@@ -103,11 +103,20 @@ scene.add(new THREE.AmbientLight(0xffffff, 0.25));
 /* ---------------- piso / ambientes ---------------- */
 const rooms = new THREE.Group(); scene.add(rooms);
 (SCENE.rooms || []).forEach(r => {
-  const floor = new THREE.Mesh(
-    new THREE.BoxGeometry(r.w, 0.04, r.d),
-    new THREE.MeshStandardMaterial({ color: r.floorColor || '#cbb79c', roughness: 0.95 })
-  );
-  floor.position.set(r.x + r.w / 2, -0.02, r.z + r.d / 2);
+  const mat = new THREE.MeshStandardMaterial({ color: r.floorColor || '#cbb79c', roughness: 0.95 });
+  let floor;
+  if (r.points && r.points.length >= 3) {
+    // piso poligonal (ambiente não-retangular): pontos {x,z} no plano
+    const shape = new THREE.Shape();
+    r.points.forEach((p, i) => { const x = p.x ?? p[0], z = p.z ?? p[1]; i ? shape.lineTo(x, z) : shape.moveTo(x, z); });
+    const geo = new THREE.ShapeGeometry(shape);
+    geo.rotateX(Math.PI / 2);   // do plano XY para o plano XZ (chão)
+    floor = new THREE.Mesh(geo, mat);
+    floor.position.y = -0.005;
+  } else {
+    floor = new THREE.Mesh(new THREE.BoxGeometry(r.w, 0.04, r.d), mat);
+    floor.position.set(r.x + r.w / 2, -0.02, r.z + r.d / 2);
+  }
   floor.receiveShadow = true;
   rooms.add(floor);
 });
@@ -253,7 +262,11 @@ function animateCam(pos, target) { camAnim = { fromP: camera.position.clone(), t
 /* ---------------- helpers ---------------- */
 function computeBounds(s) {
   let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
-  (s.rooms || []).forEach(r => { minX = Math.min(minX, r.x); maxX = Math.max(maxX, r.x + r.w); minZ = Math.min(minZ, r.z); maxZ = Math.max(maxZ, r.z + r.d); });
+  (s.rooms || []).forEach(r => {
+    if (r.points && r.points.length) {
+      r.points.forEach(p => { const x = p.x ?? p[0], z = p.z ?? p[1]; minX = Math.min(minX, x); maxX = Math.max(maxX, x); minZ = Math.min(minZ, z); maxZ = Math.max(maxZ, z); });
+    } else { minX = Math.min(minX, r.x); maxX = Math.max(maxX, r.x + r.w); minZ = Math.min(minZ, r.z); maxZ = Math.max(maxZ, r.z + r.d); }
+  });
   (s.walls || []).forEach(w => { minX = Math.min(minX, w.x1, w.x2); maxX = Math.max(maxX, w.x1, w.x2); minZ = Math.min(minZ, w.z1, w.z2); maxZ = Math.max(maxZ, w.z1, w.z2); });
   if (!isFinite(minX)) { minX = 0; maxX = 5; minZ = 0; maxZ = 5; }
   return { minX, maxX, minZ, maxZ };

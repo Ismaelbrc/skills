@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Planta 3D — Varanda boho — infantil, plantas, sapateira e canto fitness</title>
+<title>Planta 3D — Varanda boho (forma real) — infantil, plantas, sapateira e fitness</title>
 <style>
   :root { --bg:#1b1d21; --panel:#26282e; --ink:#e8eaed; --muted:#9aa0a6; --accent:#7cc4ff; }
   * { box-sizing: border-box; }
@@ -32,7 +32,7 @@
 <body>
 <div id="app"></div>
 <div id="title" class="hud">
-  <h1>Varanda boho — infantil, plantas, sapateira e canto fitness</h1>
+  <h1>Varanda boho (forma real) — infantil, plantas, sapateira e fitness</h1>
   <p id="subtitle">Arraste para girar • scroll para zoom • botão direito para mover</p>
 </div>
 <div id="legend" class="hud"><h2>Ambientes & Móveis</h2><div id="legend-body"></div></div>
@@ -66,10 +66,28 @@ const SCENE = {
   "rooms": [
     {
       "name": "Varanda",
-      "x": 0,
-      "z": 0,
-      "w": 5.6,
-      "d": 2.3,
+      "points": [
+        {
+          "x": 0,
+          "z": 0
+        },
+        {
+          "x": 3.0,
+          "z": 0
+        },
+        {
+          "x": 5.05,
+          "z": 1.43
+        },
+        {
+          "x": 4.0,
+          "z": 2.0
+        },
+        {
+          "x": 0,
+          "z": 2.0
+        }
+      ],
       "floorColor": "#c79c75"
     }
   ],
@@ -77,41 +95,66 @@ const SCENE = {
     {
       "x1": 0,
       "z1": 0,
-      "x2": 5.6,
+      "x2": 3.0,
       "z2": 0,
-      "t": 0.1,
+      "t": 0.08,
       "h": 1.1,
       "openings": [
         {
           "type": "window",
-          "at": 0.1,
-          "width": 5.4,
+          "at": 0.05,
+          "width": 2.9,
           "sill": 0.05,
           "height": 1.05
         }
       ]
     },
     {
-      "x1": 5.6,
+      "x1": 3.0,
       "z1": 0,
-      "x2": 5.6,
-      "z2": 2.3,
-      "t": 0.12,
-      "h": 2.6,
-      "openings": []
+      "x2": 5.05,
+      "z2": 1.43,
+      "t": 0.08,
+      "h": 1.1,
+      "openings": [
+        {
+          "type": "window",
+          "at": 0.05,
+          "width": 2.4,
+          "sill": 0.05,
+          "height": 1.05
+        }
+      ]
     },
     {
-      "x1": 5.6,
-      "z1": 2.3,
+      "x1": 5.05,
+      "z1": 1.43,
+      "x2": 4.0,
+      "z2": 2.0,
+      "t": 0.08,
+      "h": 1.1,
+      "openings": [
+        {
+          "type": "window",
+          "at": 0.05,
+          "width": 1.09,
+          "sill": 0.05,
+          "height": 1.05
+        }
+      ]
+    },
+    {
+      "x1": 4.0,
+      "z1": 2.0,
       "x2": 0,
-      "z2": 2.3,
+      "z2": 2.0,
       "t": 0.12,
       "h": 2.6,
       "openings": []
     },
     {
       "x1": 0,
-      "z1": 2.3,
+      "z1": 2.0,
       "x2": 0,
       "z2": 0,
       "t": 0.12,
@@ -119,8 +162,8 @@ const SCENE = {
       "openings": [
         {
           "type": "window",
-          "at": 0.3,
-          "width": 1.7,
+          "at": 0.1,
+          "width": 1.8,
           "sill": 0.0,
           "height": 2.1
         }
@@ -129,41 +172,43 @@ const SCENE = {
   ],
   "furniture": [
     {
-      "type": "planta",
-      "label": "Ficus (existente)",
-      "x": 0.12,
-      "z": 0.15,
-      "w": 0.5,
-      "d": 0.5,
-      "h": 1.75,
+      "type": "banco-bau",
+      "label": "Banco-baú + sapateira",
+      "x": 0.35,
+      "z": 0.0,
+      "w": 2.4,
+      "d": 0.45,
+      "h": 0.45,
+      "color": "#b58f5d",
+      "top": true,
+      "topColor": "#efe3cf"
+    },
+    {
+      "type": "vaso",
+      "label": "Vasos (plantas)",
+      "x": 0.5,
+      "z": 0.06,
+      "w": 0.28,
+      "d": 0.28,
+      "h": 0.45,
+      "lift": 0.45,
       "color": "#4f8f5a"
     },
     {
-      "type": "poltrona",
-      "label": "Poltrona rattan",
-      "x": 0.15,
-      "z": 1.5,
-      "w": 0.66,
-      "d": 0.66,
-      "h": 0.78,
-      "rot": 16,
-      "color": "#c39a63"
-    },
-    {
-      "type": "pufe",
-      "label": "Pufe rattan",
-      "x": 0.32,
-      "z": 0.78,
-      "w": 0.42,
-      "d": 0.42,
-      "h": 0.42,
-      "color": "#cbab73"
+      "type": "vaso",
+      "x": 2.35,
+      "z": 0.06,
+      "w": 0.28,
+      "d": 0.28,
+      "h": 0.45,
+      "lift": 0.45,
+      "color": "#4f8f5a"
     },
     {
       "type": "mesa-infantil",
       "label": "Mesa infantil",
-      "x": 1.1,
-      "z": 1.35,
+      "x": 1.0,
+      "z": 1.12,
       "w": 0.7,
       "d": 0.7,
       "h": 0.5,
@@ -174,8 +219,8 @@ const SCENE = {
     {
       "type": "cadeira-infantil",
       "label": "Cadeiras infantis (verde-oliva)",
-      "x": 0.85,
-      "z": 1.12,
+      "x": 0.74,
+      "z": 0.9,
       "w": 0.3,
       "d": 0.3,
       "h": 0.52,
@@ -183,8 +228,8 @@ const SCENE = {
     },
     {
       "type": "cadeira-infantil",
-      "x": 1.55,
-      "z": 1.58,
+      "x": 1.46,
+      "z": 1.5,
       "w": 0.3,
       "d": 0.3,
       "h": 0.52,
@@ -194,8 +239,8 @@ const SCENE = {
     {
       "type": "pendente",
       "label": "Pendente preto",
-      "x": 1.18,
-      "z": 1.33,
+      "x": 1.08,
+      "z": 1.2,
       "w": 0.34,
       "d": 0.34,
       "h": 0.22,
@@ -204,109 +249,66 @@ const SCENE = {
       "metal": true
     },
     {
-      "type": "banco-bau",
-      "label": "Banco-baú + sapateira",
-      "x": 1.95,
-      "z": 0.0,
-      "w": 2.25,
-      "d": 0.45,
-      "h": 0.45,
-      "color": "#b58f5d",
-      "top": true,
-      "topColor": "#efe3cf"
-    },
-    {
-      "type": "vaso",
-      "label": "Vasos (plantas)",
-      "x": 2.05,
-      "z": 0.07,
-      "w": 0.28,
-      "d": 0.28,
-      "h": 0.45,
-      "lift": 0.45,
-      "color": "#4f8f5a"
-    },
-    {
-      "type": "vaso",
-      "x": 3.78,
-      "z": 0.07,
-      "w": 0.28,
-      "d": 0.28,
-      "h": 0.45,
-      "lift": 0.45,
-      "color": "#4f8f5a"
-    },
-    {
       "type": "prateleira",
       "label": "Prateleira (plantas/decor)",
-      "x": 1.7,
-      "z": 2.05,
-      "w": 1.9,
-      "d": 0.25,
+      "x": 0.4,
+      "z": 1.95,
+      "w": 1.7,
+      "d": 0.22,
       "h": 0.05,
-      "lift": 1.45,
+      "lift": 1.5,
       "color": "#b58f5d"
     },
     {
       "type": "planta-pendente",
       "label": "Plantas pendentes",
-      "x": 2.05,
-      "z": 2.1,
+      "x": 0.8,
+      "z": 1.97,
       "w": 0.3,
-      "d": 0.18,
+      "d": 0.16,
       "h": 0.45,
-      "lift": 1.0,
+      "lift": 1.05,
       "color": "#5aa05f"
     },
     {
       "type": "planta-pendente",
-      "x": 3.0,
-      "z": 2.1,
+      "x": 1.6,
+      "z": 1.97,
       "w": 0.3,
-      "d": 0.18,
+      "d": 0.16,
       "h": 0.55,
-      "lift": 0.9,
+      "lift": 0.95,
       "color": "#5aa05f"
     },
     {
       "type": "tapete",
       "label": "Tapete emborrachado",
-      "x": 4.0,
-      "z": 0.5,
-      "w": 1.45,
-      "d": 1.45,
+      "x": 2.75,
+      "z": 0.55,
+      "w": 1.15,
+      "d": 0.95,
       "h": 0.02,
       "color": "#34373c"
     },
     {
       "type": "rack-pesos",
       "label": "Rack anilhas/pesos",
-      "x": 4.65,
-      "z": 1.85,
+      "x": 2.95,
+      "z": 1.58,
       "w": 0.9,
-      "d": 0.4,
+      "d": 0.38,
       "h": 1.05,
       "color": "#202327",
       "metal": true
     },
     {
-      "type": "banco-peso",
-      "label": "Banco de apoio",
-      "x": 4.15,
-      "z": 0.95,
-      "w": 0.95,
-      "d": 0.34,
-      "h": 0.45,
-      "color": "#3a3d42"
-    },
-    {
       "type": "planta",
-      "label": "Planta (canto)",
-      "x": 5.18,
-      "z": 0.12,
-      "w": 0.34,
-      "d": 0.34,
-      "h": 1.05,
+      "label": "Ficus (existente)",
+      "x": 3.85,
+      "z": 1.05,
+      "w": 0.5,
+      "d": 0.5,
+      "h": 1.75,
       "color": "#4f8f5a"
     }
   ]
@@ -354,11 +356,20 @@ scene.add(new THREE.AmbientLight(0xffffff, 0.25));
 /* ---------------- piso / ambientes ---------------- */
 const rooms = new THREE.Group(); scene.add(rooms);
 (SCENE.rooms || []).forEach(r => {
-  const floor = new THREE.Mesh(
-    new THREE.BoxGeometry(r.w, 0.04, r.d),
-    new THREE.MeshStandardMaterial({ color: r.floorColor || '#cbb79c', roughness: 0.95 })
-  );
-  floor.position.set(r.x + r.w / 2, -0.02, r.z + r.d / 2);
+  const mat = new THREE.MeshStandardMaterial({ color: r.floorColor || '#cbb79c', roughness: 0.95 });
+  let floor;
+  if (r.points && r.points.length >= 3) {
+    // piso poligonal (ambiente não-retangular): pontos {x,z} no plano
+    const shape = new THREE.Shape();
+    r.points.forEach((p, i) => { const x = p.x ?? p[0], z = p.z ?? p[1]; i ? shape.lineTo(x, z) : shape.moveTo(x, z); });
+    const geo = new THREE.ShapeGeometry(shape);
+    geo.rotateX(Math.PI / 2);   // do plano XY para o plano XZ (chão)
+    floor = new THREE.Mesh(geo, mat);
+    floor.position.y = -0.005;
+  } else {
+    floor = new THREE.Mesh(new THREE.BoxGeometry(r.w, 0.04, r.d), mat);
+    floor.position.set(r.x + r.w / 2, -0.02, r.z + r.d / 2);
+  }
   floor.receiveShadow = true;
   rooms.add(floor);
 });
@@ -504,7 +515,11 @@ function animateCam(pos, target) { camAnim = { fromP: camera.position.clone(), t
 /* ---------------- helpers ---------------- */
 function computeBounds(s) {
   let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
-  (s.rooms || []).forEach(r => { minX = Math.min(minX, r.x); maxX = Math.max(maxX, r.x + r.w); minZ = Math.min(minZ, r.z); maxZ = Math.max(maxZ, r.z + r.d); });
+  (s.rooms || []).forEach(r => {
+    if (r.points && r.points.length) {
+      r.points.forEach(p => { const x = p.x ?? p[0], z = p.z ?? p[1]; minX = Math.min(minX, x); maxX = Math.max(maxX, x); minZ = Math.min(minZ, z); maxZ = Math.max(maxZ, z); });
+    } else { minX = Math.min(minX, r.x); maxX = Math.max(maxX, r.x + r.w); minZ = Math.min(minZ, r.z); maxZ = Math.max(maxZ, r.z + r.d); }
+  });
   (s.walls || []).forEach(w => { minX = Math.min(minX, w.x1, w.x2); maxX = Math.max(maxX, w.x1, w.x2); minZ = Math.min(minZ, w.z1, w.z2); maxZ = Math.max(maxZ, w.z1, w.z2); });
   if (!isFinite(minX)) { minX = 0; maxX = 5; minZ = 0; maxZ = 5; }
   return { minX, maxX, minZ, maxZ };

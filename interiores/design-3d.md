@@ -120,8 +120,10 @@ Esta é a entrega que materializa "quero a planta em 3D".
   background: "#d9dde2",        // cor do fundo (opcional)
   wallColor: "#f2efe9",         // cor das paredes (opcional)
   wallHeight: 2.7,              // pé-direito padrão se a parede não definir
-  rooms: [                      // pisos dos ambientes (slabs)
-    { name:"Cozinha", x:0, z:0, w:3.2, d:2.6, floorColor:"#cbb79c" }
+  rooms: [                      // pisos dos ambientes
+    { name:"Cozinha", x:0, z:0, w:3.2, d:2.6, floorColor:"#cbb79c" },
+    // ambiente NÃO-retangular: passe um polígono em `points` (x,z em metros)
+    { name:"Varanda", points:[{x:0,z:0},{x:3,z:0},{x:5,z:1.4},{x:4,z:2},{x:0,z:2}], floorColor:"#c79c75" }
   ],
   walls: [                      // segmentos de parede (linha entre 2 pontos)
     { x1:0, z1:0, x2:3.2, z2:0, t:0.12, h:2.7, openings:[
