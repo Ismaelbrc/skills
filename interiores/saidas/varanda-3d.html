@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Planta 3D — Varanda boho — infantil, plantas, sapateira e canto fitness</title>
+<style>
+  :root { --bg:#1b1d21; --panel:#26282e; --ink:#e8eaed; --muted:#9aa0a6; --accent:#7cc4ff; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; overflow:hidden; background:var(--bg); color:var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  #app { position:fixed; inset:0; }
+  canvas { display:block; }
+  .hud { position:fixed; z-index:10; }
+  #title { top:14px; left:16px; max-width:46vw; }
+  #title h1 { font-size:15px; margin:0 0 2px; font-weight:600; }
+  #title p { font-size:12px; margin:0; color:var(--muted); }
+  #legend { top:14px; right:16px; background:rgba(38,40,46,.92); border:1px solid #34373e;
+    border-radius:10px; padding:10px 12px; font-size:12px; max-height:70vh; overflow:auto; min-width:180px; }
+  #legend h2 { font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:0 0 8px; }
+  .legend-row { display:flex; align-items:center; gap:8px; margin:3px 0; }
+  .swatch { width:13px; height:13px; border-radius:3px; flex:none; border:1px solid rgba(255,255,255,.15); }
+  #controls { bottom:14px; left:50%; transform:translateX(-50%); display:flex; gap:8px;
+    background:rgba(38,40,46,.92); border:1px solid #34373e; border-radius:12px; padding:8px; }
+  #controls button { background:#34373e; color:var(--ink); border:1px solid #43464e; border-radius:8px;
+    padding:8px 12px; font-size:12px; cursor:pointer; }
+  #controls button:hover { background:#41444c; }
+  #controls button.active { background:var(--accent); color:#0a2336; border-color:var(--accent); }
+  #hint { bottom:14px; left:16px; font-size:11px; color:var(--muted); }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="title" class="hud">
+  <h1>Varanda boho — infantil, plantas, sapateira e canto fitness</h1>
+  <p id="subtitle">Arraste para girar • scroll para zoom • botão direito para mover</p>
+</div>
+<div id="legend" class="hud"><h2>Ambientes & Móveis</h2><div id="legend-body"></div></div>
+<div id="controls" class="hud">
+  <button id="btn-persp" class="active">Perspectiva</button>
+  <button id="btn-top">Planta baixa</button>
+  <button id="btn-walls">Paredes ✓</button>
+  <button id="btn-labels">Rótulos ✓</button>
+</div>
+<div id="hint" class="hud">Unidades em metros.</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+/* ============================================================
+   CENA — preenchida pela skill. Unidades em metros.
+   Eixos: x = largura, z = profundidade, y = altura (para cima).
+   ============================================================ */
+const SCENE = {
+  "background": "#e0e3e2",
+  "wallColor": "#efe7d9",
+  "wallHeight": 2.6,
+  "rooms": [
+    {
+      "name": "Varanda",
+      "x": 0,
+      "z": 0,
+      "w": 5.6,
+      "d": 2.3,
+      "floorColor": "#c79c75"
+    }
+  ],
+  "walls": [
+    {
+      "x1": 0,
+      "z1": 0,
+      "x2": 5.6,
+      "z2": 0,
+      "t": 0.1,
+      "h": 1.1,
+      "openings": [
+        {
+          "type": "window",
+          "at": 0.1,
+          "width": 5.4,
+          "sill": 0.05,
+          "height": 1.05
+        }
+      ]
+    },
+    {
+      "x1": 5.6,
+      "z1": 0,
+      "x2": 5.6,
+      "z2": 2.3,
+      "t": 0.12,
+      "h": 2.6,
+      "openings": []
+    },
+    {
+      "x1": 5.6,
+      "z1": 2.3,
+      "x2": 0,
+      "z2": 2.3,
+      "t": 0.12,
+      "h": 2.6,
+      "openings": []
+    },
+    {
+      "x1": 0,
+      "z1": 2.3,
+      "x2": 0,
+      "z2": 0,
+      "t": 0.12,
+      "h": 2.6,
+      "openings": [
+        {
+          "type": "window",
+          "at": 0.3,
+          "width": 1.7,
+          "sill": 0.0,
+          "height": 2.1
+        }
+      ]
+    }
+  ],
+  "furniture": [
+    {
+      "type": "planta",
+      "label": "Ficus (existente)",
+      "x": 0.12,
+      "z": 0.15,
+      "w": 0.5,
+      "d": 0.5,
+      "h": 1.75,
+      "color": "#4f8f5a"
+    },
+    {
+      "type": "poltrona",
+      "label": "Poltrona rattan",
+      "x": 0.15,
+      "z": 1.5,
+      "w": 0.66,
+      "d": 0.66,
+      "h": 0.78,
+      "rot": 16,
+      "color": "#c39a63"
+    },
+    {
+      "type": "pufe",
+      "label": "Pufe rattan",
+      "x": 0.32,
+      "z": 0.78,
+      "w": 0.42,
+      "d": 0.42,
+      "h": 0.42,
+      "color": "#cbab73"
+    },
+    {
+      "type": "mesa-infantil",
+      "label": "Mesa infantil",
+      "x": 1.1,
+      "z": 1.35,
+      "w": 0.7,
+      "d": 0.7,
+      "h": 0.5,
+      "color": "#a8814f",
+      "top": true,
+      "topColor": "#c2965d"
+    },
+    {
+      "type": "cadeira-infantil",
+      "label": "Cadeiras infantis (verde-oliva)",
+      "x": 0.85,
+      "z": 1.12,
+      "w": 0.3,
+      "d": 0.3,
+      "h": 0.52,
+      "color": "#8a9b6e"
+    },
+    {
+      "type": "cadeira-infantil",
+      "x": 1.55,
+      "z": 1.58,
+      "w": 0.3,
+      "d": 0.3,
+      "h": 0.52,
+      "rot": 180,
+      "color": "#8a9b6e"
+    },
+    {
+      "type": "pendente",
+      "label": "Pendente preto",
+      "x": 1.18,
+      "z": 1.33,
+      "w": 0.34,
+      "d": 0.34,
+      "h": 0.22,
+      "lift": 2.05,
+      "color": "#202327",
+      "metal": true
+    },
+    {
+      "type": "banco-bau",
+      "label": "Banco-baú + sapateira",
+      "x": 1.95,
+      "z": 0.0,
+      "w": 2.25,
+      "d": 0.45,
+      "h": 0.45,
+      "color": "#b58f5d",
+      "top": true,
+      "topColor": "#efe3cf"
+    },
+    {
+      "type": "vaso",
+      "label": "Vasos (plantas)",
+      "x": 2.05,
+      "z": 0.07,
+      "w": 0.28,
+      "d": 0.28,
+      "h": 0.45,
+      "lift": 0.45,
+      "color": "#4f8f5a"
+    },
+    {
+      "type": "vaso",
+      "x": 3.78,
+      "z": 0.07,
+      "w": 0.28,
+      "d": 0.28,
+      "h": 0.45,
+      "lift": 0.45,
+      "color": "#4f8f5a"
+    },
+    {
+      "type": "prateleira",
+      "label": "Prateleira (plantas/decor)",
+      "x": 1.7,
+      "z": 2.05,
+      "w": 1.9,
+      "d": 0.25,
+      "h": 0.05,
+      "lift": 1.45,
+      "color": "#b58f5d"
+    },
+    {
+      "type": "planta-pendente",
+      "label": "Plantas pendentes",
+      "x": 2.05,
+      "z": 2.1,
+      "w": 0.3,
+      "d": 0.18,
+      "h": 0.45,
+      "lift": 1.0,
+      "color": "#5aa05f"
+    },
+    {
+      "type": "planta-pendente",
+      "x": 3.0,
+      "z": 2.1,
+      "w": 0.3,
+      "d": 0.18,
+      "h": 0.55,
+      "lift": 0.9,
+      "color": "#5aa05f"
+    },
+    {
+      "type": "tapete",
+      "label": "Tapete emborrachado",
+      "x": 4.0,
+      "z": 0.5,
+      "w": 1.45,
+      "d": 1.45,
+      "h": 0.02,
+      "color": "#34373c"
+    },
+    {
+      "type": "rack-pesos",
+      "label": "Rack anilhas/pesos",
+      "x": 4.65,
+      "z": 1.85,
+      "w": 0.9,
+      "d": 0.4,
+      "h": 1.05,
+      "color": "#202327",
+      "metal": true
+    },
+    {
+      "type": "banco-peso",
+      "label": "Banco de apoio",
+      "x": 4.15,
+      "z": 0.95,
+      "w": 0.95,
+      "d": 0.34,
+      "h": 0.45,
+      "color": "#3a3d42"
+    },
+    {
+      "type": "planta",
+      "label": "Planta (canto)",
+      "x": 5.18,
+      "z": 0.12,
+      "w": 0.34,
+      "d": 0.34,
+      "h": 1.05,
+      "color": "#4f8f5a"
+    }
+  ]
+};
+
+/* ---------------- setup ---------------- */
+const app = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+app.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(SCENE.background || '#d9dde2');
+
+// bounds para enquadrar a câmera
+const b = computeBounds(SCENE);
+const cx = (b.minX + b.maxX) / 2, cz = (b.minZ + b.maxZ) / 2;
+const span = Math.max(b.maxX - b.minX, b.maxZ - b.minZ, 3);
+
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.05, 1000);
+const perspPos = new THREE.Vector3(cx + span * 0.9, span * 0.95, cz + span * 0.9);
+const topPos   = new THREE.Vector3(cx, span * 1.8, cz + 0.001);
+camera.position.copy(perspPos);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(cx, 0.9, cz);
+controls.enableDamping = true;
+controls.maxPolarAngle = Math.PI / 2.02;
+controls.update();
+
+/* ---------------- luzes ---------------- */
+scene.add(new THREE.HemisphereLight(0xffffff, 0x6b6f78, 0.85));
+const sun = new THREE.DirectionalLight(0xfff4e6, 1.0);
+sun.position.set(cx + span, span * 1.6, cz + span * 0.6);
+sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+const sc = sun.shadow.camera;
+sc.left = -span; sc.right = span; sc.top = span; sc.bottom = -span; sc.near = 0.5; sc.far = span * 5;
+scene.add(sun);
+scene.add(new THREE.AmbientLight(0xffffff, 0.25));
+
+/* ---------------- piso / ambientes ---------------- */
+const rooms = new THREE.Group(); scene.add(rooms);
+(SCENE.rooms || []).forEach(r => {
+  const floor = new THREE.Mesh(
+    new THREE.BoxGeometry(r.w, 0.04, r.d),
+    new THREE.MeshStandardMaterial({ color: r.floorColor || '#cbb79c', roughness: 0.95 })
+  );
+  floor.position.set(r.x + r.w / 2, -0.02, r.z + r.d / 2);
+  floor.receiveShadow = true;
+  rooms.add(floor);
+});
+
+/* ---------------- paredes ---------------- */
+const wallsGroup = new THREE.Group(); scene.add(wallsGroup);
+const wallMat = new THREE.MeshStandardMaterial({ color: SCENE.wallColor || '#f2efe9', roughness: 1 });
+const glassMat = new THREE.MeshStandardMaterial({ color: '#bfe3f2', transparent: true, opacity: 0.35, roughness: 0.1 });
+
+(SCENE.walls || []).forEach(w => {
+  const dx = w.x2 - w.x1, dz = w.z2 - w.z1;
+  const len = Math.hypot(dx, dz);
+  const ang = Math.atan2(dz, dx);
+  const th = w.t || 0.12;
+  const h = w.h || SCENE.wallHeight || 2.7;
+  const segs = splitWall(len, w.openings || []); // [{a,b,kind}]
+  segs.forEach(s => {
+    if (s.kind === 'solid' || s.kind === 'lintel') {
+      const segLen = s.b - s.a;
+      const yh = s.kind === 'lintel' ? (h - s.sill - s.head) : h;
+      const yc = s.kind === 'lintel' ? (s.sill + s.head + yh / 2) : yh / 2;
+      const m = new THREE.Mesh(new THREE.BoxGeometry(segLen, yh, th), wallMat);
+      placeSeg(m, w, ang, (s.a + s.b) / 2, yc);
+      m.castShadow = true; m.receiveShadow = true; wallsGroup.add(m);
+    }
+    if (s.kind === 'sill') { // peitoril sob a janela
+      const segLen = s.b - s.a;
+      const m = new THREE.Mesh(new THREE.BoxGeometry(segLen, s.sill, th), wallMat);
+      placeSeg(m, w, ang, (s.a + s.b) / 2, s.sill / 2);
+      m.castShadow = true; wallsGroup.add(m);
+    }
+    if (s.kind === 'glass') {
+      const segLen = s.b - s.a;
+      const g = new THREE.Mesh(new THREE.BoxGeometry(segLen, s.head, th * 0.4), glassMat);
+      placeSeg(g, w, ang, (s.a + s.b) / 2, s.sill + s.head / 2);
+      wallsGroup.add(g);
+    }
+  });
+});
+
+function splitWall(len, openings) {
+  // ordena aberturas por posição
+  const ops = openings.slice().sort((a, b) => a.at - b.at);
+  const out = [];
+  let cursor = 0;
+  ops.forEach(o => {
+    const start = o.at, end = o.at + o.width;
+    if (start > cursor) out.push({ a: cursor, b: start, kind: 'solid' });
+    if (o.type === 'window') {
+      const sill = o.sill ?? 1.0, head = o.height ?? 1.2;
+      out.push({ a: start, b: end, kind: 'sill', sill });
+      out.push({ a: start, b: end, kind: 'glass', sill, head });
+      out.push({ a: start, b: end, kind: 'lintel', sill, head });
+    } // 'door' => deixa vão livre (nada)
+    cursor = end;
+  });
+  if (cursor < len) out.push({ a: cursor, b: len, kind: 'solid' });
+  return out;
+}
+function placeSeg(mesh, w, ang, along, yc) {
+  const ux = Math.cos(ang), uz = Math.sin(ang);
+  mesh.position.set(w.x1 + ux * along, yc, w.z1 + uz * along);
+  mesh.rotation.y = -ang;
+}
+
+/* ---------------- móveis ---------------- */
+const furnGroup = new THREE.Group(); scene.add(furnGroup);
+const labelSprites = [];
+(SCENE.furniture || []).forEach(f => {
+  const g = new THREE.Group();
+  const mat = new THREE.MeshStandardMaterial({ color: f.color || '#9c7b54', roughness: 0.7, metalness: f.metal ? 0.6 : 0.05 });
+  const body = new THREE.Mesh(new THREE.BoxGeometry(f.w, f.h, f.d), mat);
+  body.position.y = f.h / 2 + (f.lift || 0);
+  body.castShadow = true; body.receiveShadow = true;
+  g.add(body);
+  // tampo de contraste opcional (bancada, mesa)
+  if (f.top) {
+    const t = new THREE.Mesh(new THREE.BoxGeometry(f.w, 0.04, f.d),
+      new THREE.MeshStandardMaterial({ color: f.topColor || '#3a3d42', roughness: 0.4 }));
+    t.position.y = f.h + (f.lift || 0); t.castShadow = true; g.add(t);
+  }
+  g.position.set(f.x + f.w / 2, 0, f.z + f.d / 2);
+  g.rotation.y = THREE.MathUtils.degToRad(-(f.rot || 0));
+  furnGroup.add(g);
+  if (f.label) {
+    const s = makeLabel(f.label);
+    s.position.set(f.x + f.w / 2, f.h + (f.lift || 0) + 0.25, f.z + f.d / 2);
+    scene.add(s); labelSprites.push(s);
+  }
+});
+
+function makeLabel(text) {
+  const pad = 16, fs = 40;
+  const c = document.createElement('canvas');
+  const ctx = c.getContext('2d');
+  ctx.font = `600 ${fs}px sans-serif`;
+  const w = ctx.measureText(text).width + pad * 2;
+  c.width = w; c.height = fs + pad * 2;
+  ctx.font = `600 ${fs}px sans-serif`;
+  ctx.fillStyle = 'rgba(20,22,26,.82)';
+  roundRect(ctx, 0, 0, c.width, c.height, 12); ctx.fill();
+  ctx.fillStyle = '#fff'; ctx.textBaseline = 'middle';
+  ctx.fillText(text, pad, c.height / 2);
+  const tex = new THREE.CanvasTexture(c); tex.anisotropy = 4;
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, depthTest: false }));
+  sp.scale.set(c.width / c.height * 0.45, 0.45, 1);
+  return sp;
+}
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath(); ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+}
+
+/* ---------------- legenda ---------------- */
+const legendBody = document.getElementById('legend-body');
+const seen = new Set();
+[...(SCENE.rooms || []).map(r => ({ name: r.name, color: r.floorColor || '#cbb79c' })),
+ ...(SCENE.furniture || []).map(f => ({ name: f.label || f.type, color: f.color || '#9c7b54' }))]
+ .forEach(item => {
+   if (!item.name || seen.has(item.name)) return; seen.add(item.name);
+   const row = document.createElement('div'); row.className = 'legend-row';
+   row.innerHTML = `<span class="swatch" style="background:${item.color}"></span><span>${item.name}</span>`;
+   legendBody.appendChild(row);
+ });
+
+/* ---------------- controles HUD ---------------- */
+const btnPersp = document.getElementById('btn-persp');
+const btnTop = document.getElementById('btn-top');
+const btnWalls = document.getElementById('btn-walls');
+const btnLabels = document.getElementById('btn-labels');
+let labelsOn = true, wallsOn = true;
+
+btnPersp.onclick = () => { animateCam(perspPos, new THREE.Vector3(cx, 0.9, cz)); controls.maxPolarAngle = Math.PI / 2.02; setActive(btnPersp); };
+btnTop.onclick = () => { animateCam(topPos, new THREE.Vector3(cx, 0, cz)); controls.maxPolarAngle = Math.PI; setActive(btnTop); };
+btnWalls.onclick = () => { wallsOn = !wallsOn; wallsGroup.visible = wallsOn; btnWalls.textContent = `Paredes ${wallsOn ? '✓' : '✕'}`; btnWalls.classList.toggle('active', wallsOn); };
+btnLabels.onclick = () => { labelsOn = !labelsOn; labelSprites.forEach(s => s.visible = labelsOn); btnLabels.textContent = `Rótulos ${labelsOn ? '✓' : '✕'}`; btnLabels.classList.toggle('active', labelsOn); };
+function setActive(btn) { [btnPersp, btnTop].forEach(x => x.classList.remove('active')); btn.classList.add('active'); }
+
+let camAnim = null;
+function animateCam(pos, target) { camAnim = { fromP: camera.position.clone(), toP: pos.clone(), fromT: controls.target.clone(), toT: target.clone(), t: 0 }; }
+
+/* ---------------- helpers ---------------- */
+function computeBounds(s) {
+  let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
+  (s.rooms || []).forEach(r => { minX = Math.min(minX, r.x); maxX = Math.max(maxX, r.x + r.w); minZ = Math.min(minZ, r.z); maxZ = Math.max(maxZ, r.z + r.d); });
+  (s.walls || []).forEach(w => { minX = Math.min(minX, w.x1, w.x2); maxX = Math.max(maxX, w.x1, w.x2); minZ = Math.min(minZ, w.z1, w.z2); maxZ = Math.max(maxZ, w.z1, w.z2); });
+  if (!isFinite(minX)) { minX = 0; maxX = 5; minZ = 0; maxZ = 5; }
+  return { minX, maxX, minZ, maxZ };
+}
+
+/* ---------------- loop ---------------- */
+addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+function tick() {
+  requestAnimationFrame(tick);
+  if (camAnim) {
+    camAnim.t = Math.min(1, camAnim.t + 0.04);
+    const e = 1 - Math.pow(1 - camAnim.t, 3);
+    camera.position.lerpVectors(camAnim.fromP, camAnim.toP, e);
+    controls.target.lerpVectors(camAnim.fromT, camAnim.toT, e);
+    if (camAnim.t >= 1) camAnim = null;
+  }
+  controls.update();
+  renderer.render(scene, camera);
+}
+tick();
+</script>
+</body>
+</html>
