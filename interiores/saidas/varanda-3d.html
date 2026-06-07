@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Planta 3D — Varanda boho (forma real) — infantil, plantas, sapateira e fitness</title>
+<title>Planta 3D — Varanda boho — infantil, plantas, sapateira, banco de palhinha e fitness</title>
 <style>
   :root { --bg:#1b1d21; --panel:#26282e; --ink:#e8eaed; --muted:#9aa0a6; --accent:#7cc4ff; }
   * { box-sizing: border-box; }
@@ -32,7 +32,7 @@
 <body>
 <div id="app"></div>
 <div id="title" class="hud">
-  <h1>Varanda boho (forma real) — infantil, plantas, sapateira e fitness</h1>
+  <h1>Varanda boho — infantil, plantas, sapateira, banco de palhinha e fitness</h1>
   <p id="subtitle">Arraste para girar • scroll para zoom • botão direito para mover</p>
 </div>
 <div id="legend" class="hud"><h2>Ambientes & Móveis</h2><div id="legend-body"></div></div>
@@ -68,24 +68,24 @@ const SCENE = {
       "name": "Varanda",
       "points": [
         {
-          "x": 0,
-          "z": 0
+          "x": 0.3,
+          "z": 0.0
         },
         {
-          "x": 3.0,
-          "z": 0
+          "x": 0.0,
+          "z": 3.4
         },
         {
-          "x": 5.05,
-          "z": 1.43
+          "x": 1.4,
+          "z": 4.5
         },
         {
-          "x": 4.0,
-          "z": 2.0
+          "x": 2.95,
+          "z": 4.0
         },
         {
-          "x": 0,
-          "z": 2.0
+          "x": 2.9,
+          "z": 0.0
         }
       ],
       "floorColor": "#c79c75"
@@ -93,76 +93,76 @@ const SCENE = {
   ],
   "walls": [
     {
-      "x1": 0,
-      "z1": 0,
-      "x2": 3.0,
-      "z2": 0,
+      "x1": 0.3,
+      "z1": 0.0,
+      "x2": 0.0,
+      "z2": 3.4,
       "t": 0.08,
       "h": 1.1,
       "openings": [
         {
           "type": "window",
           "at": 0.05,
-          "width": 2.9,
+          "width": 3.3,
           "sill": 0.05,
           "height": 1.05
         }
       ]
     },
     {
-      "x1": 3.0,
-      "z1": 0,
-      "x2": 5.05,
-      "z2": 1.43,
+      "x1": 0.0,
+      "z1": 3.4,
+      "x2": 1.4,
+      "z2": 4.5,
       "t": 0.08,
       "h": 1.1,
       "openings": [
         {
           "type": "window",
           "at": 0.05,
-          "width": 2.4,
+          "width": 1.65,
           "sill": 0.05,
           "height": 1.05
         }
       ]
     },
     {
-      "x1": 5.05,
-      "z1": 1.43,
-      "x2": 4.0,
-      "z2": 2.0,
+      "x1": 1.4,
+      "z1": 4.5,
+      "x2": 2.95,
+      "z2": 4.0,
       "t": 0.08,
       "h": 1.1,
       "openings": [
         {
           "type": "window",
           "at": 0.05,
-          "width": 1.09,
+          "width": 1.5,
           "sill": 0.05,
           "height": 1.05
         }
       ]
     },
     {
-      "x1": 4.0,
-      "z1": 2.0,
-      "x2": 0,
-      "z2": 2.0,
+      "x1": 2.95,
+      "z1": 4.0,
+      "x2": 2.9,
+      "z2": 0.0,
       "t": 0.12,
       "h": 2.6,
       "openings": []
     },
     {
-      "x1": 0,
-      "z1": 2.0,
-      "x2": 0,
-      "z2": 0,
+      "x1": 2.9,
+      "z1": 0.0,
+      "x2": 0.3,
+      "z2": 0.0,
       "t": 0.12,
       "h": 2.6,
       "openings": [
         {
           "type": "window",
-          "at": 0.1,
+          "at": 0.4,
           "width": 1.8,
           "sill": 0.0,
           "height": 2.1
@@ -174,10 +174,10 @@ const SCENE = {
     {
       "type": "banco-bau",
       "label": "Banco-baú + sapateira",
-      "x": 0.35,
-      "z": 0.0,
-      "w": 2.4,
-      "d": 0.45,
+      "x": 0.3,
+      "z": 0.6,
+      "w": 0.45,
+      "d": 2.0,
       "h": 0.45,
       "color": "#b58f5d",
       "top": true,
@@ -185,22 +185,22 @@ const SCENE = {
     },
     {
       "type": "vaso",
-      "label": "Vasos (plantas)",
-      "x": 0.5,
-      "z": 0.06,
-      "w": 0.28,
-      "d": 0.28,
-      "h": 0.45,
+      "label": "Vasos",
+      "x": 0.34,
+      "z": 0.66,
+      "w": 0.26,
+      "d": 0.26,
+      "h": 0.42,
       "lift": 0.45,
       "color": "#4f8f5a"
     },
     {
       "type": "vaso",
-      "x": 2.35,
-      "z": 0.06,
-      "w": 0.28,
-      "d": 0.28,
-      "h": 0.45,
+      "x": 0.34,
+      "z": 2.3,
+      "w": 0.26,
+      "d": 0.26,
+      "h": 0.42,
       "lift": 0.45,
       "color": "#4f8f5a"
     },
@@ -208,7 +208,7 @@ const SCENE = {
       "type": "mesa-infantil",
       "label": "Mesa infantil",
       "x": 1.0,
-      "z": 1.12,
+      "z": 1.5,
       "w": 0.7,
       "d": 0.7,
       "h": 0.5,
@@ -218,9 +218,9 @@ const SCENE = {
     },
     {
       "type": "cadeira-infantil",
-      "label": "Cadeiras infantis (verde-oliva)",
-      "x": 0.74,
-      "z": 0.9,
+      "label": "Cadeiras infantis",
+      "x": 0.78,
+      "z": 1.28,
       "w": 0.3,
       "d": 0.3,
       "h": 0.52,
@@ -228,8 +228,8 @@ const SCENE = {
     },
     {
       "type": "cadeira-infantil",
-      "x": 1.46,
-      "z": 1.5,
+      "x": 1.48,
+      "z": 1.95,
       "w": 0.3,
       "d": 0.3,
       "h": 0.52,
@@ -239,8 +239,8 @@ const SCENE = {
     {
       "type": "pendente",
       "label": "Pendente preto",
-      "x": 1.08,
-      "z": 1.2,
+      "x": 1.1,
+      "z": 1.6,
       "w": 0.34,
       "d": 0.34,
       "h": 0.22,
@@ -249,67 +249,109 @@ const SCENE = {
       "metal": true
     },
     {
+      "type": "banco-palhinha",
+      "label": "Banco de palhinha",
+      "x": 2.25,
+      "z": 1.45,
+      "w": 0.42,
+      "d": 1.6,
+      "h": 0.43,
+      "color": "#a9763f",
+      "top": true,
+      "topColor": "#b9853f"
+    },
+    {
+      "type": "encosto",
+      "label": "Encosto palhinha",
+      "x": 2.6,
+      "z": 1.45,
+      "w": 0.09,
+      "d": 1.6,
+      "h": 0.4,
+      "lift": 0.43,
+      "color": "#cdaa72"
+    },
+    {
       "type": "prateleira",
-      "label": "Prateleira (plantas/decor)",
-      "x": 0.4,
-      "z": 1.95,
-      "w": 1.7,
-      "d": 0.22,
+      "label": "Prateleira (parede cega)",
+      "x": 2.55,
+      "z": 1.55,
+      "w": 0.33,
+      "d": 1.4,
       "h": 0.05,
-      "lift": 1.5,
+      "lift": 1.62,
       "color": "#b58f5d"
     },
     {
       "type": "planta-pendente",
       "label": "Plantas pendentes",
-      "x": 0.8,
-      "z": 1.97,
-      "w": 0.3,
-      "d": 0.16,
+      "x": 2.6,
+      "z": 1.8,
+      "w": 0.18,
+      "d": 0.3,
       "h": 0.45,
-      "lift": 1.05,
+      "lift": 1.18,
       "color": "#5aa05f"
     },
     {
       "type": "planta-pendente",
-      "x": 1.6,
-      "z": 1.97,
-      "w": 0.3,
-      "d": 0.16,
-      "h": 0.55,
-      "lift": 0.95,
+      "x": 2.6,
+      "z": 2.55,
+      "w": 0.18,
+      "d": 0.3,
+      "h": 0.5,
+      "lift": 1.12,
       "color": "#5aa05f"
-    },
-    {
-      "type": "tapete",
-      "label": "Tapete emborrachado",
-      "x": 2.75,
-      "z": 0.55,
-      "w": 1.15,
-      "d": 0.95,
-      "h": 0.02,
-      "color": "#34373c"
     },
     {
       "type": "rack-pesos",
       "label": "Rack anilhas/pesos",
-      "x": 2.95,
-      "z": 1.58,
-      "w": 0.9,
-      "d": 0.38,
+      "x": 2.3,
+      "z": 0.22,
+      "w": 0.58,
+      "d": 0.85,
       "h": 1.05,
       "color": "#202327",
       "metal": true
     },
     {
+      "type": "tapete",
+      "label": "Tapete (treino)",
+      "x": 0.85,
+      "z": 0.05,
+      "w": 1.0,
+      "d": 0.9,
+      "h": 0.02,
+      "color": "#34373c"
+    },
+    {
       "type": "planta",
       "label": "Ficus (existente)",
-      "x": 3.85,
-      "z": 1.05,
+      "x": 0.25,
+      "z": 3.1,
       "w": 0.5,
       "d": 0.5,
       "h": 1.75,
       "color": "#4f8f5a"
+    },
+    {
+      "type": "planta",
+      "label": "Plantas",
+      "x": 0.9,
+      "z": 3.7,
+      "w": 0.34,
+      "d": 0.34,
+      "h": 0.9,
+      "color": "#5aa05f"
+    },
+    {
+      "type": "planta",
+      "x": 2.4,
+      "z": 3.45,
+      "w": 0.32,
+      "d": 0.32,
+      "h": 0.85,
+      "color": "#5aa05f"
     }
   ]
 };
