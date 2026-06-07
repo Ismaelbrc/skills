@@ -148,6 +148,11 @@ Esta é a entrega que materializa "quero a planta em 3D".
 - Mantenha cores por categoria para a legenda fazer sentido (madeira, branco, metal, tampo).
 
 O template já entrega: órbita/zoom, alternância **Perspectiva ↔ Planta baixa**, ligar/desligar paredes e rótulos, legenda automática e sombras.
+
+**Tela preta ao abrir?** O `template-3d.html` carrega o Three.js via CDN — se o usuário abrir sem internet (celular/visualizador offline), a tela fica preta. Para evitar:
+- Use `interiores/template-3d-offline.html` (Three.js UMD embutido, sem CDN) — mesmo placeholder `__SCENE_JSON__`, abre offline.
+- Para piso poligonal, garanta `side: THREE.DoubleSide` no material do piso.
+- Sempre gere também um **render isométrico em PNG** (projeção própria com ordenação de faces back-to-front) como prévia garantida, já que não dependemos de WebGL/navegador.
 </etapa_render>
 
 <etapa_orcamento id="ORCAMENTO">
