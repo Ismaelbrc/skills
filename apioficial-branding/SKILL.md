@@ -1,6 +1,6 @@
 ---
 name: apioficial-branding
-description: Aplica a identidade de marca e a voz da apioficial (plataforma de WhatsApp Business API para empresas) a qualquer texto ou material de comunicação — mensagens de WhatsApp, respostas de atendimento/chatbot, copy de site e landing page, e-mails, pitch, posts, materiais de vendas e marketing. A voz da apioficial é construída sobre princípios retóricos de grandes oradores da história (Cícero, Demóstenes, Lincoln, Churchill, Martin Luther King Jr., Obama), adaptados para um tom de tecnologia B2B — clara, direta, confiável, nunca "discursada". Use esta skill sempre que o usuário pedir para escrever, revisar ou dar tom a qualquer texto da apioficial, mesmo que não mencione "branding" ou "voz de marca" explicitamente — por exemplo ao pedir uma mensagem de WhatsApp, um texto de site, uma resposta de suporte, ou copy para campanha.
+description: Aplica a identidade de marca e a voz da apioficial (plataforma de WhatsApp Business API para empresas) a qualquer texto ou material de comunicação — mensagens de WhatsApp, respostas de atendimento/chatbot, copy de site e landing page, e-mails, pitch, posts, materiais de vendas e marketing. A voz da apioficial é construída sobre princípios retóricos de grandes oradores da história (Cícero, Demóstenes, Lincoln, Churchill, Martin Luther King Jr., Kennedy, Obama), adaptados para um tom de tecnologia B2B — clara, direta, confiável, nunca "discursada". Use esta skill sempre que o usuário pedir para escrever, revisar ou dar tom a qualquer texto da apioficial, mesmo que não mencione "branding" ou "voz de marca" explicitamente — por exemplo ao pedir uma mensagem de WhatsApp, um texto de site, uma resposta de suporte, ou copy para campanha.
 ---
 
 # Identidade de marca — apioficial
@@ -20,6 +20,7 @@ Grandes oradores resolveram, séculos antes do WhatsApp existir, o mesmo problem
 | Lincoln | Simplicidade e cadência (frases curtas, palavras comuns) | Frases curtas. Zero jargão técnico desnecessário |
 | Churchill | Força e repetição do essencial | Repete a ideia central em vez de introduzir uma nova a cada frase |
 | Martin Luther King Jr. | Metáfora e ritmo emocional | Usa uma imagem concreta em vez de abstração ("sua mensagem chega em 2 segundos", não "baixa latência") |
+| Kennedy | Antítese/quiasmo — inverte a expectativa numa frase de efeito | Reserva para headlines e frases de fechamento; uma inversão memorável, não uma explicação |
 | Obama | Storytelling e conexão direta com quem ouve | Fala com "você", situando o leitor num cenário real, não em conceitos |
 
 Leia `references/oradores-e-retorica.md` para o detalhe de cada técnica com exemplos de antes/depois aplicados à apioficial. **Importante:** o registro é de tecnologia B2B, não de palanque — nada de grandiloquência, "!!!", ou tom de comício. A técnica retórica entra pela estrutura e pelo ritmo da frase, nunca pelo tom de discurso.
@@ -37,7 +38,7 @@ Veja `references/voz-e-tom.md` para vocabulário permitido/evitado e exemplos pr
 
 1. Identifique o canal (WhatsApp, site, atendimento, e-mail, pitch) — o tom se ajusta em formalidade, mas os 4 pilares não mudam.
 2. Escreva a versão mais simples e direta possível primeiro. Corte qualquer frase que não sirva à ação principal.
-3. Aplique **um** princípio retórico da tabela acima que se encaixe no que o texto precisa fazer (ex.: campanha de reengajamento → Churchill/repetição da ideia central; onboarding → Lincoln/simplicidade; texto institucional/pitch → Obama/storytelling situando o leitor).
+3. Aplique **um** princípio retórico da tabela acima que se encaixe no que o texto precisa fazer (ex.: campanha de reengajamento → Churchill/repetição da ideia central; onboarding → Lincoln/simplicidade; texto institucional/pitch → Obama/storytelling situando o leitor; headline ou frase de fechamento → Kennedy/antítese).
 4. Releia como se fosse o gestor de uma pequena/média empresa recebendo a mensagem, não um engenheiro. Se soar a discurso, corte o excesso — retórica aqui é ferramenta de clareza, não de espetáculo.
 
 ## O que ainda falta definir (perguntar ao usuário antes de tratar como fixo)

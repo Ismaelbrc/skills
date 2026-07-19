@@ -51,6 +51,17 @@ Churchill não introduzia uma ideia nova a cada frase — ele repetia e reforça
 - Antes: "Baixa latência na entrega de mensagens."
 - Depois: "O cliente manda a mensagem. Antes de guardar o celular no bolso, já tem resposta."
 
+## Kennedy — antítese e quiasmo
+
+"Ask not what your country can do for you — ask what your country can do for you" (inversão da mesma frase) é o recurso que faz uma única linha ficar memorável e citável, sem precisar de mais contexto.
+
+**Princípio:** reservar esse recurso para o momento de maior destaque de um texto — a headline de uma página, a última linha de um pitch, o gancho de uma campanha — nunca para o corpo do texto inteiro. É a frase que alguém repete de cabeça depois; se usada toda hora, perde a força.
+
+- Antes: "A apioficial ajuda sua empresa a responder mais rápido e a não perder clientes por demora no atendimento."
+- Depois: "Não pergunte por que o cliente não respondeu. Pergunte por que ele esperou tanto pra ter resposta."
+
+Cuidado: quiasmo mal calibrado soa forçado. Só usar quando a inversão realmente ilumina a ideia — se soar como jogo de palavras vazio, volte para uma frase direta (Lincoln).
+
 ## Obama — storytelling e conexão direta
 
 Obama fala com "vocês", situa quem ouve dentro de uma cena real, e conecta o argumento à experiência de quem está na plateia — não fala sobre um conceito distante.
@@ -62,11 +73,12 @@ Obama fala com "vocês", situa quem ouve dentro de uma cena real, e conecta o ar
 
 ## Como combinar mais de um princípio
 
-Um único texto raramente precisa de todos os seis. Escolha o que resolve o problema específico do texto:
+Um único texto raramente precisa de mais de um ou dois. Escolha o que resolve o problema específico do texto:
 
 - Mensagem transacional curta (confirmação, lembrete) → **Lincoln** (simplicidade) é suficiente.
 - Resposta de suporte/atendimento → **Cícero** (estrutura: entendo → o que fazemos → próximo passo) + **Demóstenes** (afirmar sem hedging).
 - Campanha ou e-mail de reengajamento → **Churchill** (repetir a ideia central) + **MLK** (imagem concreta).
 - Texto institucional, pitch, "sobre nós" → **Obama** (situar o leitor numa cena) + **Cícero** (estrutura).
+- Headline de site, título de campanha, última linha de um pitch → **Kennedy** (antítese) sozinho — é um recurso de destaque pontual, não de corpo de texto.
 
-Nunca empilhe os seis num texto curto — isso produz o oposto do objetivo (um texto denso e "discursado"). A disciplina retórica aqui serve para cortar, não para adicionar.
+Nunca empilhe todos num texto curto — isso produz o oposto do objetivo (um texto denso e "discursado"). A disciplina retórica aqui serve para cortar, não para adicionar.
