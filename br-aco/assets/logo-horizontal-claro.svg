@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 220">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E3B5C"/>
+      <stop offset="1" stop-color="#0E2A47"/>
+    </linearGradient>
+    <linearGradient id="rodSilver" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9AA1A8"/>
+      <stop offset="1" stop-color="#E7E9EC"/>
+    </linearGradient>
+    <linearGradient id="rodOrange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D6870C"/>
+      <stop offset="1" stop-color="#F7C55A"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(20,30) scale(0.8)">
+    <rect x="4" y="4" width="192" height="192" rx="34" fill="url(#bg)"/>
+    <line x1="48" y1="56" x2="148" y2="100" stroke="url(#rodSilver)" stroke-width="22" stroke-linecap="round" stroke-dasharray="16 8"/>
+    <line x1="148" y1="100" x2="48" y2="144" stroke="url(#rodOrange)" stroke-width="22" stroke-linecap="round" stroke-dasharray="16 8"/>
+    <circle cx="148" cy="100" r="11" fill="#F3EFE7"/>
+  </g>
+  <text x="212" y="118" font-family="'Arial Black', 'Helvetica Neue', Helvetica, sans-serif" font-weight="900" font-size="84" letter-spacing="-2">
+    <tspan fill="#0E2A47">BR</tspan><tspan fill="#F2A11D" dx="18">AÇO</tspan>
+  </text>
+  <text x="214" y="164" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="19" letter-spacing="3" fill="#5B6470">SEUS PROJETOS NA VELOCIDADE MÁXIMA</text>
+</svg>
