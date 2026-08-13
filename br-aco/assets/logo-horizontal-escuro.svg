@@ -1,10 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260">
+  <defs>
+    <pattern id="nervuraLaranja" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(52)">
+      <rect width="9" height="9" fill="#D6870C"/>
+      <rect width="4" height="9" fill="#F7C55A"/>
+    </pattern>
+    <pattern id="nervuraPrata" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(52)">
+      <rect width="10" height="10" fill="#9AA1A8"/>
+      <rect width="5" height="10" fill="#C9CDD2"/>
+    </pattern>
+  </defs>
   <g transform="translate(20,45) scale(0.85)">
     <rect x="4" y="4" width="192" height="192" rx="30" fill="#0E2A47" stroke="#3A5878" stroke-width="3"/>
     <text x="100" y="130" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Helvetica,sans-serif" font-weight="900" font-size="132" fill="#FFFFFF">A</text>
-    <rect x="65" y="148" width="70" height="12" rx="4" fill="#F2A11D"/>
+    <rect x="65" y="148" width="70" height="12" rx="4" fill="url(#nervuraLaranja)"/>
   </g>
   <text x="232" y="98" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="28" letter-spacing="5" fill="#FFFFFF">CASA BRASILEIRA DE</text>
   <text x="230" y="205" font-family="'Arial Black','Helvetica Neue',Helvetica,sans-serif" font-weight="900" font-size="130" letter-spacing="-3" fill="#F2A11D">AÇO</text>
-  <rect x="232" y="222" width="236" height="12" rx="4" fill="#AEB4BB"/>
+  <rect x="232" y="222" width="236" height="12" rx="4" fill="url(#nervuraPrata)"/>
 </svg>

@@ -37,7 +37,13 @@ Ver `assets/paleta.svg` para as amostras.
 
 ## Ícone / monograma
 
-Quadrado com cantos arredondados em Azul-Aço, letra **A** (de Aço) em branco, peso máximo, com uma barra em Laranja-Vergalhão sob a letra. Usado isolado apenas onde o nome completo não cabe (favicon, avatar de rede social).
+Quadrado com cantos arredondados em Azul-Aço, letra **A** (de Aço) em branco, peso máximo, com uma barra sob a letra. Usado isolado apenas onde o nome completo não cabe (favicon, avatar de rede social).
+
+## Elemento gráfico — a nervura
+
+Toda barra sólida da marca (sob o `A` do ícone, sob a palavra `AÇO`) é preenchida com um padrão diagonal de duas tonalidades da mesma cor — a nervura real de um vergalhão CA-50, vista de perto, virou textura. É um detalhe discreto, não um ícone ilustrado: some ao ver de longe, aparece ao ver de perto.
+
+`assets/textura-nervura.svg` traz o mesmo padrão em tira, para uso como divisor, rodapé de página ou borda em materiais impressos (papelaria, apresentações, embalagem).
 
 ## Tom de voz
 
@@ -53,5 +59,6 @@ Direto, técnico e confiante. Fala com quem está na obra: prazo, resistência, 
 | `assets/logo-horizontal-escuro.svg` | Mesmo lockup para fundos escuros ou fotografados |
 | `assets/logo-vertical.svg` | Versão empilhada e centralizada — perfil de rede social, adesivo |
 | `assets/paleta.svg` | Referência rápida da paleta de cores com hex |
+| `assets/textura-nervura.svg` | Tira com a textura de nervura — divisor, rodapé, borda |
 
 **Regras de uso**: nunca recolorir fora da paleta acima; manter área de respiro mínima equivalente à altura da palavra `AÇO` em todas as bordas; nunca esticar desproporcionalmente o lockup.
