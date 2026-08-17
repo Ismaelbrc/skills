@@ -1,0 +1,28 @@
+CASA BRASILEIRA DE AÇO
+Defesa de marca e manual de identidade · versão 1.0 · 2026
+
+CASA_BRASILEIRA_manual.html   documento completo, um arquivo só, fontes embutidas.
+                              Abre em qualquer navegador, sem internet.
+CASA_BRASILEIRA_manual.pdf    o mesmo documento em A4, 12 páginas, pronto para imprimir.
+
+marca/                        arquivos da marca com o texto em curvas (não dependem
+                              da fonte Jura instalada).
+  CBA-principal-*             composição principal — listra sob CASA BRASILEIRA
+    -cor                      fundo transparente
+    -papel / -branco          sobre fundo claro
+    -reversa-azul             sobre o azul institucional
+    -reversa-preto            sobre preto
+    -mono-preto / -mono-branco  uma cor só: gravação, frota, bordado
+  CBA-alt1-horizontal         listras à esquerda, nome em duas linhas
+  CBA-alt2-vertical           listras acima, nome centralizado
+  CBA-alt3-uma-linha          assinatura horizontal compacta
+  .svg  vetor, para qualquer tamanho
+  .png  4x (≈6260 px de largura na principal)
+  .pdf  vetor para gráfica
+
+fonte/                        scripts que geram tudo. A listra é calculada a partir
+                              das métricas reais da Jura Light — se o corpo ou a
+                              entreletra mudar, é preciso rodar de novo, não
+                              redesenhar à mão.
+
+Tipografia: Jura Light (SIL Open Font License).

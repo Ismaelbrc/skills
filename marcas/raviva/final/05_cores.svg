@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000">
+  <rect width="1600" height="2000" fill="#FCF8F1"/>
+  
+        <line x1="130" y1="86" x2="1470" y2="86" stroke="#E2A98C" stroke-width="1.5"/>
+        <text x="130" y="66" font-family="DM Mono" font-size="18" fill="#6b5645" letter-spacing="3">RAVIVA — MANUAL DE MARCA</text>
+        <text x="1470" y="66" font-family="DM Mono" font-size="18" fill="#6b5645" text-anchor="end" letter-spacing="3">04 — COR</text>
+        
+  <text x="130" y="230" font-family="Poiret One" font-size="64" fill="#3A2317" letter-spacing="4">Paleta de cores</text><text x="130" y="285" font-family="Outfit" font-weight="400" font-size="24" fill="#6b5645" text-anchor="start" letter-spacing="0">Valores de CMYK são aproximados a partir do RGB — calibrar com a gráfica antes</text>
+<text x="130" y="319" font-family="Outfit" font-weight="400" font-size="24" fill="#6b5645" text-anchor="start" letter-spacing="0">da impressão final.</text><rect x="130" y="400" width="360" height="200" fill="#3A2317" />
+    <text x="154" y="576" font-family="DM Mono" font-size="20" fill="#FCF8F1" letter-spacing="2">TINTA</text>
+    <text x="130" y="634" font-family="DM Mono" font-size="18" fill="#3A2317" letter-spacing="1">#3A2317   RGB 58.35.23</text>
+    <text x="130" y="660" font-family="DM Mono" font-size="18" fill="#6b5645" letter-spacing="1">CMYK 0.40.60.77</text><text x="130" y="692" font-family="Outfit" font-weight="400" font-size="18" fill="#6b5645" text-anchor="start" letter-spacing="0">texto principal, wordmark</text><rect x="550" y="400" width="360" height="200" fill="#C9491F" />
+    <text x="574" y="576" font-family="DM Mono" font-size="20" fill="#FCF8F1" letter-spacing="2">BRASA</text>
+    <text x="550" y="634" font-family="DM Mono" font-size="18" fill="#3A2317" letter-spacing="1">#C9491F   RGB 201.73.31</text>
+    <text x="550" y="660" font-family="DM Mono" font-size="18" fill="#6b5645" letter-spacing="1">CMYK 0.64.85.21</text><text x="550" y="692" font-family="Outfit" font-weight="400" font-size="18" fill="#6b5645" text-anchor="start" letter-spacing="0">cor de marca — símbolo, tagline,</text>
+<text x="550" y="716" font-family="Outfit" font-weight="400" font-size="18" fill="#6b5645" text-anchor="start" letter-spacing="0">links</text><rect x="970" y="400" width="360" height="200" fill="#E2A98C" />
+    <text x="994" y="576" font-family="DM Mono" font-size="20" fill="#3A2317" letter-spacing="2">BRASA SUAVE</text>
+    <text x="970" y="634" font-family="DM Mono" font-size="18" fill="#3A2317" letter-spacing="1">#E2A98C   RGB 226.169.140</text>
+    <text x="970" y="660" font-family="DM Mono" font-size="18" fill="#6b5645" letter-spacing="1">CMYK 0.25.38.11</text><text x="970" y="692" font-family="Outfit" font-weight="400" font-size="18" fill="#6b5645" text-anchor="start" letter-spacing="0">anel interno, traços de apoio</text><rect x="130" y="750" width="360" height="200" fill="#E8A63C" />
+    <text x="154" y="926" font-family="DM Mono" font-size="20" fill="#3A2317" letter-spacing="2">SOL</text>
+    <text x="130" y="984" font-family="DM Mono" font-size="18" fill="#3A2317" letter-spacing="1">#E8A63C   RGB 232.166.60</text>
+    <text x="130" y="1010" font-family="DM Mono" font-size="18" fill="#6b5645" letter-spacing="1">CMYK 0.28.74.9</text><text x="130" y="1042" font-family="Outfit" font-weight="400" font-size="18" fill="#6b5645" text-anchor="start" letter-spacing="0">acentos sobre fundo escuro</text><rect x="550" y="750" width="360" height="200" fill="#FCF8F1" stroke="#6b5645" stroke-width="1"/>
+    <text x="574" y="926" font-family="DM Mono" font-size="20" fill="#3A2317" letter-spacing="2">PAPEL</text>
+    <text x="550" y="984" font-family="DM Mono" font-size="18" fill="#3A2317" letter-spacing="1">#FCF8F1   RGB 252.248.241</text>
+    <text x="550" y="1010" font-family="DM Mono" font-size="18" fill="#6b5645" letter-spacing="1">CMYK 0.2.4.1</text><text x="550" y="1042" font-family="Outfit" font-weight="400" font-size="18" fill="#6b5645" text-anchor="start" letter-spacing="0">fundo claro padrão</text><rect x="970" y="750" width="360" height="200" fill="#20140D" />
+    <text x="994" y="926" font-family="DM Mono" font-size="20" fill="#FCF8F1" letter-spacing="2">CARVÃO</text>
+    <text x="970" y="984" font-family="DM Mono" font-size="18" fill="#3A2317" letter-spacing="1">#20140D   RGB 32.20.13</text>
+    <text x="970" y="1010" font-family="DM Mono" font-size="18" fill="#6b5645" letter-spacing="1">CMYK 0.38.59.87</text><text x="970" y="1042" font-family="Outfit" font-weight="400" font-size="18" fill="#6b5645" text-anchor="start" letter-spacing="0">fundo escuro / versão reversa</text>
+  
+    <line x1="130" y1="1930" x2="1470" y2="1930" stroke="#E2A98C" stroke-width="1.5" opacity="0.6"/>
+    <text x="1470" y="1960" font-family="DM Mono" font-size="18" fill="#6b5645" text-anchor="end" letter-spacing="2">05</text>
+    <text x="130" y="1960" font-family="DM Mono" font-size="18" fill="#6b5645" letter-spacing="2">ACENDA A FAÍSCA</text>
+    
+</svg>
