@@ -91,24 +91,32 @@ def protecao(S=52):
           f'width="{lar_total + 2*X - lsb0*k:.1f}" '
           f'height="{S*0.72 + S*0.32 + alt_listras + 2*X:.1f}" fill="none" '
           f'stroke="{VERDE}" stroke-width="1.4" stroke-dasharray="7 6"/>')
-    o += (f'<text x="{x + lsb0*k - X + 6:.1f}" y="{base - S*0.72 - X - 8:.1f}" '
-          f'font-family="{MONO}" font-size="{S*0.21:.1f}" fill="{VERDE}">'
-          f'respiro mínimo = X</text>')
     return svg(round(w), round(h), o)
 
 
 def escala():
-    tamanhos = [46, 32, 22, 15, 11]
-    pad = 26
+    """Corpos empilhados: a figura fica estreita, entao a etiqueta continua legivel
+    depois que o SVG e reduzido para a largura da coluna."""
+    tamanhos = [44, 30, 20, 15, 11]
+    pad = 22
     x = pad
+    maior = avanco("CASA BRASILEIRA ", max(tamanhos)) + largura_tinta("DE AÇO", max(tamanhos))
+    x_rot = x + maior + 30
+    w = x_rot + 210
+    y = pad
     linhas = []
     for S in tamanhos:
-        corpo, _ = principal(x, 74, S)
+        t = S * 0.140
+        alt_listras = 3 * t + 2 * (t * 0.34)
+        base = y + S * 0.74
+        corpo, _ = principal(x, base, S)
+        fundo = base + S * 0.32 + alt_listras
+        marca_min = (f'<tspan fill="{VERDE}"> · mínimo</tspan>' if S == 15 else "")
         linhas.append(corpo)
-        linhas.append(f'<text x="{x}" y="104" font-family="{MONO}" font-size="11" '
-                      f'fill="{CINZA_2}">{S} px</text>')
-        x += avanco("CASA BRASILEIRA ", S) + largura_tinta("DE AÇO", S) + 34
-    return svg(round(x + pad), 126, "".join(linhas))
+        linhas.append(f'<text x="{x_rot}" y="{base:.1f}" font-family="{MONO}" font-size="15" '
+                      f'fill="{CINZA_2}">corpo {S} px{marca_min}</text>')
+        y = fundo + 20
+    return svg(round(w), round(y + pad - 20), "".join(linhas))
 
 
 # ------------------------------------------------------------ aplicacoes
@@ -129,34 +137,36 @@ def etiqueta(w=520, h=380):
     return svg(w, h, o)
 
 
-def frota(w=620, h=300):
+def frota(w=600, h=440):
+    """Proporcao alinhada com a etiqueta ao lado — as duas figuras fecham juntas."""
     o = f'<rect width="{w}" height="{h}" fill="{OSSO}"/>'
+    o += '<g transform="translate(4 100)">'
     # bau
     o += f'<rect x="40" y="70" width="430" height="150" rx="6" fill="{AZUL}"/>'
     # cabine
     o += f'<path d="M 470 220 L 470 120 L 540 120 L 578 168 L 578 220 Z" fill="{AZUL}"/>'
     o += f'<rect x="486" y="130" width="52" height="34" rx="3" fill="{OSSO}" opacity="0.85"/>'
-    for cx in (120, 300, 420, 540):
+    for cx in (118, 196, 424, 540):   # tandem traseiro + eixo dianteiro
         o += f'<circle cx="{cx}" cy="{224}" r="26" fill="{TINTA}"/>'
         o += f'<circle cx="{cx}" cy="{224}" r="11" fill="{CINZA}"/>'
     m, _ = principal(78, 148, 22, BRANCO, AMARELO, (BRANCO, AMARELO, BRANCO))
-    o += m
+    o += m + '</g>'
     return svg(w, h, o)
 
 
 def cartao(w=520, h=300):
     o = f'<rect width="{w}" height="{h}" fill="{OSSO}"/>'
     o += f'<rect x="20" y="20" width="230" height="130" fill="{BRANCO}" stroke="{CINZA}" stroke-width="1"/>'
-    m, _ = principal(38, 62, 11)
+    m, _ = principal(34, 66, 13)
     o += m
-    o += (f'<text x="38" y="110" font-family="{MONO}" font-size="8.5" fill="{CINZA_2}">'
+    o += (f'<text x="34" y="112" font-family="{MONO}" font-size="9" fill="{CINZA_2}">'
           f'corte e dobra de vergalhão</text>')
     o += f'<rect x="270" y="20" width="230" height="130" fill="{AZUL}"/>'
-    m2, _ = principal(288, 62, 11, BRANCO, AMARELO, (BRANCO, AMARELO, BRANCO))
+    m2, _ = principal(284, 66, 13, BRANCO, AMARELO, (BRANCO, AMARELO, BRANCO))
     o += m2
     # papel timbrado
     o += f'<rect x="20" y="170" width="480" height="110" fill="{BRANCO}" stroke="{CINZA}" stroke-width="1"/>'
-    m3, _ = principal(42, 206, 12)
+    m3, _ = principal(42, 208, 14)
     o += m3
     for i in range(4):
         o += (f'<rect x="42" y="{232+i*13}" width="{300 - i*38}" height="3" '
@@ -170,10 +180,10 @@ def site(w=620, h=340):
     o += f'<rect x="20" y="20" width="580" height="34" fill="{OSSO}"/>'
     for i, c in enumerate(["#d9d6cf", "#d9d6cf", "#d9d6cf"]):
         o += f'<circle cx="{40+i*16}" cy="37" r="5" fill="{c}"/>'
-    m, _ = principal(44, 92, 15)
+    m, _ = principal(44, 94, 17)
     o += m
     for i, t in enumerate(["CORTE E DOBRA", "TELAS", "ORÇAMENTO"]):
-        o += (f'<text x="{330+i*90}" y="92" font-family="{MONO}" font-size="9" '
+        o += (f'<text x="{[336, 452, 524][i]}" y="94" font-family="{MONO}" font-size="9" '
               f'fill="{CINZA_2}" letter-spacing="1">{t}</text>')
     o += f'<rect x="20" y="118" width="580" height="1" fill="{CINZA}" opacity="0.3"/>'
     o += (f'<text x="44" y="182" font-family="{JURA}" font-weight="300" font-size="34" '
@@ -187,46 +197,59 @@ def site(w=620, h=340):
 
 
 # ------------------------------------------------------------ usos errados
-def erro(tipo, S=17, w=300, h=110):
-    inner = f'<rect width="{w}" height="{h}" fill="{OSSO}"/>'
+def erro(tipo, S=17, w=300, h=150):
+    """Cada desvio sobre fundo branco, com o proibido fora da area da marca."""
+    borda = (f'<rect x="0.5" y="0.5" width="{w-1}" height="{h-1}" fill="none" '
+             f'stroke="{CINZA}" stroke-width="1" opacity="0.45"/>')
+    inner = f'<rect width="{w}" height="{h}" fill="{BRANCO}"/>'
+    cy = h * 0.42                       # linha de base das amostras
     if tipo == "esticar":
-        m, _ = principal(0, 0, S)
-        inner += f'<g transform="translate(22 {h/2-4}) scale(1.35 0.72)">{m}</g>'
+        esc_x, esc_y = 1.35, 0.72
+        lar = avanco("CASA BRASILEIRA ", S) + largura_tinta("DE AÇO", S)
+        # o corpo encolhe ate a versao esticada caber na moldura
+        S_e = S * min(1.0, (w - 44) / (esc_x * lar))
+        m, _ = principal(0, 0, S_e)
+        inner += f'<g transform="translate(22 {cy}) scale({esc_x} {esc_y})">{m}</g>'
     elif tipo == "listra_longa":
         lar = avanco("CASA BRASILEIRA ", S) + largura_tinta("DE AÇO", S)
-        m = (f'<text x="22" y="{h/2}" font-family="{JURA}" font-weight="300" font-size="{S}" '
+        _, lsb0, _ = _metricas("C")
+        x0 = 22 + lsb0 * (S / _UPM)
+        m = (f'<text x="22" y="{cy}" font-family="{JURA}" font-weight="300" font-size="{S}" '
              f'fill="{TINTA}" letter-spacing="{S*TRACK:.2f}" xml:space="preserve">'
              f'CASA BRASILEIRA <tspan fill="{VERDE}">DE AÇO</tspan></text>')
         t = S * 0.140
         g = t * 0.34
         for i, c in enumerate(CORES):
-            m += (f'<rect x="24" y="{h/2 + S*0.32 + i*(t+g):.1f}" width="{lar:.1f}" '
+            m += (f'<rect x="{x0:.1f}" y="{cy + S*0.32 + i*(t+g):.1f}" width="{lar:.1f}" '
                   f'height="{t:.1f}" fill="{c}"/>')
         inner += m
     elif tipo == "cor_errada":
-        m, _ = principal(22, h / 2, S, TINTA, "#B02418", ("#B02418", "#E08A00", "#5A2D82"))
+        m, _ = principal(22, cy, S, TINTA, "#B02418", ("#B02418", "#E08A00", "#5A2D82"))
         inner += m
     elif tipo == "girar":
         m, _ = principal(0, 0, S)
-        inner += f'<g transform="translate({w/2} {h/2}) rotate(-9) translate(-{w/2-22} 0)">{m}</g>'
+        inner += (f'<g transform="translate({w/2} {cy}) rotate(-9) '
+                  f'translate(-{w/2-22} 0)">{m}</g>')
     elif tipo == "fundo_ruim":
         inner = f'<rect width="{w}" height="{h}" fill="{AMARELO}"/>'
-        m, _ = principal(22, h / 2, S, TINTA, VERDE)
+        m, _ = principal(22, cy, S, TINTA, VERDE)
         inner += m
     elif tipo == "trocar_fonte":
         lar = largura_tinta("CASA BRASILEIRA", S)
-        m = (f'<text x="22" y="{h/2}" font-family="Work Sans" font-weight="700" '
+        m = (f'<text x="22" y="{cy}" font-family="Work Sans" font-weight="700" '
              f'font-size="{S}" fill="{TINTA}" letter-spacing="1" xml:space="preserve">'
              f'CASA BRASILEIRA <tspan fill="{VERDE}">DE AÇO</tspan></text>')
         t = S * 0.140
         g = t * 0.34
         for i, c in enumerate(CORES):
-            m += (f'<rect x="24" y="{h/2 + S*0.32 + i*(t+g):.1f}" width="{lar*1.02:.1f}" '
+            m += (f'<rect x="24" y="{cy + S*0.32 + i*(t+g):.1f}" width="{lar*1.02:.1f}" '
                   f'height="{t:.1f}" fill="{c}"/>')
         inner += m
-    # marca de proibido
-    inner += (f'<circle cx="{w-40}" cy="{h-34}" r="15" fill="none" stroke="#C0392B" '
-              f'stroke-width="2.4"/>'
-              f'<line x1="{w-50}" y1="{h-24}" x2="{w-30}" y2="{h-44}" stroke="#C0392B" '
-              f'stroke-width="2.4"/>')
+    # proibido, no canto inferior direito — fora da area da marca
+    px, py = w - 30, h - 28
+    inner += (f'<circle cx="{px}" cy="{py}" r="13" fill="none" stroke="#C0392B" '
+              f'stroke-width="2.2"/>'
+              f'<line x1="{px-9}" y1="{py+9}" x2="{px+9}" y2="{py-9}" stroke="#C0392B" '
+              f'stroke-width="2.2"/>')
+    inner += borda
     return svg(w, h, inner)

@@ -303,8 +303,8 @@ BODY = f"""
   serra e bancada na obra, menos erro de medida, menos tempo.</p>
   <div class="callout">
     <p><strong>O ponto de contato real da marca é a etiqueta.</strong> Cada peça ou feixe
-    chega na obra com obra, elemento, romaneio, desenho, posição, bitola, formato e
-    quantidade. É ali que a marca é vista todo dia — não em outdoor.</p>
+    chega ao canteiro identificado com a obra, o elemento, o romaneio, o desenho, a posição,
+    a bitola, o formato e a quantidade. É ali que a marca é vista todo dia — não em outdoor.</p>
   </div>
 </div></section>
 
@@ -320,8 +320,9 @@ BODY = f"""
     <tr><th>Nome</th><th>Situação</th></tr>
     <tr><td>Aço Brasileiro</td><td>Genérico — descreve literalmente aço feito no Brasil.
       Registro frágil no INPI e impossível de defender contra concorrentes.</td></tr>
-    <tr><td>Aço Brasil</td><td>Ocupado. Existe como distribuidora e, mais sério, é o nome
-      do Instituto Aço Brasil, entidade da indústria siderúrgica nacional.</td></tr>
+    <tr><td>Aço Brasil</td><td>Ocupado. É o nome do Instituto Aço Brasil, entidade que
+      representa a indústria siderúrgica nacional — e a expressão já circula no comércio
+      de aço.</td></tr>
     <tr><td>CBA</td><td>Ocupado. É a Companhia Brasileira de Alumínio, do Grupo
       Votorantim, listada na B3 (CBAV3). Por isso a marca <strong>não</strong> usa
       monograma de iniciais.</td></tr>
@@ -338,7 +339,7 @@ BODY = f"""
   <h2>Três barras, duas leituras.</h2>
   <p>As cores do Brasil na ordem da bandeira — verde, amarelo, azul — desenhadas como três
   barras paralelas. Para quem olha rápido, é a bandeira: diz <strong>Casa Brasileira</strong>.
-  Para quem é do ramo, são três vergalhões alinhados: diz <strong>de Aço</strong>. As duas
+  Para quem é do ramo, são três vergalhões alinhados: diz <strong>De Aço</strong>. As duas
   leituras cabem no mesmo desenho, sem ilustração e sem metáfora forçada.</p>
 
   <h3>A calibragem é o conceito</h3>
@@ -416,28 +417,34 @@ BODY = f"""
 <section class="quebra"><div class="wrap">
   <span class="eyebrow">08 · Construção</span>
   <h2>As regras que geram a marca.</h2>
-  <p>A listra é <strong>calculada</strong>, não desenhada. Quem mudar o corpo ou o
+  <p>A listra é <strong>calculada</strong>, não desenhada. Quem mudar o corpo ou a
   entreletra precisa recalcular a largura — senão ela desalinha do A.</p>
   <table>
     <tr><th>Parâmetro</th><th>Valor</th><th>Observação</th></tr>
     <tr><td>Tipografia</td><td class="v">Jura Light</td><td>caixa alta</td></tr>
     <tr><td>Entreletra</td><td class="v">0,155 × corpo</td><td>igual nas duas partes do nome</td></tr>
     <tr><td>Espessura da listra</td><td class="v">0,140 × corpo</td><td>as três iguais</td></tr>
-    <tr><td>Respiro entre listras</td><td class="v">0,34 × espessura</td><td></td></tr>
+    <tr><td>Respiro entre listras</td><td class="v">0,34 × espessura</td><td>é ele que separa vergalhão de bandeira</td></tr>
     <tr><td>Topo da listra</td><td class="v">0,32 × corpo</td><td>abaixo da linha de base</td></tr>
     <tr><td>Início da listra</td><td class="v">tinta do C</td><td>não o avanço do glifo</td></tr>
     <tr><td>Fim da listra</td><td class="v">tinta do A</td><td>último A de BRASILEIRA</td></tr>
     <tr><td>Cor de DE AÇO</td><td class="v">{VERDE}</td><td>sempre fora da listra</td></tr>
   </table>
 
-  <h3>Área de proteção</h3>
-  <figure class="fig">{D.protecao()}
-    <figcaption>X = altura do conjunto das três listras. Respiro mínimo em volta = X.</figcaption></figure>
-
-  <h3>Escala</h3>
-  <figure class="fig">{D.escala()}
-    <figcaption>Mínimo recomendado: corpo 15 px em tela, 9 mm impresso. Abaixo disso a
-    listra fecha e as três cores viram uma mancha.</figcaption></figure>
+  <div class="grid2">
+    <div>
+      <h3>Área de proteção</h3>
+      <figure class="fig">{D.protecao()}
+        <figcaption>X = altura do conjunto das três listras. Respiro mínimo em volta = X.
+        </figcaption></figure>
+    </div>
+    <div>
+      <h3>Escala</h3>
+      <figure class="fig">{D.escala()}
+        <figcaption>Mínimo: corpo 15 px em tela, 9 mm impresso. Abaixo disso a listra fecha
+        e as três cores viram uma mancha.</figcaption></figure>
+    </div>
+  </div>
 </div></section>
 
 <section><div class="wrap">
