@@ -419,10 +419,16 @@ BODY = f"""
   <h2>As regras que geram a marca.</h2>
   <p>A listra é <strong>calculada</strong>, não desenhada. Quem mudar o corpo ou a
   entreletra precisa recalcular a largura — senão ela desalinha do A.</p>
+  <p>A entreletra também não basta sozinha. Os glifos D, E, Ç e O têm laterais mais
+  largas que as letras de CASA BRASILEIRA: com o mesmo 0,155 numérico, o vão de tinta de
+  “DE AÇO” sai <strong>8% maior</strong> e a segunda metade do nome parece mais solta que
+  a primeira. Por isso o que se iguala é o <strong>vão</strong>, não o número — cada par
+  de DE AÇO recebe uma correção calculada a partir das laterais reais dos glifos.</p>
   <table>
     <tr><th>Parâmetro</th><th>Valor</th><th>Observação</th></tr>
     <tr><td>Tipografia</td><td class="v">Jura Light</td><td>caixa alta</td></tr>
-    <tr><td>Entreletra</td><td class="v">0,155 × corpo</td><td>igual nas duas partes do nome</td></tr>
+    <tr><td>Entreletra</td><td class="v">0,155 × corpo</td><td>valor base, nas duas partes do nome</td></tr>
+    <tr><td>Vão óptico</td><td class="v">0,270 × corpo</td><td>DE AÇO é corrigido par a par até bater com ele</td></tr>
     <tr><td>Espessura da listra</td><td class="v">0,140 × corpo</td><td>as três iguais</td></tr>
     <tr><td>Respiro entre listras</td><td class="v">0,34 × espessura</td><td>é ele que separa vergalhão de bandeira</td></tr>
     <tr><td>Topo da listra</td><td class="v">0,32 × corpo</td><td>abaixo da linha de base</td></tr>

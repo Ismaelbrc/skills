@@ -4,8 +4,9 @@ import os
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from kit import (VERDE, AMARELO, AZUL, BRANCO, OSSO, TINTA, CORES, JURA, TRACK,
-                 largura_tinta, avanco, _F, _UPM, _CMAP, _metricas, listras,
-                 listras_bloco)
+                 largura_tinta, largura_kern, largura_nome, avanco, _F, _UPM,
+                 _CMAP, _metricas, listras, listras_bloco, kern,
+                 VAO_PALAVRA, _vao_palavra)
 
 GS = _F.getGlyphSet()
 
@@ -24,10 +25,37 @@ def curvas(texto, x, y, S, track=TRACK):
     return " ".join(d), x
 
 
+def curvas_kern(texto, x, y, S, track=TRACK):
+    """Como `curvas`, mas com a correcao optica por par aplicada."""
+    dx = kern(texto, track)
+    k = S / _UPM
+    d, j = [], 0
+    for ch in texto:
+        if ch == " ":
+            x += _metricas(" ")[0] * k + S * track
+            continue
+        if j:
+            x += dx[j] * S
+        pen = SVGPathPen(GS)
+        GS[_CMAP[ord(ch)]].draw(TransformPen(pen, (k, 0, 0, -k, x, y)))
+        c = pen.getCommands()
+        if c:
+            d.append(c)
+        x += _metricas(ch)[0] * k + S * track
+        j += 1
+    return " ".join(d), x
+
+
 def bloco_nome(x, y, S, c1, c2, track=TRACK):
-    """CASA BRASILEIRA em c1 + DE AÇO em c2, em curvas."""
+    """CASA BRASILEIRA em c1 + DE AÇO em c2, em curvas.
+
+    DE ACO leva o ajuste optico: a entreletra numerica e a mesma, mas os
+    glifos D, E, C e O tem lateral mais larga e, sem correcao, o vao de
+    tinta sai cerca de 8% maior que o de CASA BRASILEIRA.
+    """
     d1, x2 = curvas("CASA BRASILEIRA ", x, y, S, track)
-    d2, xf = curvas("DE AÇO", x2, y, S, track)
+    d0 = VAO_PALAVRA - _vao_palavra("A", "D", track)
+    d2, xf = curvas_kern("DE AÇO", x2 + d0 * S, y, S, track)
     return (f'<path d="{d1}" fill="{c1}"/><path d="{d2}" fill="{c2}"/>'), xf
 
 
@@ -39,7 +67,7 @@ def marca(S=64, bg=None, c1=TINTA, c2=VERDE, cores=CORES, pad_f=0.9):
     lar = largura_tinta("CASA BRASILEIRA", S)
     x0 = pad + _metricas("C")[1] * (S / _UPM)
     lst, _ = listras(x0, base + S * 0.32, lar, S, cores)
-    W = round(avanco("CASA BRASILEIRA ", S) + largura_tinta("DE AÇO", S) + 2 * pad)
+    W = round(largura_nome(S) + _metricas("C")[1] * (S / _UPM) + 2 * pad)
     H = round(S * 2.40)
     fundo = f'<rect width="{W}" height="{H}" fill="{bg}"/>' if bg else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
@@ -54,7 +82,7 @@ def marca_h(S=48, bg=None, c1=TINTA, c2=VERDE, cores=CORES, pad_f=0.9):
     bl, L = listras_bloco(pad + alt * 1.0, cy, alt, cores)
     tx = pad + alt * 1.0 - L / 2 + L + S * 0.95
     d1, _ = curvas("CASA BRASILEIRA", tx, cy - S * 0.30, S)
-    d2, _ = curvas("DE AÇO", tx, cy + S * 0.65, S, track=0.435)
+    d2, _ = curvas_kern("DE AÇO", tx, cy + S * 0.65, S)
     W = round(tx + largura_tinta("CASA BRASILEIRA", S) + pad)
     H = round(cy + S * 0.95 + pad)
     fundo = f'<rect width="{W}" height="{H}" fill="{bg}"/>' if bg else ""
@@ -68,7 +96,7 @@ def marca_v(S=48, bg=None, c1=TINTA, c2=VERDE, cores=CORES, pad_f=1.0):
     pad = S * pad_f
     alt = S * 1.62
     lar1 = largura_tinta("CASA BRASILEIRA", S)
-    lar2 = largura_tinta("DE AÇO", S, track=0.435)
+    lar2 = largura_kern("DE AÇO", S)
     W = round(lar1 + 2 * pad)
     cx = W / 2
     cy = pad + alt / 2
@@ -76,7 +104,7 @@ def marca_v(S=48, bg=None, c1=TINTA, c2=VERDE, cores=CORES, pad_f=1.0):
     b1 = cy + alt * 0.62 + S * 1.05
     b2 = cy + alt * 0.62 + S * 2.00
     d1, _ = curvas("CASA BRASILEIRA", cx - lar1 / 2, b1, S)
-    d2, _ = curvas("DE AÇO", cx - lar2 / 2, b2, S, track=0.435)
+    d2, _ = curvas_kern("DE AÇO", cx - lar2 / 2, b2, S)
     H = round(b2 + S * 0.30 + pad)
     fundo = f'<rect width="{W}" height="{H}" fill="{bg}"/>' if bg else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
