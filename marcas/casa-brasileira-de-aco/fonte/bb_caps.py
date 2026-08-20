@@ -6,15 +6,15 @@ C01 = """
   exatamente esse o problema dela.</p>
   <p>Ela chega na usina genérica e sai genérica. Serve pra tudo, então não resolve nada.
   Quem compra assim compra material e leva trabalho de brinde: alguém vai ter que medir,
-  cortar, dobrar, contar e conferir dentro do canteiro, com serra de bancada, no meio do
-  barro.</p>
+  cortar, dobrar, contar e conferir dentro do canteiro, com policorte e viradeira, no
+  meio do barro.</p>
   <p>Depois do corte e dobra, a mesma barra vira a <strong>posição N5</strong> de uma
   viga específica, de um projeto específico. Tem comprimento, tem formato, tem
   quantidade, tem nome. Parou de servir pra qualquer obra e passou a servir pra
   <em>aquela</em> obra.</p>
   <p>Essa passagem é o produto. Todo o resto, a máquina e o galpão e o caminhão, é meio.</p>
   <div class="citacao">
-    <p>“O cliente não está comprando aço. Está comprando a serra que ele não vai
+    <p>“O cliente não está comprando aço. Está comprando a lixadeira que ele não vai
     precisar ligar.”</p>
     <div class="quem">é o que eu escreveria na parede da fábrica, se me deixassem</div>
   </div>
@@ -190,7 +190,8 @@ C14_A = """
   transformar isso em jargão para impressionar quem não é do ramo.</p>
   <h3>Do lado de quem recebe</h3>
   <p>Falar do ganho no canteiro, não da máquina que a gente comprou. Ninguém se importa
-  com o seu equipamento. Todo mundo se importa com a serra que não vai precisar ligar.</p>
+  com o seu equipamento. Todo mundo se importa com a lixadeira que não vai precisar
+  ligar.</p>
   <h3>Brasileiro sem ufanismo</h3>
   <p>A brasilidade já está na cor e no nome, gritada em verde, amarelo e azul. O texto não
   precisa repetir. Quem repete parece inseguro.</p>
@@ -233,6 +234,16 @@ C_PROMESSA = """
   segunda-feira?</p>
   <p>A frase que sobrou é a mais literal de todas. É também a única que descreve
   exatamente o que muda no dia de quem compra.</p>
+  <p>E já respondo a quem vai cobrar rigor, porque vão: a obra continua tendo lixadeira
+  para outras coisas. O que sai do canteiro é a <strong>bancada de armação</strong> — o
+  policorte, a viradeira, o estoque de barra de doze metros e as duas pessoas que
+  passavam o dia ali. Frase de marca é curta por obrigação. A conta exata está na
+  página seguinte.</p>
+  <p class="nota" style="margin-top:1.4rem">Nota de quem escreveu: a primeira versão
+  desta frase dizia “serra”. Levei um corretivo do cliente, com razão — serra é para
+  madeira, vergalhão se corta com policorte, lixadeira ou tesoura. Deixo registrado
+  porque é o tipo de erro que denuncia quem nunca pisou numa obra, e porque o glossário
+  no fim deste documento existe justamente para isso.</p>
 """
 
 C_SUSTENTA_A = """

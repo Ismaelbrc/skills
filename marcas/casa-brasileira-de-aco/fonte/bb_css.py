@@ -324,8 +324,10 @@ td.x{color:#9d3226}
   .troca{padding-block:1rem}
   .troca .txt{font-size:.9rem;line-height:1.45}
   .troca .por{font-size:.72rem;margin-top:.6rem}
-  .gloss .item{padding-block:.6rem}
-  .gloss .d{font-size:.85rem;line-height:1.45}
+  .gloss{margin-top:1rem}
+  .gloss .item{padding-block:.42rem;grid-template-columns:10rem 1fr;gap:1rem}
+  .gloss .t{font-size:.82rem}
+  .gloss .d{font-size:.81rem;line-height:1.4}
   .fig,.sw,.lixo li,figure,.citacao,.troca,.pg,.gloss .item,.fala{break-inside:avoid}
   .colofao{margin-top:2rem;font-size:.62rem}
 }

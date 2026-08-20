@@ -88,7 +88,7 @@ TROCAS = [
      "soluções completas em corte e dobra, sendo referência de excelência no "
      "mercado de armaduras para construção civil.",
      "A gente corta e dobra a barra na medida do seu projeto e entrega etiquetada "
-     "por posição. Sua obra não precisa de serra.",
+     "por posição. Sua obra não precisa de lixadeira.",
      "O primeiro fala da empresa. O segundo fala do problema de quem lê. Cortei "
      "34 palavras e ganhei um argumento."),
     ("Prezado cliente, informamos que sua solicitação foi processada com sucesso "
@@ -132,6 +132,15 @@ GLOSSARIO = [
      "Dobrar é fácil. Desdobrar barra já dobrada é o que ninguém quer fazer, porque "
      "enfraquece o aço no ponto da dobra. É por isso que o projeto tem que estar certo "
      "antes de a máquina rodar."),
+    ("policorte e lixadeira",
+     "As duas máquinas que cortam aço no canteiro. O policorte é a bancada com disco "
+     "abrasivo; a lixadeira, também chamada de esmerilhadeira ou pelo nome da marca, é "
+     "a de mão, com disco de corte. Serra é para madeira. Quem escreve “serra” numa "
+     "peça da Casa entrega na primeira linha que nunca pisou numa obra."),
+    ("cortador de vergalhão",
+     "A tesoura de corte, manual ou hidráulica, que corta a barra sem faísca e sem "
+     "queimar a ponta. Junto com a viradeira, é o que forma a bancada de armação — a "
+     "bancada que o corte e dobra elimina do canteiro."),
     ("canteiro",
      "O terreno da obra. Não é “site”, não é “empreendimento”, não é “projeto”. "
      "Canteiro. É a palavra que a pessoa usa."),
@@ -172,7 +181,7 @@ PERGUNTAS = [
 ]
 
 # ------------------------------------------------------------- promessa
-PROMESSA = "Sua obra não precisa de serra."
+PROMESSA = "Sua obra não precisa de lixadeira."
 
 SUSTENTA = [
     ("Corte por posição de projeto",

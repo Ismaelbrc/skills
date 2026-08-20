@@ -254,8 +254,8 @@ MANIFESTO = """
   Mesma norma, mesma bitola, mesmo preço de tabela.</p>
   <p>A Casa não vende aço.</p>
   <p class="miudo">Vende a barra já cortada no tamanho da viga, já dobrada no formato do
-  estribo, já contada e já etiquetada com a posição que o projeto pediu. Vende a serra que
-  sai do canteiro e o pedaço de barra que não sobra no chão.</p>
+  estribo, já contada e já etiquetada com a posição que o projeto pediu. Vende a bancada
+  de armação que sai do canteiro e o pedaço de barra que não sobra no chão.</p>
 </div></section>"""
 
 FECHO = """
@@ -505,7 +505,7 @@ BODY = "".join([
     cap("defesa", "Perguntas que vão te fazer.", C.C17_A + PERG_HTML),
     cap("o que vem depois", "Como nomear o próximo produto.",
         C_ARQUITETURA, larga=True),
-    cap("a frase, de novo", "Sua obra não precisa de serra.", C_FIM, larga=True),
+    cap("a frase, de novo", "Sua obra não precisa de lixadeira.", C_FIM, larga=True),
     FECHO,
 ])
 

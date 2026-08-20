@@ -184,7 +184,8 @@ def especimen(w=980):
 
 def frase(w=980, S=86):
     """A promessa em corpo grande, para a pagina de fecho."""
-    linhas = [("SUA OBRA", TINTA), ("NÃO PRECISA", TINTA), ("DE SERRA", VERDE)]
+    linhas = [("SUA OBRA", TINTA), ("NÃO PRECISA", TINTA),
+              ("DE LIXADEIRA", VERDE)]
     o = ""
     y = 0.0
     for txt, cor in linhas:
