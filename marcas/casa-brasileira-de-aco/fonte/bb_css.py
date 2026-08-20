@@ -211,7 +211,46 @@ td.x{color:#9d3226}
  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:#7c7f86;
  max-width:44ch;line-height:1.7}
 
-/* =========================================================== impresso */
+
+/* ---------------------------------------------------------- índice */
+.indice{margin-top:2rem;border-top:1px solid var(--linha)}
+.ix{display:grid;grid-template-columns:3.4rem 11rem 1fr;gap:1.2rem;align-items:baseline;
+ padding-block:1rem;border-bottom:1px solid var(--linha)}
+@media(max-width:640px){.ix{grid-template-columns:2.6rem 1fr;gap:.4rem 1rem}
+ .ix-l{grid-column:2}}
+.ix-n{font-family:var(--mono);font-size:.82rem;color:var(--verde)}
+.ix-t{font-family:var(--display);font-weight:300;font-size:1.32rem;letter-spacing:.04em}
+.ix-l{font-size:.92rem;color:var(--cinza2);line-height:1.5}
+
+/* -------------------------------------------------------- promessa */
+.promessa{background:var(--tinta);color:var(--papel)}
+.promessa .frase{font-family:var(--display);font-weight:300;
+ font-size:clamp(2.2rem,7vw,5rem);line-height:1.06;letter-spacing:.02em;
+ max-width:22ch;margin:1.4rem 0 0;color:var(--papel)}
+.promessa .rodape-frase{font-family:var(--mono);font-size:.8rem;color:#8b8e95;
+ letter-spacing:.04em;max-width:44ch;margin-top:2.4rem;line-height:1.7}
+
+/* ---------------------------------------------------------- provas */
+.provas{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:1.8rem;
+ border-top:1px solid var(--linha);border-left:1px solid var(--linha)}
+@media(max-width:640px){.provas{grid-template-columns:1fr}}
+.prova{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;padding:1.4rem 1.5rem;
+ border-right:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.prova .pn{font-family:var(--mono);font-size:.78rem;color:var(--verde);padding-top:.2rem}
+.prova p{margin:.3rem 0 0;color:var(--cinza2);font-size:.92rem;line-height:1.5;
+ max-width:none}
+
+/* ------------------------------------------------------- não faça */
+.nfaca{margin-top:2.2rem;border-left:2px solid #c0392b;padding:.1rem 0 .1rem 1.4rem}
+.nfaca h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;
+ text-transform:uppercase;color:#9d3226;margin-bottom:.7rem}
+.nfaca ul{margin:0;padding-left:1.1rem}
+.nfaca li{color:var(--cinza2);font-size:.94rem;line-height:1.5;margin-bottom:.4rem}
+
+/* ---------------------------------------------------- especímen */
+.fig.plain{background:transparent;border:none;padding:0}
+
+/* ============================================ impresso ================ */
 @media print{
   /* margem vem do page.pdf(), nao daqui: com @page{margin} o Chromium
      escala o layout e mm no CSS deixa de ser mm no papel */
@@ -231,10 +270,24 @@ td.x{color:#9d3226}
   h2{font-size:1.6rem;margin-bottom:.9rem;break-after:avoid}
   h3{font-size:1.12rem;margin:1.5rem 0 .5rem;break-after:avoid}
   p{max-width:none}
+  .nota{max-width:76ch}
   .entrada{font-size:1.06rem;max-width:none;margin-bottom:1.2rem}
 
   /* a folha inteira: proporcao em vez de mm, porque o layout de impressao
      e escalado e mm no CSS nao e mm no papel */
+  .promessa{padding:14mm;min-height:252mm;display:flex;flex-direction:column;
+   justify-content:center;break-inside:avoid}
+  .promessa .frase{font-size:3.4rem}
+  .indice{margin-top:1.2rem}
+  .ix{padding-block:.6rem;grid-template-columns:3rem 10rem 1fr}
+  .ix-t{font-size:1.15rem}
+  .ix-l{font-size:.85rem}
+  .provas{grid-template-columns:repeat(2,1fr);margin-top:1.2rem}
+  .prova{padding:.9rem 1rem}
+  .prova p{font-size:.84rem;line-height:1.42}
+  .nfaca{margin-top:1.4rem}
+  .nfaca li{font-size:.86rem;line-height:1.42;margin-bottom:.25rem}
+  .provas,.prova,.nfaca,.ix{break-inside:avoid}
   .capa{min-height:252mm;break-before:auto;padding-block:0;
    justify-content:space-between}
   .capa-meio .logo{max-width:100%}

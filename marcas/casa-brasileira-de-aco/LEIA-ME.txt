@@ -11,7 +11,7 @@ ESPECIFICACAO.md        Ficha técnica: cor, tipografia, geometria, o que nunca
                         que vá reproduzir a marca. Leia antes de abrir editor.
 ESPECIFICACAO.json      O mesmo conteúdo em formato de máquina, com o inventário
                         e o SHA-256 de cada arquivo.
-CASA_BRASILEIRA_brandbook.pdf   O brandbook, A4, 34 páginas. Oito partes, do
+CASA_BRASILEIRA_brandbook.pdf   O brandbook, A4, 44 páginas. Oito partes, do
                         negócio à voz, escrito por Théo Sampaio. É o documento
                         para ler; a ficha técnica acima é o documento para
                         consultar.

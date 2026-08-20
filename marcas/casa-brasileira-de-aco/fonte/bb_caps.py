@@ -225,3 +225,70 @@ C17_A = """
   <p class="entrada">Seis. Todas já me fizeram. Deixo as respostas escritas para quem
   tiver que defender esta marca numa reunião onde eu não estou.</p>
 """
+
+C_PROMESSA = """
+  <p class="entrada">Toda marca precisa de uma frase que ela consiga cumprir. Só uma.</p>
+  <p>Passei semanas testando frases sobre qualidade, tradição e compromisso. Todas
+  passavam no teste de bonito e falhavam no único teste que importa: dava pra provar na
+  segunda-feira?</p>
+  <p>A frase que sobrou é a mais literal de todas. É também a única que descreve
+  exatamente o que muda no dia de quem compra.</p>
+"""
+
+C_SUSTENTA_A = """
+  <p class="entrada">Promessa sem prova é slogan. Estas quatro coisas são o que faz a
+  frase acima parar de pé.</p>
+"""
+
+C_SUSTENTA_B = """
+  <p style="margin-top:1.6rem">Se algum dia uma dessas quatro deixar de ser verdade, a
+  promessa cai junto e este documento precisa ser reescrito. Não é retórica: é o critério
+  para saber quando a marca virou mentira.</p>
+"""
+
+C_ESPECIMEN = """
+  <p class="entrada">A tipografia da marca, no tamanho em que ela foi pensada.</p>
+"""
+
+C_COBRANDING_A = """
+  <p class="entrada">Esta marca vai passar a vida ao lado de outras. É bom decidir agora
+  como, porque na hora ninguém decide: alguém arrasta e solta.</p>
+  <p>O caso mais comum é a placa de obra. Ali a Casa não é a estrela — é o fornecedor da
+  armadura. Aparece menor que o nome do empreendimento e do mesmo tamanho dos outros
+  fornecedores. Querer aparecer mais que a construtora numa placa é o tipo de coisa que
+  faz a construtora tirar você da placa.</p>
+"""
+
+C_COBRANDING_B = """
+  <h3>A régua é a mesma de sempre</h3>
+  <p>Quando a marca divide espaço com outra, o fio divisor fica a 2X dela, e o logo do
+  parceiro começa a 2X do fio. X continua sendo a altura do conjunto das três listras. A
+  Casa vem à esquerda do fio, sempre.</p>
+  <p>Duas regras que não se negociam nesse arranjo. A marca não encolhe abaixo do mínimo
+  para caber ao lado de um logo grande — se não cabe, a placa está mal dimensionada, e
+  isso é problema de quem fez a placa. E a marca nunca entra dentro de uma moldura,
+  selo ou faixa para “combinar” com o logo do vizinho.</p>
+"""
+
+C_ARQUITETURA_A = """
+  <p class="entrada">Hoje a empresa faz uma coisa. Um dia vai fazer duas, e nesse dia
+  alguém vai querer criar uma marca nova. Não crie.</p>
+  <p>Marca nova custa registro, custa manual, custa manutenção e divide a atenção que
+  levou anos pra construir. Uma empresa deste tamanho aguenta bem uma marca. Não aguenta
+  três.</p>
+  <p>A regra é simples: o nome do produto vem <strong>depois</strong> da marca, na mesma
+  tipografia, e descreve o que a coisa é. Nunca inventa nome próprio.</p>
+"""
+
+C_ARQUITETURA_B = """
+  <p style="margin-top:1.6rem">Repare no quarto exemplo. “Casa Digital” parece esperto e
+  é o pior dos quatro, porque cria uma segunda marca disfarçada de produto. No dia em que
+  ela existir, alguém vai pedir um logo pra ela, e depois uma cor, e depois um manual.</p>
+  <div class="citacao">
+    <p>Produto descreve. Marca nomeia. Só a empresa tem direito a nome.</p>
+  </div>
+"""
+
+C_FIM = """
+  <p class="entrada">A frase do começo, agora que você leu o resto.</p>
+"""

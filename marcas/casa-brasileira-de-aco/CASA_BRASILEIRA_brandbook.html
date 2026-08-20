@@ -214,7 +214,46 @@ td.x{color:#9d3226}
  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:#7c7f86;
  max-width:44ch;line-height:1.7}
 
-/* =========================================================== impresso */
+
+/* ---------------------------------------------------------- índice */
+.indice{margin-top:2rem;border-top:1px solid var(--linha)}
+.ix{display:grid;grid-template-columns:3.4rem 11rem 1fr;gap:1.2rem;align-items:baseline;
+ padding-block:1rem;border-bottom:1px solid var(--linha)}
+@media(max-width:640px){.ix{grid-template-columns:2.6rem 1fr;gap:.4rem 1rem}
+ .ix-l{grid-column:2}}
+.ix-n{font-family:var(--mono);font-size:.82rem;color:var(--verde)}
+.ix-t{font-family:var(--display);font-weight:300;font-size:1.32rem;letter-spacing:.04em}
+.ix-l{font-size:.92rem;color:var(--cinza2);line-height:1.5}
+
+/* -------------------------------------------------------- promessa */
+.promessa{background:var(--tinta);color:var(--papel)}
+.promessa .frase{font-family:var(--display);font-weight:300;
+ font-size:clamp(2.2rem,7vw,5rem);line-height:1.06;letter-spacing:.02em;
+ max-width:22ch;margin:1.4rem 0 0;color:var(--papel)}
+.promessa .rodape-frase{font-family:var(--mono);font-size:.8rem;color:#8b8e95;
+ letter-spacing:.04em;max-width:44ch;margin-top:2.4rem;line-height:1.7}
+
+/* ---------------------------------------------------------- provas */
+.provas{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:1.8rem;
+ border-top:1px solid var(--linha);border-left:1px solid var(--linha)}
+@media(max-width:640px){.provas{grid-template-columns:1fr}}
+.prova{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;padding:1.4rem 1.5rem;
+ border-right:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.prova .pn{font-family:var(--mono);font-size:.78rem;color:var(--verde);padding-top:.2rem}
+.prova p{margin:.3rem 0 0;color:var(--cinza2);font-size:.92rem;line-height:1.5;
+ max-width:none}
+
+/* ------------------------------------------------------- não faça */
+.nfaca{margin-top:2.2rem;border-left:2px solid #c0392b;padding:.1rem 0 .1rem 1.4rem}
+.nfaca h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;
+ text-transform:uppercase;color:#9d3226;margin-bottom:.7rem}
+.nfaca ul{margin:0;padding-left:1.1rem}
+.nfaca li{color:var(--cinza2);font-size:.94rem;line-height:1.5;margin-bottom:.4rem}
+
+/* ---------------------------------------------------- especímen */
+.fig.plain{background:transparent;border:none;padding:0}
+
+/* ============================================ impresso ================ */
 @media print{
   /* margem vem do page.pdf(), nao daqui: com @page{margin} o Chromium
      escala o layout e mm no CSS deixa de ser mm no papel */
@@ -234,10 +273,24 @@ td.x{color:#9d3226}
   h2{font-size:1.6rem;margin-bottom:.9rem;break-after:avoid}
   h3{font-size:1.12rem;margin:1.5rem 0 .5rem;break-after:avoid}
   p{max-width:none}
+  .nota{max-width:76ch}
   .entrada{font-size:1.06rem;max-width:none;margin-bottom:1.2rem}
 
   /* a folha inteira: proporcao em vez de mm, porque o layout de impressao
      e escalado e mm no CSS nao e mm no papel */
+  .promessa{padding:14mm;min-height:252mm;display:flex;flex-direction:column;
+   justify-content:center;break-inside:avoid}
+  .promessa .frase{font-size:3.4rem}
+  .indice{margin-top:1.2rem}
+  .ix{padding-block:.6rem;grid-template-columns:3rem 10rem 1fr}
+  .ix-t{font-size:1.15rem}
+  .ix-l{font-size:.85rem}
+  .provas{grid-template-columns:repeat(2,1fr);margin-top:1.2rem}
+  .prova{padding:.9rem 1rem}
+  .prova p{font-size:.84rem;line-height:1.42}
+  .nfaca{margin-top:1.4rem}
+  .nfaca li{font-size:.86rem;line-height:1.42;margin-bottom:.25rem}
+  .provas,.prova,.nfaca,.ix{break-inside:avoid}
   .capa{min-height:252mm;break-before:auto;padding-block:0;
    justify-content:space-between}
   .capa-meio .logo{max-width:100%}
@@ -332,6 +385,13 @@ td.x{color:#9d3226}
     </div>
   </div>
 </div></section>
+<section><div class="wrap">
+  <span class="olho">O caminho</span>
+  <h2>Oito partes.</h2>
+  <p class="entrada">As três primeiras são argumento. As cinco últimas são regra. Se
+  você só vai ler uma, leia a seis.</p>
+  <div class="indice"><div class="ix"><span class="ix-n">01</span><span class="ix-t">O negócio</span><span class="ix-l">O que está sendo vendido aqui não é o que está escrito na nota fiscal.</span></div><div class="ix"><span class="ix-n">02</span><span class="ix-t">O nome</span><span class="ix-l">Ele já existia quando eu cheguei. Meu trabalho foi entender por que é bom.</span></div><div class="ix"><span class="ix-n">03</span><span class="ix-t">A ideia</span><span class="ix-l">Um desenho que diz duas coisas ao mesmo tempo, sem contar piada.</span></div><div class="ix"><span class="ix-n">04</span><span class="ix-t">O lixo</span><span class="ix-l">Todo brandbook finge que a marca nasceu pronta na terceira página do caderno. É mentira em todos eles.</span></div><div class="ix"><span class="ix-n">05</span><span class="ix-t">As peças</span><span class="ix-l">A partir daqui é manual. Menos opinião, mais medida.</span></div><div class="ix"><span class="ix-n">06</span><span class="ix-t">As regras</span><span class="ix-l">Odeio manual de marca. Trabalhei doze anos com eles e nunca abri um por vontade própria. Então vou ser breve.</span></div><div class="ix"><span class="ix-n">07</span><span class="ix-t">No mundo</span><span class="ix-l">Onde tudo isso encosta em papel, chapa e tinta.</span></div><div class="ix"><span class="ix-n">08</span><span class="ix-t">A voz</span><span class="ix-l">Metade do que estraga marca de indústria não é o logo. É o texto.</span></div></div>
+</div></section>
 <section class="manifesto"><div class="wrap">
   <p>Aço é commodity.</p>
   <p>Barra de doze metros é <span class="destaque">igual em toda usina do país</span>.
@@ -341,6 +401,12 @@ td.x{color:#9d3226}
   estribo, já contada e já etiquetada com a posição que o projeto pediu. Vende a serra que
   sai do canteiro e o pedaço de barra que não sobra no chão.</p>
 </div></section>
+<section class="promessa"><div class="wrap">
+  <span class="olho" style="color:var(--amarelo)">A promessa</span>
+  <p class="frase">Sua obra não precisa de serra.</p>
+  <p class="rodape-frase">Uma frase. Se ela não for verdade numa segunda-feira
+  qualquer, nada aqui dentro salva a marca.</p>
+</div></section>
 <section class="parte"><div class="wrap">
   <div class="num">01</div>
   <div class="rot">Parte um</div>
@@ -348,7 +414,39 @@ td.x{color:#9d3226}
   <p>O que está sendo vendido aqui não é o que está escrito na nota fiscal.</p>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">01 · o produto de verdade</span>
+  <span class="olho">01 · a promessa</span>
+  <h2>Uma frase que dê pra cumprir.</h2>
+  
+  <p class="entrada">Toda marca precisa de uma frase que ela consiga cumprir. Só uma.</p>
+  <p>Passei semanas testando frases sobre qualidade, tradição e compromisso. Todas
+  passavam no teste de bonito e falhavam no único teste que importa: dava pra provar na
+  segunda-feira?</p>
+  <p>A frase que sobrou é a mais literal de todas. É também a única que descreve
+  exatamente o que muda no dia de quem compra.</p>
+
+</div></section>
+<section><div class="wrap">
+  <span class="olho">02 · o que a sustenta</span>
+  <h2>Quatro provas.</h2>
+  
+  <p class="entrada">Promessa sem prova é slogan. Estas quatro coisas são o que faz a
+  frase acima parar de pé.</p>
+<div class="provas"><div class="prova">
+  <div class="pn">01</div>
+  <div><h4>Corte por posição de projeto</h4><p>Cada peça chega com a posição do projeto estrutural — N5, N12 — e não como barra genérica. Quem monta a armadura procura pela posição, não pelo comprimento.</p></div></div><div class="prova">
+  <div class="pn">02</div>
+  <div><h4>Romaneio fechado na fábrica</h4><p>A lista é conferida antes de sair, no galpão, com a peça na mão. Não no barro, às sete da manhã, com o caminhão esperando.</p></div></div><div class="prova">
+  <div class="pn">03</div>
+  <div><h4>A sobra de um pedido vira peça de outro</h4><p>Ponta de barra é dinheiro no chão. Na fábrica ela entra no pedido seguinte; no canteiro ela vira sucata.</p></div></div><div class="prova">
+  <div class="pn">04</div>
+  <div><h4>Aço com classe e rastreio</h4><p>CA-50 e CA-60 conforme a NBR 7480, com a corrida rastreável. Se o fiscal da obra pedir o documento, ele existe.</p></div></div></div>
+  <p style="margin-top:1.6rem">Se algum dia uma dessas quatro deixar de ser verdade, a
+  promessa cai junto e este documento precisa ser reescrito. Não é retórica: é o critério
+  para saber quando a marca virou mentira.</p>
+
+</div></section>
+<section><div class="wrap">
+  <span class="olho">03 · o produto de verdade</span>
   <h2>A barra deixa de ser genérica.</h2>
   
   <p class="entrada">Uma barra de doze metros serve para qualquer obra do Brasil. É
@@ -370,7 +468,7 @@ td.x{color:#9d3226}
 
 </div></section>
 <section><div class="wrap">
-  <span class="olho">02 · o problema honesto</span>
+  <span class="olho">04 · o problema honesto</span>
   <h2>Ninguém se apaixona por vergalhão. Ótimo.</h2>
   
   <p class="entrada">Passei a primeira semana deste projeto procurando o que emocionar.
@@ -391,7 +489,7 @@ td.x{color:#9d3226}
 
 </div></section>
 <section><div class="wrap">
-  <span class="olho">03 · onde a marca mora</span>
+  <span class="olho">05 · onde a marca mora</span>
   <h2>Ela vive numa etiqueta suja.</h2>
   
   <p class="entrada">Não vai ter outdoor. Não precisa.</p>
@@ -417,7 +515,7 @@ td.x{color:#9d3226}
   <p>Ele já existia quando eu cheguei. Meu trabalho foi entender por que é bom.</p>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">04 · a palavra que salva o nome</span>
+  <span class="olho">06 · a palavra que salva o nome</span>
   <h2>Casa não é casinha.</h2>
   
   <p class="entrada">Casa da Moeda. Casa de Câmara e Cadeia. Casa Bahia, que virou
@@ -451,7 +549,7 @@ td.x{color:#9d3226}
   <p>Um desenho que diz duas coisas ao mesmo tempo, sem contar piada.</p>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">05 · o símbolo</span>
+  <span class="olho">07 · o símbolo</span>
   <h2>Um desenho, duas leituras.</h2>
   
   <p class="entrada">Verde, amarelo, azul. Três listras paralelas.</p>
@@ -477,7 +575,7 @@ td.x{color:#9d3226}
 
 </div></section>
 <section><div class="wrap">
-  <span class="olho">06 · a regra que carrega o significado</span>
+  <span class="olho">08 · a regra que carrega o significado</span>
   <h2>Por que a listra para no A.</h2>
   
   <p class="entrada">Porque as cores do Brasil estão sublinhando a palavra BRASILEIRA.
@@ -502,7 +600,7 @@ td.x{color:#9d3226}
   <p>Todo brandbook finge que a marca nasceu pronta na terceira página do caderno. É mentira em todos eles.</p>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">07 · oito tentativas</span>
+  <span class="olho">09 · oito tentativas</span>
   <h2>O que eu joguei fora.</h2>
   
   <p class="entrada">Cinco no lixo, uma no meio do caminho, duas de pé. Registro aqui
@@ -572,7 +670,7 @@ td.x{color:#9d3226}
   <p>A partir daqui é manual. Menos opinião, mais medida.</p>
 </div></section>
 <section><div class="wrap-larga">
-  <span class="olho">08 · a assinatura</span>
+  <span class="olho">10 · a assinatura</span>
   <h2>A marca e suas quatro formas.</h2>
   
   <p class="entrada">Uma principal e três alternativas. Não são opções de gosto: cada uma
@@ -599,10 +697,10 @@ td.x{color:#9d3226}
   rede social, favicon e adesivo. Nesses lugares o nome aparece do lado, escrito pela
   própria plataforma. Em proposta, etiqueta, nota e placa de obra, não: três listras sem
   nome não se apresentam.</p>
-
+<div class="nfaca"><h4>Não faça</h4><ul><li>Símbolo sozinho em proposta, nota ou etiqueta.</li><li>Marca dentro de moldura, selo ou balãozinho.</li><li>Duas composições diferentes na mesma peça.</li><li>Alternativa vertical onde a principal caberia.</li></ul></div>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">09 · a cor</span>
+  <span class="olho">11 · a cor</span>
   <h2>Cores do Brasil, em tom grave.</h2>
   
   <p class="entrada">Não são os valores oficiais da bandeira. Foi decisão, não descuido.</p>
@@ -658,9 +756,19 @@ td.x{color:#9d3226}
   especificado de propósito — feche em prova impressa com a gráfica. Pantone chutado em
   manual é como erro de reprodução nasce.</p>
 
+        <h3>Quanto de cada uma</h3>
+        <p>Ter a cor certa não basta: erra-se mais na dose que no tom. Uma peça da
+        Casa é quase toda papel e tinta. As três cores da listra entram como acento,
+        somando um sétimo do que se vê — e o amarelo é o menor de todos, porque é o
+        mais barulhento.</p>
+        <figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 150" style="width:100%;height:auto;display:block" role="img"><rect x="0.0" y="8" width="548.8" height="74" fill="#F5F4F0"/><rect x="0.5" y="8.5" width="547.8" height="73" fill="none" stroke="#8A8B90" stroke-width="1" opacity="0.5"/><text x="12.0" y="38" font-family="IBM Plex Mono" font-size="13" fill="#14161C" letter-spacing="1.5">56%</text><text x="12.0" y="58" font-family="IBM Plex Mono" font-size="11" fill="#14161C" opacity="0.75">Papel</text><rect x="548.8" y="8" width="294.0" height="74" fill="#14161C"/><text x="560.8" y="38" font-family="IBM Plex Mono" font-size="13" fill="#F5F4F0" letter-spacing="1.5">30%</text><text x="560.8" y="58" font-family="IBM Plex Mono" font-size="11" fill="#F5F4F0" opacity="0.75">Tinta</text><rect x="842.8" y="8" width="78.4" height="74" fill="#006B3C"/><text x="854.8" y="38" font-family="IBM Plex Mono" font-size="13" fill="#FFFFFF" letter-spacing="1.5">8%</text><text x="854.8" y="58" font-family="IBM Plex Mono" font-size="11" fill="#FFFFFF" opacity="0.75">Verde</text><rect x="921.2" y="8" width="39.2" height="74" fill="#002B5C"/><text x="940.8" y="102" font-family="IBM Plex Mono" font-size="11" fill="#5A5C60" text-anchor="middle">4%</text><text x="940.8" y="118" font-family="IBM Plex Mono" font-size="10" fill="#5A5C60" text-anchor="middle">Azul</text><rect x="960.4" y="8" width="19.6" height="74" fill="#F2B705"/><text x="970.2" y="102" font-family="IBM Plex Mono" font-size="11" fill="#5A5C60" text-anchor="middle">2%</text><text x="970.2" y="118" font-family="IBM Plex Mono" font-size="10" fill="#5A5C60" text-anchor="middle">Amarelo</text></svg>
+          <figcaption>A dose, numa peça média. Não é lei de milímetro, é ordem de
+          grandeza: se a sua peça está mais colorida que isto, ela está errada.
+          </figcaption></figure>
+        <div class="nfaca"><h4>Não faça</h4><ul><li>Amarelo em texto sobre fundo claro. Ele desaparece.</li><li>Inverter a ordem das listras. Verde em cima, sempre.</li><li>Verde ou azul na listra sobre fundo escuro.</li><li>Inventar um quarto tom “pra variar”.</li></ul></div>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">10 · a tipografia</span>
+  <span class="olho">12 · a tipografia</span>
   <h2>Jura Light, e por que não as outras sete.</h2>
   
   <p class="entrada">Geométrica, quase instrumental, e fina. Testei oito.</p>
@@ -684,6 +792,19 @@ td.x{color:#9d3226}
   </table></div>
 
 </div></section>
+<section><div class="wrap-larga">
+  <span class="olho">13 · especímen</span>
+  <h2>A letra, no tamanho dela.</h2>
+  
+  <p class="entrada">A tipografia da marca, no tamanho em que ela foi pensada.</p>
+
+  <figure class="fig plain"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 446" style="width:100%;height:auto;display:block" role="img"><text x="0" y="59.2" font-family="Jura Light" font-weight="300" font-size="58" fill="#14161C" letter-spacing="3.19">ABCDEFGHIJKLM</text><text x="0" y="138.0" font-family="Jura Light" font-weight="300" font-size="58" fill="#14161C" letter-spacing="3.19">NOPQRSTUVWXYZ</text><text x="0" y="216.9" font-family="Jura Light" font-weight="300" font-size="58" fill="#006B3C" letter-spacing="3.19">ÇÃÕÁÉÍÓÚÊÔÀ</text><text x="0" y="281.5" font-family="Jura Light" font-weight="300" font-size="44" fill="#5A5C60" letter-spacing="3.08">0123456789 Ø × ° · , /</text><line x1="0" y1="322.5" x2="980" y2="322.5" stroke="#8A8B90" stroke-width="1" opacity="0.4"/><text x="0" y="396.5" font-family="Jura Light" font-weight="300" font-size="54" fill="#14161C" letter-spacing="3.2">ESTRIBO 90° · Ø 10,0 mm · CA-50</text><text x="0" y="430.5" font-family="IBM Plex Mono" font-size="12" fill="#5A5C60">a linha que a marca escreve mais vezes por dia</text></svg></figure>
+  <p class="nota" style="margin-top:1.6rem">Caixa alta sempre. Os acentos em verde
+  não são enfeite: Ç, Ã e Õ são os caracteres que quebram fonte importada, e é por
+  isso que eles estão aqui — para conferir antes de comprar licença de qualquer
+  substituta. A última linha é a frase que a Casa escreve mais vezes por dia.</p>
+
+</div></section>
 <section class="parte"><div class="wrap">
   <div class="num">06</div>
   <div class="rot">Parte seis</div>
@@ -691,7 +812,7 @@ td.x{color:#9d3226}
   <p>Odeio manual de marca. Trabalhei doze anos com eles e nunca abri um por vontade própria. Então vou ser breve.</p>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">11 · construção</span>
+  <span class="olho">14 · construção</span>
   <h2>Dez linhas que geram a marca.</h2>
   
   <p class="entrada">A listra é calculada, não desenhada. Quem mudar o corpo ou a
@@ -729,7 +850,7 @@ td.x{color:#9d3226}
 
 </div></section>
 <section><div class="wrap">
-  <span class="olho">12 · respiro e escala</span>
+  <span class="olho">15 · respiro e escala</span>
   <h2>Onde ela encosta e até onde encolhe.</h2>
   
   <p class="entrada">Duas perguntas que ninguém faz e todo mundo erra.</p>
@@ -757,7 +878,7 @@ td.x{color:#9d3226}
 
 </div></section>
 <section><div class="wrap-larga">
-  <span class="olho">13 · uso incorreto</span>
+  <span class="olho">16 · uso incorreto</span>
   <h2>Seis maneiras de estragar isso.</h2>
   
   <p class="entrada">Todas eu já vi acontecer. Nenhuma por má-fé: foi sempre alguém com
@@ -775,7 +896,7 @@ td.x{color:#9d3226}
   <p>Onde tudo isso encosta em papel, chapa e tinta.</p>
 </div></section>
 <section><div class="wrap-larga">
-  <span class="olho">14 · aplicações</span>
+  <span class="olho">17 · aplicações</span>
   <h2>A marca em uso.</h2>
   
   <p class="entrada">Quatro lugares onde a marca vive de verdade. Nenhum deles é
@@ -794,6 +915,41 @@ td.x{color:#9d3226}
   </div>
 
 </div></section>
+<section><div class="wrap-larga">
+  <span class="olho">18 · placa de obra</span>
+  <h2>Onde a marca é fornecedor, não estrela.</h2>
+  
+  <p class="entrada">Esta marca vai passar a vida ao lado de outras. É bom decidir agora
+  como, porque na hora ninguém decide: alguém arrasta e solta.</p>
+  <p>O caso mais comum é a placa de obra. Ali a Casa não é a estrela — é o fornecedor da
+  armadura. Aparece menor que o nome do empreendimento e do mesmo tamanho dos outros
+  fornecedores. Querer aparecer mais que a construtora numa placa é o tipo de coisa que
+  faz a construtora tirar você da placa.</p>
+
+  <figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 530" style="width:100%;height:auto;display:block" role="img"><rect width="980" height="530" fill="#F5F4F0"/><rect x="60" y="40" width="860" height="400" fill="#FFFFFF" stroke="#8A8B90" stroke-width="1"/><rect x="60" y="40" width="860" height="82" fill="#002B5C"/><text x="94" y="90" font-family="Jura Light" font-weight="300" font-size="30" fill="#FFFFFF" letter-spacing="4">RESIDENCIAL VILA NOVA</text><text x="94" y="196" font-family="IBM Plex Mono" font-size="11" fill="#5A5C60" letter-spacing="1.4">INCORPORAÇÃO</text><text x="280" y="196" font-family="IBM Plex Mono" font-size="11" fill="#8A8B90">—</text><text x="94" y="228" font-family="IBM Plex Mono" font-size="11" fill="#5A5C60" letter-spacing="1.4">EXECUÇÃO</text><text x="280" y="228" font-family="IBM Plex Mono" font-size="11" fill="#8A8B90">—</text><text x="94" y="260" font-family="IBM Plex Mono" font-size="11" fill="#5A5C60" letter-spacing="1.4">RESP. TÉCNICO</text><text x="280" y="260" font-family="IBM Plex Mono" font-size="11" fill="#8A8B90">CREA 0000000000</text><text x="94" y="292" font-family="IBM Plex Mono" font-size="11" fill="#5A5C60" letter-spacing="1.4">ALVARÁ</text><text x="280" y="292" font-family="IBM Plex Mono" font-size="11" fill="#8A8B90">0000/2026</text><line x1="60" y1="324" x2="920" y2="324" stroke="#8A8B90" stroke-width="1" opacity="0.6"/><text x="94" y="296" font-family="IBM Plex Mono" font-size="12" fill="#5A5C60" letter-spacing="2">ARMADURA CORTADA E DOBRADA POR</text><text x="94" y="372" font-family="Jura Light" font-weight="300" font-size="19" fill="#14161C" letter-spacing="2.945" xml:space="preserve">CASA BRASILEIRA <tspan fill="#006B3C">D<tspan dx="-1.050">E</tspan> <tspan dx="1.045">A</tspan><tspan dx="0.385">Ç</tspan><tspan dx="-0.651">O</tspan></tspan></text><rect x="95.52" y="378.08" width="188.03" height="2.66" fill="#006B3C"/><rect x="95.52" y="381.64" width="188.03" height="2.66" fill="#F2B705"/><rect x="95.52" y="385.21" width="188.03" height="2.66" fill="#002B5C"/><rect x="480" y="342" width="200" height="46" fill="none" stroke="#8A8B90" stroke-width="1" stroke-dasharray="5 4"/><text x="580" y="370" font-family="IBM Plex Mono" font-size="10" fill="#5A5C60" text-anchor="middle" letter-spacing="1">CONSTRUTORA</text><rect x="730" y="342" width="200" height="46" fill="none" stroke="#8A8B90" stroke-width="1" stroke-dasharray="5 4"/><text x="830" y="370" font-family="IBM Plex Mono" font-size="10" fill="#5A5C60" text-anchor="middle" letter-spacing="1">PROJETO ESTRUTURAL</text></svg>
+    <figcaption>A marca entra na faixa de fornecedores, no mesmo tamanho dos outros
+    e menor que o nome da obra. Sair maior que a construtora é o caminho mais curto
+    pra sair da placa.</figcaption></figure>
+
+</div></section>
+<section><div class="wrap">
+  <span class="olho">19 · ao lado de outra marca</span>
+  <h2>A régua do co-branding.</h2>
+  
+  <h3>A régua é a mesma de sempre</h3>
+  <p>Quando a marca divide espaço com outra, o fio divisor fica a 2X dela, e o logo do
+  parceiro começa a 2X do fio. X continua sendo a altura do conjunto das três listras. A
+  Casa vem à esquerda do fio, sempre.</p>
+  <p>Duas regras que não se negociam nesse arranjo. A marca não encolhe abaixo do mínimo
+  para caber ao lado de um logo grande — se não cabe, a placa está mal dimensionada, e
+  isso é problema de quem fez a placa. E a marca nunca entra dentro de uma moldura,
+  selo ou faixa para “combinar” com o logo do vizinho.</p>
+
+  <figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 230" style="width:100%;height:auto;display:block" role="img"><rect width="980" height="230" fill="#FFFFFF"/><text x="30" y="96" font-family="Jura Light" font-weight="300" font-size="30" fill="#14161C" letter-spacing="4.650" xml:space="preserve">CASA BRASILEIRA <tspan fill="#006B3C">D<tspan dx="-1.657">E</tspan> <tspan dx="1.650">A</tspan><tspan dx="0.608">Ç</tspan><tspan dx="-1.027">O</tspan></tspan></text><rect x="32.40" y="105.60" width="296.90" height="4.20" fill="#006B3C"/><rect x="32.40" y="111.23" width="296.90" height="4.20" fill="#F2B705"/><rect x="32.40" y="116.86" width="296.90" height="4.20" fill="#002B5C"/><line x1="496.3" y1="72.6" x2="496.3" y2="112.5" stroke="#8A8B90" stroke-width="1"/><rect x="527.2" y="72.6" width="150" height="39.9" fill="none" stroke="#8A8B90" stroke-width="1" stroke-dasharray="5 4"/><text x="602.2" y="94.5" font-family="IBM Plex Mono" font-size="11" fill="#5A5C60" text-anchor="middle">logo do parceiro</text><line x1="465.4" y1="130.5" x2="496.3" y2="130.5" stroke="#006B3C" stroke-width="1"/><line x1="465.4" y1="126.5" x2="465.4" y2="134.5" stroke="#006B3C" stroke-width="1"/><line x1="496.3" y1="126.5" x2="496.3" y2="134.5" stroke="#006B3C" stroke-width="1"/><text x="480.8" y="148.5" font-family="IBM Plex Mono" font-size="11" fill="#006B3C" text-anchor="middle">2X</text><line x1="496.3" y1="130.5" x2="527.2" y2="130.5" stroke="#006B3C" stroke-width="1"/><line x1="496.3" y1="126.5" x2="496.3" y2="134.5" stroke="#006B3C" stroke-width="1"/><line x1="527.2" y1="126.5" x2="527.2" y2="134.5" stroke="#006B3C" stroke-width="1"/><text x="511.7" y="148.5" font-family="IBM Plex Mono" font-size="11" fill="#006B3C" text-anchor="middle">2X</text><text x="30" y="208" font-family="IBM Plex Mono" font-size="11" fill="#5A5C60">X = altura do conjunto das três listras · a marca vem sempre à esquerda do fio</text></svg>
+    <figcaption>Fio a 2X da marca, parceiro a 2X do fio. X é a altura do conjunto
+    das três listras.</figcaption></figure>
+
+</div></section>
 <section class="parte"><div class="wrap">
   <div class="num">08</div>
   <div class="rot">Parte oito</div>
@@ -801,7 +957,7 @@ td.x{color:#9d3226}
   <p>Metade do que estraga marca de indústria não é o logo. É o texto.</p>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">15 · tom</span>
+  <span class="olho">20 · tom</span>
   <h2>Como a Casa fala.</h2>
   
   <p class="entrada">Como quem já está na obra falando com quem já está na obra. Sem
@@ -833,7 +989,7 @@ td.x{color:#9d3226}
 
 </div></section>
 <section><div class="wrap">
-  <span class="olho">16 · na prática</span>
+  <span class="olho">21 · na prática</span>
   <h2>Antes e depois.</h2>
   
   <p class="entrada">Três textos que chegaram pra mim e três reescritas. É assim que se
@@ -862,10 +1018,10 @@ td.x{color:#9d3226}
       <div class="txt">Você fala a bitola e o formato. A gente corta, dobra, etiqueta e entrega.</div></div>
   </div>
   <div class="por">Se a frase cabe em qualquer empresa do Brasil, ela não é sua. Essa aqui só cabe em quem corta e dobra.</div>
-</div>
+</div><div class="nfaca"><h4>Não faça</h4><ul><li>Adjetivo sem número atrás.</li><li>“Em breve” onde caberia uma data.</li><li>Falar da máquina em vez do ganho no canteiro.</li><li>Repetir que a empresa é brasileira. A cor já disse.</li></ul></div>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">17 · vocabulário</span>
+  <span class="olho">22 · vocabulário</span>
   <h2>Glossário do canteiro.</h2>
   
   <p class="entrada">Estas palavras têm significado exato. Usar errado, na frente de quem
@@ -882,7 +1038,7 @@ td.x{color:#9d3226}
   <div class="t">canteiro</div><div class="d">O terreno da obra. Não é “site”, não é “empreendimento”, não é “projeto”. Canteiro. É a palavra que a pessoa usa.</div></div></div>
 </div></section>
 <section><div class="wrap">
-  <span class="olho">18 · defesa</span>
+  <span class="olho">23 · defesa</span>
   <h2>Perguntas que vão te fazer.</h2>
   
   <p class="entrada">Seis. Todas já me fizeram. Deixo as respostas escritas para quem
@@ -900,6 +1056,37 @@ td.x{color:#9d3226}
   <div class="r"><p>Precisa. E não é preciosismo: a largura da listra é calculada a partir da largura de tinta do nome nessa fonte, nesse peso, nesse espacejamento. Trocar a fonte desalinha a listra do A, e o alinhamento é o único lugar onde essa marca guarda significado.</p><p>Para texto corrido, contrato e planilha, use Work Sans e Plex Mono, que estão especificados. Para o nome, é Jura Light.</p></div></div><div class="pg">
   <div class="q">— Quanto tempo essa identidade dura?</div>
   <div class="r"><p>A parte de baixo — três listras, cores do Brasil, nome em caixa alta — dura décadas, porque não depende de moda. A parte de cima, que é como a marca aparece em site e em rede social, vai envelhecer em uns cinco anos como tudo envelhece.</p><p>Quando isso acontecer, mexa na de cima. A de baixo fica.</p></div></div>
+</div></section>
+<section><div class="wrap-larga">
+  <span class="olho">24 · o que vem depois</span>
+  <h2>Como nomear o próximo produto.</h2>
+  
+  <p class="entrada">Hoje a empresa faz uma coisa. Um dia vai fazer duas, e nesse dia
+  alguém vai querer criar uma marca nova. Não crie.</p>
+  <p>Marca nova custa registro, custa manual, custa manutenção e divide a atenção que
+  levou anos pra construir. Uma empresa deste tamanho aguenta bem uma marca. Não aguenta
+  três.</p>
+  <p>A regra é simples: o nome do produto vem <strong>depois</strong> da marca, na mesma
+  tipografia, e descreve o que a coisa é. Nunca inventa nome próprio.</p>
+
+  <figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" style="width:100%;height:auto;display:block" role="img"><text x="30" y="46" font-family="Jura Light" font-weight="300" font-size="22" fill="#14161C" letter-spacing="3.410" xml:space="preserve">CASA BRASILEIRA <tspan fill="#006B3C">D<tspan dx="-1.215">E</tspan> <tspan dx="1.210">A</tspan><tspan dx="0.446">Ç</tspan><tspan dx="-0.753">O</tspan></tspan></text><rect x="31.76" y="53.04" width="217.72" height="3.08" fill="#006B3C"/><rect x="31.76" y="57.17" width="217.72" height="3.08" fill="#F2B705"/><rect x="31.76" y="61.29" width="217.72" height="3.08" fill="#002B5C"/><line x1="30" y1="88" x2="950" y2="88" stroke="#8A8B90" stroke-width="1" opacity="0.5"/><line x1="38" y1="88" x2="38" y2="122" stroke="#8A8B90" stroke-width="1" opacity="0.5"/><text x="38" y="146" font-family="Jura Light" font-weight="300" font-size="17" fill="#14161C" letter-spacing="2.2">CORTE E DOBRA</text><text x="38" y="168" font-family="IBM Plex Mono" font-size="11" fill="#006B3C">o produto de hoje</text><line x1="274" y1="88" x2="274" y2="122" stroke="#8A8B90" stroke-width="1" opacity="0.5"/><text x="274" y="146" font-family="Jura Light" font-weight="300" font-size="17" fill="#14161C" letter-spacing="2.2">TELAS</text><text x="274" y="168" font-family="IBM Plex Mono" font-size="11" fill="#006B3C">se um dia existir</text><line x1="510" y1="88" x2="510" y2="122" stroke="#8A8B90" stroke-width="1" opacity="0.5"/><text x="510" y="146" font-family="Jura Light" font-weight="300" font-size="17" fill="#14161C" letter-spacing="2.2">TRELIÇA</text><text x="510" y="168" font-family="IBM Plex Mono" font-size="11" fill="#006B3C">se um dia existir</text><line x1="746" y1="88" x2="746" y2="122" stroke="#8A8B90" stroke-width="1" opacity="0.5"/><text x="746" y="146" font-family="Jura Light" font-weight="300" font-size="17" fill="#14161C" letter-spacing="2.2">CASA DIGITAL</text><text x="746" y="168" font-family="IBM Plex Mono" font-size="11" fill="#9d3226">não</text><text x="30" y="228" font-family="IBM Plex Mono" font-size="12" fill="#5A5C60">O nome do produto vem depois da marca, em Jura Light, e descreve o que é — nunca inventa nome próprio.</text><text x="30" y="252" font-family="IBM Plex Mono" font-size="12" fill="#5A5C60">“Casa Brasileira de Aço · Telas” funciona. “Casa Digital” cria uma segunda marca para cuidar, e ninguém aqui tem tempo pra isso.</text></svg></figure>
+
+  <p style="margin-top:1.6rem">Repare no quarto exemplo. “Casa Digital” parece esperto e
+  é o pior dos quatro, porque cria uma segunda marca disfarçada de produto. No dia em que
+  ela existir, alguém vai pedir um logo pra ela, e depois uma cor, e depois um manual.</p>
+  <div class="citacao">
+    <p>Produto descreve. Marca nomeia. Só a empresa tem direito a nome.</p>
+  </div>
+
+</div></section>
+<section><div class="wrap-larga">
+  <span class="olho">25 · a frase, de novo</span>
+  <h2>Sua obra não precisa de serra.</h2>
+  
+  <p class="entrada">A frase do começo, agora que você leu o resto.</p>
+
+  <figure class="fig plain" style="margin-top:2.4rem"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 318" style="width:100%;height:auto;display:block" role="img"><text x="0" y="91.2" font-family="Jura Light" font-weight="300" font-size="86" fill="#14161C" letter-spacing="5.16">SUA OBRA</text><text x="0" y="190.9" font-family="Jura Light" font-weight="300" font-size="86" fill="#14161C" letter-spacing="5.16">NÃO PRECISA</text><text x="0" y="290.7" font-family="Jura Light" font-weight="300" font-size="86" fill="#006B3C" letter-spacing="5.16">DE SERRA</text></svg></figure>
+
 </div></section>
 <section class="fecho"><div class="wrap">
   <span class="olho" style="color:var(--amarelo)">Fecho</span>

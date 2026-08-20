@@ -8,7 +8,9 @@ ordem em que as coisas são contadas.
 import base64, os
 import doc_svg as D
 from bb_css import CSS as CSS_BRUTO
-from bb_texto import (LIXO, NOMES, DIZ, NAO_DIZ, TROCAS, GLOSSARIO, PERGUNTAS)
+from bb_texto import (LIXO, NOMES, DIZ, NAO_DIZ, TROCAS, GLOSSARIO, PERGUNTAS,
+                      PROMESSA, SUSTENTA, NAO_FACA)
+import bb_svg as V
 from kit import (VERDE, AMARELO, AZUL, BRANCO, OSSO, TINTA, CINZA, CINZA_2,
                  VAO, kern)
 
@@ -42,7 +44,13 @@ def parte(n, rotulo, titulo, linha):
 </div></section>"""
 
 
+_n = [0]
+
+
 def cap(olho, titulo, corpo, larga=False):
+    """O numero do capitulo e automatico: renumerar a mao ja deu erro tres vezes."""
+    _n[0] += 1
+    olho = f"{_n[0]:02d} · {olho}"
     w = "wrap-larga" if larga else "wrap"
     return f"""
 <section><div class="{w}">
@@ -50,6 +58,27 @@ def cap(olho, titulo, corpo, larga=False):
   <h2>{titulo}</h2>
   {corpo}
 </div></section>"""
+
+
+def indice(partes):
+    linhas = "".join(
+        f'<div class="ix"><span class="ix-n">{n}</span>'
+        f'<span class="ix-t">{t}</span>'
+        f'<span class="ix-l">{linha}</span></div>'
+        for n, _, t, linha in partes)
+    return f"""
+<section><div class="wrap">
+  <span class="olho">O caminho</span>
+  <h2>Oito partes.</h2>
+  <p class="entrada">As três primeiras são argumento. As cinco últimas são regra. Se
+  você só vai ler uma, leia a seis.</p>
+  <div class="indice">{linhas}</div>
+</div></section>"""
+
+
+def nao_faca(chave, titulo="Não faça"):
+    itens = "".join(f"<li>{x}</li>" for x in NAO_FACA[chave])
+    return (f'<div class="nfaca"><h4>{titulo}</h4><ul>{itens}</ul></div>')
 
 
 def hex2rgb(h):
@@ -127,6 +156,28 @@ PERG_HTML = "".join(f"""<div class="pg">
   <div class="r">{r}</div></div>""" for q, r in PERGUNTAS)
 
 K = kern("DE AÇO")
+
+PARTES = [
+    ("01", "Parte um", "O negócio",
+     "O que está sendo vendido aqui não é o que está escrito na nota fiscal."),
+    ("02", "Parte dois", "O nome",
+     "Ele já existia quando eu cheguei. Meu trabalho foi entender por que é bom."),
+    ("03", "Parte três", "A ideia",
+     "Um desenho que diz duas coisas ao mesmo tempo, sem contar piada."),
+    ("04", "Parte quatro", "O lixo",
+     "Todo brandbook finge que a marca nasceu pronta na terceira página do caderno. "
+     "É mentira em todos eles."),
+    ("05", "Parte cinco", "As peças",
+     "A partir daqui é manual. Menos opinião, mais medida."),
+    ("06", "Parte seis", "As regras",
+     "Odeio manual de marca. Trabalhei doze anos com eles e nunca abri um por "
+     "vontade própria. Então vou ser breve."),
+    ("07", "Parte sete", "No mundo",
+     "Onde tudo isso encosta em papel, chapa e tinta."),
+    ("08", "Parte oito", "A voz",
+     "Metade do que estraga marca de indústria não é o logo. É o texto."),
+]
+PARTE = {p[0]: p for p in PARTES}
 
 import bb_caps as C
 
@@ -355,50 +406,106 @@ C13 = f"""
   </div>
 """
 
+
+SUSTENTA_HTML = "".join(f"""<div class="prova">
+  <div class="pn">{i+1:02d}</div>
+  <div><h4>{t}</h4><p>{d}</p></div></div>"""
+  for i, (t, d) in enumerate(SUSTENTA))
+
+PROMESSA_HTML = f"""
+<section class="promessa"><div class="wrap">
+  <span class="olho" style="color:var(--amarelo)">A promessa</span>
+  <p class="frase">{PROMESSA}</p>
+  <p class="rodape-frase">Uma frase. Se ela não for verdade numa segunda-feira
+  qualquer, nada aqui dentro salva a marca.</p>
+</div></section>"""
+
+C_SUSTENTA = C.C_SUSTENTA_A + f'<div class="provas">{SUSTENTA_HTML}</div>' + C.C_SUSTENTA_B
+
+C_ESPECIMEN = C.C_ESPECIMEN + f"""
+  <figure class="fig plain">{V.especimen()}</figure>
+  <p class="nota" style="margin-top:1.6rem">Caixa alta sempre. Os acentos em verde
+  não são enfeite: Ç, Ã e Õ são os caracteres que quebram fonte importada, e é por
+  isso que eles estão aqui — para conferir antes de comprar licença de qualquer
+  substituta. A última linha é a frase que a Casa escreve mais vezes por dia.</p>
+"""
+
+C_PLACA = C.C_COBRANDING_A + f"""
+  <figure class="fig">{V.placa_obra()}
+    <figcaption>A marca entra na faixa de fornecedores, no mesmo tamanho dos outros
+    e menor que o nome da obra. Sair maior que a construtora é o caminho mais curto
+    pra sair da placa.</figcaption></figure>
+"""
+
+C_COBRANDING = C.C_COBRANDING_B + f"""
+  <figure class="fig">{V.cobranding()}
+    <figcaption>Fio a 2X da marca, parceiro a 2X do fio. X é a altura do conjunto
+    das três listras.</figcaption></figure>
+"""
+
+C_ARQUITETURA = C.C_ARQUITETURA_A + f"""
+  <figure class="fig">{V.arquitetura()}</figure>
+""" + C.C_ARQUITETURA_B
+
+C_FIM = C.C_FIM + f"""
+  <figure class="fig plain" style="margin-top:2.4rem">{V.frase()}</figure>
+"""
+
 # ====================================================================== corpo
 BODY = "".join([
-    CAPA, AUTOR, MANIFESTO,
-    parte("01", "Parte um", "O negócio",
-          "O que está sendo vendido aqui não é o que está escrito na nota fiscal."),
-    cap("01 · o produto de verdade", "A barra deixa de ser genérica.", C.C01),
-    cap("02 · o problema honesto", "Ninguém se apaixona por vergalhão. Ótimo.", C.C02),
-    cap("03 · onde a marca mora", "Ela vive numa etiqueta suja.", C03),
-    parte("02", "Parte dois", "O nome",
-          "Ele já existia quando eu cheguei. Meu trabalho foi entender por que é bom."),
-    cap("04 · a palavra que salva o nome", "Casa não é casinha.",
+    CAPA, AUTOR, indice(PARTES), MANIFESTO, PROMESSA_HTML,
+    parte(*PARTE["01"]),
+    cap("a promessa", "Uma frase que dê pra cumprir.", C.C_PROMESSA),
+    cap("o que a sustenta", "Quatro provas.", C_SUSTENTA),
+    cap("o produto de verdade", "A barra deixa de ser genérica.", C.C01),
+    cap("o problema honesto", "Ninguém se apaixona por vergalhão. Ótimo.", C.C02),
+    cap("onde a marca mora", "Ela vive numa etiqueta suja.", C03),
+    parte(*PARTE["02"]),
+    cap("a palavra que salva o nome", "Casa não é casinha.",
         C.C04_A + NOMES_HTML + C.C04_B),
-    parte("03", "Parte três", "A ideia",
-          "Um desenho que diz duas coisas ao mesmo tempo, sem contar piada."),
-    cap("05 · o símbolo", "Um desenho, duas leituras.", C05),
-    cap("06 · a regra que carrega o significado", "Por que a listra para no A.", C.C06),
-    parte("04", "Parte quatro", "O lixo",
-          "Todo brandbook finge que a marca nasceu pronta na terceira página do "
-          "caderno. É mentira em todos eles."),
-    cap("07 · oito tentativas", "O que eu joguei fora.",
+    parte(*PARTE["03"]),
+    cap("o símbolo", "Um desenho, duas leituras.", C05),
+    cap("a regra que carrega o significado", "Por que a listra para no A.", C.C06),
+    parte(*PARTE["04"]),
+    cap("oito tentativas", "O que eu joguei fora.",
         C.C07_A + LIXO_HTML + C.C07_B),
-    parte("05", "Parte cinco", "As peças",
-          "A partir daqui é manual. Menos opinião, mais medida."),
-    cap("08 · a assinatura", "A marca e suas quatro formas.", C08, larga=True),
-    cap("09 · a cor", "Cores do Brasil, em tom grave.",
-        C.C09_A + PALETA_HTML + C.C09_B),
-    cap("10 · a tipografia", "Jura Light, e por que não as outras sete.", C.C10),
-    parte("06", "Parte seis", "As regras",
-          "Odeio manual de marca. Trabalhei doze anos com eles e nunca abri um por "
-          "vontade própria. Então vou ser breve."),
-    cap("11 · construção", "Dez linhas que geram a marca.", C11),
-    cap("12 · respiro e escala", "Onde ela encosta e até onde encolhe.", C11B),
-    cap("13 · uso incorreto", "Seis maneiras de estragar isso.", C12, larga=True),
-    parte("07", "Parte sete", "No mundo",
-          "Onde tudo isso encosta em papel, chapa e tinta."),
-    cap("14 · aplicações", "A marca em uso.", C13, larga=True),
-    parte("08", "Parte oito", "A voz",
-          "Metade do que estraga marca de indústria não é o logo. É o texto."),
-    cap("15 · tom", "Como a Casa fala.",
+    parte(*PARTE["05"]),
+    cap("a assinatura", "A marca e suas quatro formas.",
+        C08 + nao_faca("peças"), larga=True),
+    cap("a cor", "Cores do Brasil, em tom grave.",
+        C.C09_A + PALETA_HTML + C.C09_B + f"""
+        <h3>Quanto de cada uma</h3>
+        <p>Ter a cor certa não basta: erra-se mais na dose que no tom. Uma peça da
+        Casa é quase toda papel e tinta. As três cores da listra entram como acento,
+        somando um sétimo do que se vê — e o amarelo é o menor de todos, porque é o
+        mais barulhento.</p>
+        <figure class="fig">{V.proporcao()}
+          <figcaption>A dose, numa peça média. Não é lei de milímetro, é ordem de
+          grandeza: se a sua peça está mais colorida que isto, ela está errada.
+          </figcaption></figure>
+        """ + nao_faca("cor")),
+    cap("a tipografia", "Jura Light, e por que não as outras sete.", C.C10),
+    cap("especímen", "A letra, no tamanho dela.", C_ESPECIMEN, larga=True),
+    parte(*PARTE["06"]),
+    cap("construção", "Dez linhas que geram a marca.", C11),
+    cap("respiro e escala", "Onde ela encosta e até onde encolhe.", C11B),
+    cap("uso incorreto", "Seis maneiras de estragar isso.", C12, larga=True),
+    parte(*PARTE["07"]),
+    cap("aplicações", "A marca em uso.", C13, larga=True),
+    cap("placa de obra", "Onde a marca é fornecedor, não estrela.",
+        C_PLACA, larga=True),
+    cap("ao lado de outra marca", "A régua do co-branding.", C_COBRANDING),
+    parte(*PARTE["08"]),
+    cap("tom", "Como a Casa fala.",
         C.C14_A + DIZ_HTML + C.C14_B + NAO_HTML + C.C14_C),
-    cap("16 · na prática", "Antes e depois.", C.C15_A + TROCAS_HTML),
-    cap("17 · vocabulário", "Glossário do canteiro.",
+    cap("na prática", "Antes e depois.",
+        C.C15_A + TROCAS_HTML + nao_faca("voz")),
+    cap("vocabulário", "Glossário do canteiro.",
         C.C16_A + GLOSS_HTML + "</div>"),
-    cap("18 · defesa", "Perguntas que vão te fazer.", C.C17_A + PERG_HTML),
+    cap("defesa", "Perguntas que vão te fazer.", C.C17_A + PERG_HTML),
+    cap("o que vem depois", "Como nomear o próximo produto.",
+        C_ARQUITETURA, larga=True),
+    cap("a frase, de novo", "Sua obra não precisa de serra.", C_FIM, larga=True),
     FECHO,
 ])
 

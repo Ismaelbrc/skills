@@ -170,3 +170,44 @@ PERGUNTAS = [
      "em site e em rede social, vai envelhecer em uns cinco anos como tudo envelhece.</p>"
      "<p>Quando isso acontecer, mexa na de cima. A de baixo fica.</p>"),
 ]
+
+# ------------------------------------------------------------- promessa
+PROMESSA = "Sua obra não precisa de serra."
+
+SUSTENTA = [
+    ("Corte por posição de projeto",
+     "Cada peça chega com a posição do projeto estrutural — N5, N12 — e não como "
+     "barra genérica. Quem monta a armadura procura pela posição, não pelo "
+     "comprimento."),
+    ("Romaneio fechado na fábrica",
+     "A lista é conferida antes de sair, no galpão, com a peça na mão. Não no barro, "
+     "às sete da manhã, com o caminhão esperando."),
+    ("A sobra de um pedido vira peça de outro",
+     "Ponta de barra é dinheiro no chão. Na fábrica ela entra no pedido seguinte; no "
+     "canteiro ela vira sucata."),
+    ("Aço com classe e rastreio",
+     "CA-50 e CA-60 conforme a NBR 7480, com a corrida rastreável. Se o fiscal da obra "
+     "pedir o documento, ele existe."),
+]
+
+# --------------------------------------------------- não faça, por capítulo
+NAO_FACA = {
+    "cor": [
+        "Amarelo em texto sobre fundo claro. Ele desaparece.",
+        "Inverter a ordem das listras. Verde em cima, sempre.",
+        "Verde ou azul na listra sobre fundo escuro.",
+        "Inventar um quarto tom “pra variar”.",
+    ],
+    "voz": [
+        "Adjetivo sem número atrás.",
+        "“Em breve” onde caberia uma data.",
+        "Falar da máquina em vez do ganho no canteiro.",
+        "Repetir que a empresa é brasileira. A cor já disse.",
+    ],
+    "peças": [
+        "Símbolo sozinho em proposta, nota ou etiqueta.",
+        "Marca dentro de moldura, selo ou balãozinho.",
+        "Duas composições diferentes na mesma peça.",
+        "Alternativa vertical onde a principal caberia.",
+    ],
+}
