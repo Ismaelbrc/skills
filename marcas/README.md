@@ -10,10 +10,13 @@ manual em HTML e PDF, os arquivos da marca e o código que gera tudo.
 Três listras paralelas nas cores do Brasil em tom grave, sob CASA BRASILEIRA —
 terminando exatamente na tinta do A final. Tipografia Jura Light.
 
-Comece por `ESPECIFICACAO.md`: é a ficha técnica com cor, tipografia, geometria e
-o que nunca fazer, **gerada pelo próprio código que desenha a marca**. Corrija o
-código e rode `fonte/spec.py` de novo — nunca edite a ficha à mão, senão ela e o
-desenho se separam.
+Dois documentos, com funções diferentes. `CASA_BRASILEIRA_brandbook.pdf` é o
+documento para **ler**: 34 páginas em oito partes, do negócio à voz, escrito na
+primeira pessoa por Théo Sampaio, o publicitário que assina o projeto (o
+personagem está descrito em `fonte/autor.md`). `ESPECIFICACAO.md` é o documento
+para **consultar**: a ficha técnica com cor, tipografia e geometria, **gerada pelo
+próprio código que desenha a marca**. Corrija o código e rode `fonte/spec.py` de
+novo — nunca edite a ficha à mão, senão ela e o desenho se separam.
 
 - `marca/` — 35 arquivos em vetor com o texto em curvas, mais PNG em 8000 px e
   1600 px, PDF para gráfica e o símbolo em seis tamanhos de ícone
