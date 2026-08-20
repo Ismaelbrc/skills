@@ -435,6 +435,8 @@ BODY = f"""
     <tr><td>Início da listra</td><td class="v">tinta do C</td><td>não o avanço do glifo</td></tr>
     <tr><td>Fim da listra</td><td class="v">tinta do A</td><td>último A de BRASILEIRA</td></tr>
     <tr><td>Cor de DE AÇO</td><td class="v">{VERDE}</td><td>sempre fora da listra</td></tr>
+    <tr><td>Sobre fundo escuro</td><td class="v">branco · amarelo · branco</td>
+      <td>o verde cai a 2,7:1 e o azul a 1,3:1 — somem</td></tr>
   </table>
 
   <div class="grid2">

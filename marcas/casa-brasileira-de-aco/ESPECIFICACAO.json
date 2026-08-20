@@ -1,0 +1,1190 @@
+{
+  "marca": "Casa Brasileira de Aço",
+  "negocio": "corte e dobra de vergalhão para construção civil",
+  "versao_da_identidade": "1.0",
+  "estado": "definida",
+  "conceito": "Três listras paralelas nas cores do Brasil sob CASA BRASILEIRA. Para quem olha rápido, é a bandeira: diz Casa Brasileira. Para quem é do ramo, são três vergalhões alinhados: diz De Aço. A calibragem — espessura e respiro — é o que decide qual leitura domina.",
+  "regra_de_ouro": "A listra é calculada a partir das métricas da fonte, nunca desenhada à mão. Mudou o corpo ou a entreletra? Rode fonte/vetor.py de novo — não corrija esticando no editor.",
+  "paleta": [
+    {
+      "nome": "Verde Casa",
+      "hex": "#006B3C",
+      "rgb": [
+        0,
+        107,
+        60
+      ],
+      "cmyk_calculado": [
+        100,
+        0,
+        44,
+        58
+      ],
+      "uso": "DE AÇO, listra superior, botões, links"
+    },
+    {
+      "nome": "Amarelo Ouro",
+      "hex": "#F2B705",
+      "rgb": [
+        242,
+        183,
+        5
+      ],
+      "cmyk_calculado": [
+        0,
+        24,
+        98,
+        5
+      ],
+      "uso": "listra do meio; acento. Nunca texto sobre fundo claro"
+    },
+    {
+      "nome": "Azul Profundo",
+      "hex": "#002B5C",
+      "rgb": [
+        0,
+        43,
+        92
+      ],
+      "cmyk_calculado": [
+        100,
+        53,
+        0,
+        64
+      ],
+      "uso": "listra inferior, fundo institucional, frota"
+    },
+    {
+      "nome": "Tinta",
+      "hex": "#14161C",
+      "rgb": [
+        20,
+        22,
+        28
+      ],
+      "cmyk_calculado": [
+        29,
+        21,
+        0,
+        89
+      ],
+      "uso": "CASA BRASILEIRA e texto corrido"
+    },
+    {
+      "nome": "Papel",
+      "hex": "#F5F4F0",
+      "rgb": [
+        245,
+        244,
+        240
+      ],
+      "cmyk_calculado": [
+        0,
+        0,
+        2,
+        4
+      ],
+      "uso": "fundo claro padrão"
+    },
+    {
+      "nome": "Branco",
+      "hex": "#FFFFFF",
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "cmyk_calculado": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "uso": "fundo alternativo e marca reversa"
+    },
+    {
+      "nome": "Cinza",
+      "hex": "#8A8B90",
+      "rgb": [
+        138,
+        139,
+        144
+      ],
+      "cmyk_calculado": [
+        4,
+        3,
+        0,
+        44
+      ],
+      "uso": "fios, molduras, elementos de apoio"
+    },
+    {
+      "nome": "Cinza texto",
+      "hex": "#5A5C60",
+      "rgb": [
+        90,
+        92,
+        96
+      ],
+      "cmyk_calculado": [
+        6,
+        4,
+        0,
+        62
+      ],
+      "uso": "legendas e texto secundário"
+    }
+  ],
+  "nota_sobre_cor": "O HEX/RGB e a especificacao para tela e e definitivo. O CMYK listado e conversão aritmética: serve para pedir a prova, não para fechar a tiragem. Pantone não está especificado de propósito — precisa ser escolhido em prova impressa com a gráfica, a partir do CMYK, e só depois anotado aqui. Pintura de frota exige o mesmo: prova numa amostra do substrato.",
+  "tipografia": {
+    "familia": "Jura",
+    "peso": "Light (300)",
+    "nome_interno": "Jura Light",
+    "versao": "Version 5.106",
+    "licenca": "SIL Open Font License 1.1",
+    "arquivo": "Jura-Light.ttf",
+    "sha256": "c891a381df056b2c4dfe85841e911bf45da0890fa21a7b2692cbe5ea1f505e1e",
+    "unidades_por_em": 2000,
+    "caixa": "sempre alta, no nome e nas etiquetas",
+    "apoio": {
+      "texto_corrido": "Work Sans (Regular 400 / Bold 700)",
+      "dados_e_legendas": "IBM Plex Mono (Regular 400)"
+    },
+    "descartadas": [
+      "Italiana",
+      "Poiret One",
+      "Outfit",
+      "Work Sans",
+      "Arsenal SC"
+    ]
+  },
+  "geometria": {
+    "unidade": "todas as medidas são fração do corpo (font-size) do nome",
+    "entreletra_base": 0.155,
+    "vao_optico_alvo": 0.2698,
+    "vao_de_palavra": 0.6445,
+    "ajuste_optico_de_aco": {
+      "por_que": "D, E, Ç e O têm lateral mais larga na Jura Light. Com a mesma entreletra numérica o vão de tinta de DE AÇO sai 8% maior que o de CASA BRASILEIRA. O que se iguala é o vão, não o número.",
+      "D-E": -0.0552,
+      "espaco_DE_ACO": 0.055,
+      "A-C_cedilha": 0.0203,
+      "C_cedilha-O": -0.0342
+    },
+    "listra": {
+      "quantidade": 3,
+      "ordem": [
+        "verde",
+        "amarelo",
+        "azul"
+      ],
+      "espessura": 0.14,
+      "respiro_entre_listras": "0,34 x a espessura",
+      "topo_abaixo_da_base": 0.32,
+      "inicio": "borda esquerda da tinta do C (não o avanço do glifo)",
+      "fim": "borda direita da tinta do último A de BRASILEIRA",
+      "nunca": "sob DE AÇO"
+    },
+    "bloco_de_listras_solto": {
+      "onde": "alternativas 1, 2, 3 e símbolo",
+      "comprimento": "2,0 x a altura do bloco",
+      "espessura": "0,28 da altura, normalizada junto com o respiro",
+      "respiro": "0,34 x a espessura"
+    },
+    "area_de_protecao": {
+      "X": "altura do conjunto das três listras",
+      "respiro_minimo_em_volta": "1 X"
+    },
+    "escala_minima": {
+      "tela_px": 15,
+      "impresso_mm": 9
+    },
+    "larguras_no_corpo_1": {
+      "tinta_CASA_BRASILEIRA": 9.8965,
+      "tinta_DE_ACO_com_ajuste": 3.97075,
+      "tinta_do_nome_inteiro": 14.51175,
+      "altura_das_tres_listras": 0.5152
+    },
+    "vaos_medidos_no_corpo_1": {
+      "CASA_BRASILEIRA": [
+        0.2385,
+        0.2495,
+        0.2495,
+        0.295,
+        0.2075,
+        0.2495,
+        0.325,
+        0.335,
+        0.265,
+        0.28,
+        0.335,
+        0.2075
+      ],
+      "DE_ACO_apos_ajuste": [
+        0.2698,
+        0.2698,
+        0.2698
+      ]
+    }
+  },
+  "composicoes": {
+    "principal": {
+      "arquivo": "CBA-principal-*",
+      "descricao": "nome em uma linha, listra sob CASA BRASILEIRA",
+      "uso": "padrão em tudo. Só trocar quando a proporção do espaço impedir."
+    },
+    "alt1-horizontal": {
+      "arquivo": "CBA-alt1-horizontal-*",
+      "descricao": "bloco de listras à esquerda, nome em duas linhas",
+      "uso": "espaços largos e baixos onde a principal ficaria pequena"
+    },
+    "alt2-vertical": {
+      "arquivo": "CBA-alt2-vertical-*",
+      "descricao": "bloco de listras acima, nome centralizado em duas linhas",
+      "uso": "espaços estreitos e altos"
+    },
+    "alt3-uma-linha": {
+      "arquivo": "CBA-alt3-uma-linha-*",
+      "descricao": "bloco de listras à esquerda, nome inteiro em uma linha",
+      "uso": "faixas muito baixas: cabeçalho de site, rodapé, assinatura de e-mail"
+    },
+    "simbolo": {
+      "arquivo": "CBA-simbolo-*",
+      "descricao": "as três listras isoladas em quadro quadrado",
+      "uso": "avatar, favicon, adesivo. Elemento derivado: nunca substitui a marca em documento, proposta ou etiqueta."
+    }
+  },
+  "versoes_de_cor": {
+    "cor": "fundo transparente, para aplicar sobre fundo claro próprio",
+    "papel": "fundo #F5F4F0 — o padrao do sistema",
+    "branco": "fundo branco puro",
+    "reversa-azul": "sobre #002B5C; DE AÇO em #F2B705, listra branco/amarelo/branco",
+    "reversa-preto": "sobre #14161C; mesma regra do azul: DE AÇO em #F2B705, listra branco/amarelo/branco",
+    "mono-preto": "uma cor: gravação, carimbo, jornal",
+    "mono-branco": "uma cor sobre fundo escuro: bordado, serigrafia, pintura de frota"
+  },
+  "proibido": [
+    "esticar, achatar ou distorcer em qualquer proporção",
+    "estender a listra sob DE AÇO — desfaz a única regra de significado da marca",
+    "trocar as cores ou a ordem das listras",
+    "inclinar ou rotacionar a assinatura",
+    "aplicar sobre fundo que anule o amarelo",
+    "trocar a tipografia ou redigitar o nome em outra fonte",
+    "redesenhar a listra à mão em vez de recalcular pela métrica",
+    "usar o símbolo sozinho onde o nome precisa aparecer"
+  ],
+  "regra_de_fundo_escuro": {
+    "regra": "Sobre qualquer fundo escuro a listra vira branco/amarelo/branco e DE AÇO vira amarelo. Não é gosto: é contraste medido.",
+    "contraste_sobre_tinta_14161C": {
+      "branco": "18,1:1",
+      "amarelo": "9,9:1",
+      "verde": "2,7:1 — fraco",
+      "azul": "1,3:1 — invisível"
+    },
+    "contraste_sobre_azul_002B5C": {
+      "branco": "14,0:1",
+      "amarelo": "7,7:1",
+      "verde": "2,1:1 — fraco"
+    },
+    "consequencia": "verde e azul saem da listra em fundo escuro. As três listras continuam três: o que carrega a leitura é a contagem e o amarelo no meio, não as três cores."
+  },
+  "formatos_entregues": {
+    "svg": "vetor, texto em curvas — não depende da Jura instalada",
+    "pdf": "vetor para grafica",
+    "png-alta": "8000 px na maior dimensao",
+    "png-web": "1600 px na maior dimensao",
+    "icones": "símbolo quadrado em 1024, 512, 256, 128, 64 e 32 px"
+  },
+  "inventario": [
+    {
+      "arquivo": "marca/CBA-alt1-horizontal-branco.svg",
+      "bytes": 17610,
+      "sha256": "f9a3e1a7f6ad4e8fd4297624a19938f1a9b6022a596716d20d72cb3eedba0069",
+      "viewbox": "1144x278"
+    },
+    {
+      "arquivo": "marca/CBA-alt1-horizontal-cor.svg",
+      "bytes": 17562,
+      "sha256": "b3d8ffa3b606fc0f7178b117da7ac555c820495627357169e9ea78f2eb211dd1",
+      "viewbox": "1144x278"
+    },
+    {
+      "arquivo": "marca/CBA-alt1-horizontal-mono-branco.svg",
+      "bytes": 17610,
+      "sha256": "7b437f96e1b639d76e70306f56964f7850aa8a2c9e2902593fd6b3580a26ffd4",
+      "viewbox": "1144x278"
+    },
+    {
+      "arquivo": "marca/CBA-alt1-horizontal-mono-preto.svg",
+      "bytes": 17562,
+      "sha256": "2f583b1874e186ca593ddbf334f5538d3cbcdd9d2daf75b264977bb642d1ed12",
+      "viewbox": "1144x278"
+    },
+    {
+      "arquivo": "marca/CBA-alt1-horizontal-papel.svg",
+      "bytes": 17610,
+      "sha256": "8e7e99847726f3021c98dbd8cd45826c764f477c620eb10ff0fdaa3bfe6dfac4",
+      "viewbox": "1144x278"
+    },
+    {
+      "arquivo": "marca/CBA-alt1-horizontal-reversa-azul.svg",
+      "bytes": 17610,
+      "sha256": "fda0a64cb9415166207aac499e4dbb1ae63a62a3f51e6409de4b2b66214280e1",
+      "viewbox": "1144x278"
+    },
+    {
+      "arquivo": "marca/CBA-alt1-horizontal-reversa-preto.svg",
+      "bytes": 17610,
+      "sha256": "28b3b33772b02569c0f5403b5e65c1342a1710aec0f5779d9fc21ca90e56e759",
+      "viewbox": "1144x278"
+    },
+    {
+      "arquivo": "marca/CBA-alt2-vertical-branco.svg",
+      "bytes": 17632,
+      "sha256": "46e606e1fd1516938080617880316b39bcd8c090e12d36faea6233aac2e1fb0c",
+      "viewbox": "857x440"
+    },
+    {
+      "arquivo": "marca/CBA-alt2-vertical-cor.svg",
+      "bytes": 17585,
+      "sha256": "b351677e1f8b290c49440c6703710bbba9bac2a86ad6b500e8d4c8fe8f2f94d4",
+      "viewbox": "857x440"
+    },
+    {
+      "arquivo": "marca/CBA-alt2-vertical-mono-branco.svg",
+      "bytes": 17632,
+      "sha256": "87cfd2dfa44d18410133548b911abb75225862e9ce3b65b0b2e48fd9e7907c57",
+      "viewbox": "857x440"
+    },
+    {
+      "arquivo": "marca/CBA-alt2-vertical-mono-preto.svg",
+      "bytes": 17585,
+      "sha256": "fb3057ac3b295142650852a9882797539b22d9cba41cb4870ff395a8cb4ce202",
+      "viewbox": "857x440"
+    },
+    {
+      "arquivo": "marca/CBA-alt2-vertical-papel.svg",
+      "bytes": 17632,
+      "sha256": "d321f8a5c3c8af6b6198ea07d13d81ab22f5570a3922e4316987215b96c46ba4",
+      "viewbox": "857x440"
+    },
+    {
+      "arquivo": "marca/CBA-alt2-vertical-reversa-azul.svg",
+      "bytes": 17632,
+      "sha256": "02d31e0f86a0547d05daeae29f704dd95f0c8bc2ed1cf3bde584a67205853961",
+      "viewbox": "857x440"
+    },
+    {
+      "arquivo": "marca/CBA-alt2-vertical-reversa-preto.svg",
+      "bytes": 17632,
+      "sha256": "677253eec62eeb1fa2f2ede270fe0eb29e002af48c692f102104720b4c3c166a",
+      "viewbox": "857x440"
+    },
+    {
+      "arquivo": "marca/CBA-alt3-uma-linha-branco.svg",
+      "bytes": 19135,
+      "sha256": "001bf951fcd5382eb85ad6262d0dcb67db7d4cfcc82582ed2919ce763e066692",
+      "viewbox": "1434x223"
+    },
+    {
+      "arquivo": "marca/CBA-alt3-uma-linha-cor.svg",
+      "bytes": 19087,
+      "sha256": "17296cddc9e9c125c929e3adfe1d53e27057c3097e5333fabdb9e32acbc0d99b",
+      "viewbox": "1434x223"
+    },
+    {
+      "arquivo": "marca/CBA-alt3-uma-linha-mono-branco.svg",
+      "bytes": 19135,
+      "sha256": "2abafaa94bee8672c21361087844c17c34bad0aa6b92942c997af85782c58f44",
+      "viewbox": "1434x223"
+    },
+    {
+      "arquivo": "marca/CBA-alt3-uma-linha-mono-preto.svg",
+      "bytes": 19087,
+      "sha256": "082a92e644cb245e44595fd25703e51dc7605b82bd9e713328dad9ea34f042fc",
+      "viewbox": "1434x223"
+    },
+    {
+      "arquivo": "marca/CBA-alt3-uma-linha-papel.svg",
+      "bytes": 19135,
+      "sha256": "e43c8c8c53f060a584276ce7bd0069823f5ecfb6b7d4063b3d1de9a5aa08a78d",
+      "viewbox": "1434x223"
+    },
+    {
+      "arquivo": "marca/CBA-alt3-uma-linha-reversa-azul.svg",
+      "bytes": 19135,
+      "sha256": "cf9636b8a3c8766354fb8a6e8a6d4f9bc3689477621a4c5efc0226357d404620",
+      "viewbox": "1434x223"
+    },
+    {
+      "arquivo": "marca/CBA-alt3-uma-linha-reversa-preto.svg",
+      "bytes": 19135,
+      "sha256": "1e84bf5ce5beaeabbbdfeeb29797d7074a43f3493cddbb13b8e1ca337789eeb6",
+      "viewbox": "1434x223"
+    },
+    {
+      "arquivo": "marca/CBA-principal-branco.svg",
+      "bytes": 16509,
+      "sha256": "5f3afea4df1d7d3feab2beefeef982ce3284f6202ec609b855ab0b2b7a1902a8",
+      "viewbox": "1574x230"
+    },
+    {
+      "arquivo": "marca/CBA-principal-cor.svg",
+      "bytes": 16461,
+      "sha256": "96a5dc4bbd95a1fde595e5b2cdac4fc383c7c526c0974f203f72b31eca1ea981",
+      "viewbox": "1574x230"
+    },
+    {
+      "arquivo": "marca/CBA-principal-mono-branco.svg",
+      "bytes": 16509,
+      "sha256": "76ef7b6818c6c6229257fc35f634834c7b1f1d9ef2808f465fe3d5f09e1b6593",
+      "viewbox": "1574x230"
+    },
+    {
+      "arquivo": "marca/CBA-principal-mono-preto.svg",
+      "bytes": 16461,
+      "sha256": "01326ad4cb295b5f0656902b50977ad0c413e2c3c2bda1fedbc34e7183344b43",
+      "viewbox": "1574x230"
+    },
+    {
+      "arquivo": "marca/CBA-principal-papel.svg",
+      "bytes": 16509,
+      "sha256": "20fd07e16a23d772ece5cd1d4fc08e8c7b9f15fc1c8d199696f9e40574d2716a",
+      "viewbox": "1574x230"
+    },
+    {
+      "arquivo": "marca/CBA-principal-reversa-azul.svg",
+      "bytes": 16509,
+      "sha256": "39ea6646da39ef506d1141a1710c766573b6d2e5fe4373611c6166d190b27073",
+      "viewbox": "1574x230"
+    },
+    {
+      "arquivo": "marca/CBA-principal-reversa-preto.svg",
+      "bytes": 16509,
+      "sha256": "9551994a9debbf4a5418079e599f560695b3c5c5db886ecb4fa15476dc78fa7f",
+      "viewbox": "1574x230"
+    },
+    {
+      "arquivo": "marca/CBA-simbolo-branco.svg",
+      "bytes": 359,
+      "sha256": "267b07e4322c9fc631ac2807f5da129f508959730ebc559bd3f9206cb13809f9",
+      "viewbox": "512x512"
+    },
+    {
+      "arquivo": "marca/CBA-simbolo-cor.svg",
+      "bytes": 312,
+      "sha256": "c8350e126271a3b673514aa7d631e3122d23372882efdcc642a47f23046d463a",
+      "viewbox": "512x512"
+    },
+    {
+      "arquivo": "marca/CBA-simbolo-mono-branco.svg",
+      "bytes": 359,
+      "sha256": "0e3e99f323cfe9021a7a6d5edad96eac5ab532a147e7d4f552ce669e0fd730f5",
+      "viewbox": "512x512"
+    },
+    {
+      "arquivo": "marca/CBA-simbolo-mono-preto.svg",
+      "bytes": 312,
+      "sha256": "82531c795eed55f5f694620b9e0d3c3dd5812ce3b716933564baf4f6660a0850",
+      "viewbox": "512x512"
+    },
+    {
+      "arquivo": "marca/CBA-simbolo-papel.svg",
+      "bytes": 359,
+      "sha256": "5404ecabdcace52434428859fc767093fd6f503c52201f0a51fc1fdc65b65b18",
+      "viewbox": "512x512"
+    },
+    {
+      "arquivo": "marca/CBA-simbolo-reversa-azul.svg",
+      "bytes": 359,
+      "sha256": "f8357175272148a149682cc49d076606a49ca81be312167b53fd7e0ba338a686",
+      "viewbox": "512x512"
+    },
+    {
+      "arquivo": "marca/CBA-simbolo-reversa-preto.svg",
+      "bytes": 359,
+      "sha256": "ef8105494c83edb82d038642828147414229a58991f9b3f0c5659ab6442095f3",
+      "viewbox": "512x512"
+    },
+    {
+      "arquivo": "marca/FOLHA-DE-CONFERENCIA.pdf",
+      "bytes": 132832,
+      "sha256": "16be618c7e35da7d5105747a5ce2144733030b37dd872cbd4976b85af1cc36d0"
+    },
+    {
+      "arquivo": "marca/FOLHA-DE-CONFERENCIA.png",
+      "bytes": 528953,
+      "sha256": "366109b0d3572f55c1462f0ff682a34dcbbe81240105117238ce513d59e8da3a"
+    },
+    {
+      "arquivo": "marca/FOLHA-DE-CONFERENCIA.svg",
+      "bytes": 506093,
+      "sha256": "4397b73f2dc8e8d532b90b1a502f755b7804e43ac23702ebd48ff5f7cd667ce9",
+      "viewbox": "3220x1178"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-branco-1024.png",
+      "bytes": 5608,
+      "sha256": "209c9100315572221da44d3de47b05b349096a545d88dc68615b78dca7bc1fc4"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-branco-128.png",
+      "bytes": 576,
+      "sha256": "e6a7e638b9710feeb610935695175fc0aa7568d06951162e3b81699635ebc993"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-branco-256.png",
+      "bytes": 1005,
+      "sha256": "d162833ecb38ebb59a8112744e4353b9a5c88e7c5826c2e6bfcd993bf8230555"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-branco-32.png",
+      "bytes": 266,
+      "sha256": "b8fc9eaee7ef3b2ccf658c05e26a6ffb154a71ca8bbc77299139c8c88199a549"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-branco-512.png",
+      "bytes": 2137,
+      "sha256": "c996f0e131e89a7a5045d0042354aff982f0c4848533e979bfd0a8c294d8a3b2"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-branco-64.png",
+      "bytes": 389,
+      "sha256": "73f64b8101c4d641889a61588b04d293d8a8405afa0c89f4b0abb6ff3a141108"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-cor-1024.png",
+      "bytes": 5012,
+      "sha256": "651021c83c3e37ad1048ed87c96d9deab787eb3abcea5d12be3ea8647005a221"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-cor-128.png",
+      "bytes": 427,
+      "sha256": "64ad34bdea0721a3ec62b3241e7b49685dd9a45cf1539b6aaa2eb16fbde208d7"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-cor-256.png",
+      "bytes": 691,
+      "sha256": "22e1baf2e698878b766847b89385b425ec85907c1a8ab416853a0b401bbf903a"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-cor-32.png",
+      "bytes": 255,
+      "sha256": "182ff693a0699fae2995c50b192614910328a4cbed361a95660fd1545aea274a"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-cor-512.png",
+      "bytes": 1610,
+      "sha256": "8481fb4fce5fe2953dbafaefd86897b19355e7a6381c0b664f04475486d6e9c8"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-cor-64.png",
+      "bytes": 327,
+      "sha256": "a372808a43b2b74f766526c93fdd6cd67c2c71a507bb01ec3542d2e2b708676d"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-branco-1024.png",
+      "bytes": 5602,
+      "sha256": "aedd1e72ee22920171162dc4cc7c3b4987588e62bfaf2e89751044b987cabc8e"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-branco-128.png",
+      "bytes": 579,
+      "sha256": "bde672bf1768348fad469d9031ede31ae9e7b61d8f81f9382447aead559734f4"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-branco-256.png",
+      "bytes": 1000,
+      "sha256": "7ad820466f8d829a4aca6ba689221d8e67301b6902008ee9a81e9b24ca211ac7"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-branco-32.png",
+      "bytes": 253,
+      "sha256": "2ca88747f8110a2984804db60580f2fc983b90a972e7d899063c6d5cc68f3d50"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-branco-512.png",
+      "bytes": 2130,
+      "sha256": "c0edd3ddcdeae2097c27ae31a3128bba22e12eaef62c06fa64614072b89146dd"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-branco-64.png",
+      "bytes": 362,
+      "sha256": "c03e45c843f6cae805fa1fbe7cd45de41884c7163cf4a4e6bb9bf9fa23ef7beb"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-preto-1024.png",
+      "bytes": 5031,
+      "sha256": "8dca1ad09a44324d5de787b4f6afff1eff7d69edb90cb061b434d5e039e744cb"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-preto-128.png",
+      "bytes": 425,
+      "sha256": "ce019c5955c1c3bdd2d04da395bc7a5e534825dc9fc4c7d39ce1ee1bcf3a9832"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-preto-256.png",
+      "bytes": 687,
+      "sha256": "66aee4931dff434791fe4d00e356a1967b419bd0c95935c3259f9dfa8b842e4c"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-preto-32.png",
+      "bytes": 245,
+      "sha256": "50fb4d44a98bdd8c43096b1a9e84f11bbb418aace987760d2e140e17962d551a"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-preto-512.png",
+      "bytes": 1618,
+      "sha256": "2c87c7b070f5e2c46246011f43cec7427a96b8990c4a898bc2d4f3a1c7e25ee1"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-mono-preto-64.png",
+      "bytes": 324,
+      "sha256": "83672f4fa2aa82751f853b3b9424ec6f480d936c3e8730185cc214e1f3f81bce"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-papel-1024.png",
+      "bytes": 5619,
+      "sha256": "bb50e34377960ae00f4865d1e38f8c036028b5895483924b3ba01714a8b18ec6"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-papel-128.png",
+      "bytes": 589,
+      "sha256": "8c3c340b357e2eb1f9a2bbdc838c8310c194541b7acb9db35e8f619085c0e990"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-papel-256.png",
+      "bytes": 1003,
+      "sha256": "934486a80dc4f1e0a61d2ec84dcaf3784a7b8f0078d0e6cceea430344d16b230"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-papel-32.png",
+      "bytes": 263,
+      "sha256": "e2b043a52f95ac737d8cdff39304f5606c0e27cef97a5323427d1af02fd1bdcd"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-papel-512.png",
+      "bytes": 2137,
+      "sha256": "1c488b7d3854e13b247613e2505ccb47db782022365978a47b8a5922a349cf11"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-papel-64.png",
+      "bytes": 381,
+      "sha256": "32c0ce30e84065258a05b706eeb24aff14369134c5385059ac62eaff0076dda1"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-azul-1024.png",
+      "bytes": 5625,
+      "sha256": "3733e83c5e3acd484e84fcf837f74dfa68dd1fa62e50a7e31e44f96fbd7004d4"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-azul-128.png",
+      "bytes": 593,
+      "sha256": "3f2ac9337f738ab24dee512a79adba5dea581a600aa8780c7ac6280208ba0d19"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-azul-256.png",
+      "bytes": 1000,
+      "sha256": "60e41d541e1423738e1f4ed25bd2c973fd9a50b33a6b6bb51a3148ec61db538e"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-azul-32.png",
+      "bytes": 252,
+      "sha256": "23a97363796a36083501f1742e9e3e4de36270355bf13d1fdff03568546e41e8"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-azul-512.png",
+      "bytes": 2140,
+      "sha256": "622c5a9c6033565f19cf7afe1c76d04d365315c8bdb3b8aa4755f389ac7b0967"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-azul-64.png",
+      "bytes": 382,
+      "sha256": "1be3014a9476d38c95640ee39d13045b1a720165675954e05339f262f8f516a0"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-preto-1024.png",
+      "bytes": 5611,
+      "sha256": "598c9db6b6b93600efe916e8ac6d0adc93e8b5053d9ecc7a188d8c617727dc65"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-preto-128.png",
+      "bytes": 584,
+      "sha256": "cfc301ebb7d526f0a58b90ee2b30b34908efd5e0c482d91502b1fdf210617c8d"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-preto-256.png",
+      "bytes": 1003,
+      "sha256": "abdde65754acdb9f8352edab007a3984f25b3e8e7eec7b1903df08114d8886f6"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-preto-32.png",
+      "bytes": 254,
+      "sha256": "a6366d245ce37c62d6555bcbb71738665eced2243d00bb49d79d34084c4814a4"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-preto-512.png",
+      "bytes": 2135,
+      "sha256": "e60b168b5c603614309961a202ff7e2b9f11f2fedffe6864dec42611b40ceba0"
+    },
+    {
+      "arquivo": "marca/icones/CBA-simbolo-reversa-preto-64.png",
+      "bytes": 374,
+      "sha256": "42a11f0bf6e68bc90ad3781ef177bd32f4b7b969cb9b473ae75f69fb30e01261"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt1-horizontal-branco.pdf",
+      "bytes": 6702,
+      "sha256": "1bdead43573c50cb4f4e4bbb0091c959c33c2d0ade0baa78e42de52a622ff9dc"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt1-horizontal-cor.pdf",
+      "bytes": 6694,
+      "sha256": "fe769fd2e5d2b9bc85942c28edf4541f200a620fadfb41056966d424c13879d8"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt1-horizontal-mono-branco.pdf",
+      "bytes": 6670,
+      "sha256": "9010296337a4ff7a37096200f36d7888c748c2235e394d2fcb3af479582142ae"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt1-horizontal-mono-preto.pdf",
+      "bytes": 6656,
+      "sha256": "b0cbfd3ede90d398d0caa9042e8fa2b17dd45bbe84c22e8fe4f61d3928375e3d"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt1-horizontal-papel.pdf",
+      "bytes": 6713,
+      "sha256": "a526c610a75a1625bbff44d4476770b184594eb7973f40799ea7c4c427efa9ac"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt1-horizontal-reversa-azul.pdf",
+      "bytes": 6685,
+      "sha256": "08c578de704eea20aceefbf6c4e8fede9f7569c82dc8d0da2acd7810a26c82db"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt1-horizontal-reversa-preto.pdf",
+      "bytes": 6691,
+      "sha256": "f15e6b7dfbe848ca568677609df60a5a4b1aecabc16b413816134783273aeab5"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt2-vertical-branco.pdf",
+      "bytes": 6787,
+      "sha256": "4da0400ba064f382eaae1ee670fcc5d11a565eb7325ff20029c80d94d1584337"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt2-vertical-cor.pdf",
+      "bytes": 6776,
+      "sha256": "4e934bd1f7572b27c5ea5c259a4dae8385ac8f3389313386e82a0b35d68c25ca"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt2-vertical-mono-branco.pdf",
+      "bytes": 6754,
+      "sha256": "a2fe23d95cdbdc72120e45d4a999f3b11ce1c9fdd5e15a9fd596f99e5963b252"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt2-vertical-mono-preto.pdf",
+      "bytes": 6736,
+      "sha256": "99fb2d19f69cf15a113d64d2476bbd98036189384411a5d6641814e3f85f5d1d"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt2-vertical-papel.pdf",
+      "bytes": 6798,
+      "sha256": "84737083b24e415f93ef25fb359dc472b22e59682f1133ede1166c2eda6e9d4c"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt2-vertical-reversa-azul.pdf",
+      "bytes": 6768,
+      "sha256": "9108ec496d7ce821e37fe92e2e97bf62ee2b99d4f4d14f7970a43496c110046f"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt2-vertical-reversa-preto.pdf",
+      "bytes": 6773,
+      "sha256": "5fd937ba9c9bc12b026e5ff7dea24fc8b410aeab2c8cc22a14f8dd45fa905514"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt3-uma-linha-branco.pdf",
+      "bytes": 6612,
+      "sha256": "a2346fd905aa58e52e74579febb9506e2d498e584e97ea551ff60f51883eae71"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt3-uma-linha-cor.pdf",
+      "bytes": 6600,
+      "sha256": "db19c2cc10a02adb61945fd2003b6917b9752ab25b236747e3678790e0594469"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt3-uma-linha-mono-branco.pdf",
+      "bytes": 6582,
+      "sha256": "28751babb6f125c65dfe45ec8f4453496249efb63df00cb1a233555a14fe2c64"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt3-uma-linha-mono-preto.pdf",
+      "bytes": 6563,
+      "sha256": "b23c0382dd0551f86e8b9e731c1c4b714022168683e854849d309a73462cced2"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt3-uma-linha-papel.pdf",
+      "bytes": 6622,
+      "sha256": "5b8f668b578108ae49ecef9fc7cbb0b6fd53d475816a117a841df607158b5762"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt3-uma-linha-reversa-azul.pdf",
+      "bytes": 6598,
+      "sha256": "980f8dba9ffa9bf4d9459b54204312e078e24fe0fb892a624e3dfe8f2ec6fcc5"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-alt3-uma-linha-reversa-preto.pdf",
+      "bytes": 6603,
+      "sha256": "da61c2cb19faf27eb997aacecba25bffcb74c872f8cca1390fde3f61f982ff6f"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-principal-branco.pdf",
+      "bytes": 6664,
+      "sha256": "0665890ccd4d8ceaf8b3f695db94130e5ec1f4ac6d9e3ebf191536eb18748056"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-principal-cor.pdf",
+      "bytes": 6651,
+      "sha256": "42ce21da2f7ef60fa135a05e3bb2104fd38aec3e03ba923eeca50c45f598a4ee"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-principal-mono-branco.pdf",
+      "bytes": 6624,
+      "sha256": "b7c9bd300ab913f401348c61de3598f3d6b1efcce95853ea59ceeb5298ca0997"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-principal-mono-preto.pdf",
+      "bytes": 6604,
+      "sha256": "584661614bce1444a1d0a84c1dffc544a08c2f58ae852f481c8edb390b51b9b9"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-principal-papel.pdf",
+      "bytes": 6675,
+      "sha256": "997aeb3a55d881ea3f148ad6ccccab8c91fb9670df157b0ba21fc0459f6d0224"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-principal-reversa-azul.pdf",
+      "bytes": 6646,
+      "sha256": "f3d4f089ddbabbc23a7b3304194046b466b980785fd2c249ad3390a17bb20ebe"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-principal-reversa-preto.pdf",
+      "bytes": 6649,
+      "sha256": "a7c4fdd3dc631003f0e7e07a3666da3f867147b60c16a63c912f84b524c61f57"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-simbolo-branco.pdf",
+      "bytes": 1105,
+      "sha256": "bbca1318879043b5bb9e35b7bfe3828df48b649a00c96baea5744bb3044c2940"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-simbolo-cor.pdf",
+      "bytes": 1100,
+      "sha256": "90b013f084b856e77d411ba152c24ba442cc3bc50a6a4fbd228a744b3d3c02be"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-simbolo-mono-branco.pdf",
+      "bytes": 1087,
+      "sha256": "d69b2902daabc68c5d82423700fda4b8ea53f76c6934459629af4d04674ca28f"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-simbolo-mono-preto.pdf",
+      "bytes": 1079,
+      "sha256": "f1865c284256b399199980b4007a10d408351e10d471f615c40c53e0fcbfa4ba"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-simbolo-papel.pdf",
+      "bytes": 1117,
+      "sha256": "0d96fc9a23a76d6203dd840b7bfbfc705b5de4727229bfb079731f7aa9ab4329"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-simbolo-reversa-azul.pdf",
+      "bytes": 1098,
+      "sha256": "8b0c667c074952aec383fcb1f98f1c636640012e6474b12aebe47ff6c7b23d5d"
+    },
+    {
+      "arquivo": "marca/pdf/CBA-simbolo-reversa-preto.pdf",
+      "bytes": 1102,
+      "sha256": "c7879a252f1ec6589555ef01da8f76c7c9961acced1d3c85672678b713020b1b"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt1-horizontal-branco.png",
+      "bytes": 178283,
+      "sha256": "c74cbff0ae63c4a81138a10a132ebc6820575fa3a75a2e853d470e1c1625aebb"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt1-horizontal-cor.png",
+      "bytes": 184817,
+      "sha256": "fda1265480b8660c03b0e82d96fa7699b88a39a1bcf6ab796a8f570ad3d42fdb"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt1-horizontal-mono-branco.png",
+      "bytes": 178625,
+      "sha256": "581b92ba2c97af761ce4bc5e9b894afd6ca76011711ca9f6ff42b5d07d28ca5f"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt1-horizontal-mono-preto.png",
+      "bytes": 187351,
+      "sha256": "8ef032569701cabcb3752a6d4a253dd7295199b3b3bda9fc8d885e31f7f4a088"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt1-horizontal-papel.png",
+      "bytes": 178898,
+      "sha256": "e4404d00141829b0137a82a00c170472cc15e195ee8ceddb703fdd7d184016db"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt1-horizontal-reversa-azul.png",
+      "bytes": 177128,
+      "sha256": "280a6e8420e7e1b727dc0c4a06f1018f20997c4e0a23006ecf55604cd866e470"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt1-horizontal-reversa-preto.png",
+      "bytes": 176308,
+      "sha256": "670fb557507d237832467f1c62d55ef1055a7bdd7dff2fccbafff2fe02eb6e30"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt2-vertical-branco.png",
+      "bytes": 267765,
+      "sha256": "3a3ba084693b543333e42ece80b4813d1728f149e63ba726baf3493e0ae5f4d4"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt2-vertical-cor.png",
+      "bytes": 287359,
+      "sha256": "43e1b9ff651f4fe947e38da416cb830b420e86ce5e810616bb593a46eb56091d"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt2-vertical-mono-branco.png",
+      "bytes": 268556,
+      "sha256": "44b54f5e4dc9a3281e9843d7bdce05f5b177a956c83ecaf4085f08ecc3b79eeb"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt2-vertical-mono-preto.png",
+      "bytes": 290808,
+      "sha256": "8e60260e97db6377d7f81741ea3d9cc326eda1cc7b310504391fa0983b3d54f8"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt2-vertical-papel.png",
+      "bytes": 268818,
+      "sha256": "103a11bd87dfbf12f0f6dbf9247b8419148320c4b7c72d5ed16c47f6eca18c1c"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt2-vertical-reversa-azul.png",
+      "bytes": 267195,
+      "sha256": "28bd79c2e04f37dc1350d1f378bca4e71e55c221fadd0a23bbcc3e0d9da252bf"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt2-vertical-reversa-preto.png",
+      "bytes": 266174,
+      "sha256": "b600d44e6619fe57e69d492207987e9ace2e2fd92e552d9e70ee7c5b39cadd88"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt3-uma-linha-branco.png",
+      "bytes": 133732,
+      "sha256": "a813f5868b6057faa841719cfb19c9ed319a0aba446e79b81a69db7236e2252f"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt3-uma-linha-cor.png",
+      "bytes": 137405,
+      "sha256": "2be49cc1646d67a77cc000cdc32bca848bf8f1197ae47ee6772db80b5597136a"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt3-uma-linha-mono-branco.png",
+      "bytes": 131907,
+      "sha256": "076ac9313c543ed3dfbc0374ee11366efdeea6484bf0cfa7d46c5e7e36644760"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt3-uma-linha-mono-preto.png",
+      "bytes": 137928,
+      "sha256": "d6304eac84a3bc9096473c6eae043518eb76c5eec8060a1776092a30ec29282f"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt3-uma-linha-papel.png",
+      "bytes": 134301,
+      "sha256": "bfd182b680bf3643a5685e6cf78f6d68905420f5757c79cf182e53ace3a55531"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt3-uma-linha-reversa-azul.png",
+      "bytes": 132782,
+      "sha256": "4c1c4fb4c2a0747b8ed5c5e473145d5768af01109b3fc82d749e6975fab25574"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-alt3-uma-linha-reversa-preto.png",
+      "bytes": 132551,
+      "sha256": "8ed9351eacdaccfc9d283b7bd1cb11f948fd9128e02f9d4bab5d7b92b0885f69"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-principal-branco.png",
+      "bytes": 151933,
+      "sha256": "081c0a326ed5663b84440bcad41ae9efc831ace0a1c6017b42bf19b42e47db59"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-principal-cor.png",
+      "bytes": 154494,
+      "sha256": "a9d42c24ef20af751cfac40c5784e804de7cfc3d52cf5782c353957c5caed339"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-principal-mono-branco.png",
+      "bytes": 150105,
+      "sha256": "acd312102df4ac1896e3ab56bd5f33b239d02da48903541b92b27e1474549454"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-principal-mono-preto.png",
+      "bytes": 155273,
+      "sha256": "8cfb4e2f15ebbf5eb5b96c49fb7aa1117238ea466661039433bfbfbe77e152f0"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-principal-papel.png",
+      "bytes": 152860,
+      "sha256": "5d1e6beeb0cc6de593ed539056f7aff702565b0b5690e371fd3a3cec70b9c8b1"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-principal-reversa-azul.png",
+      "bytes": 151316,
+      "sha256": "e0e826737b102821cf0753519be33bd9d0f989047bdc5864ab4943c9ceb8c78f"
+    },
+    {
+      "arquivo": "marca/png-alta/CBA-principal-reversa-preto.png",
+      "bytes": 150739,
+      "sha256": "553e12407fcd9b85b3a0996bc333b6653ab0043b9558db15d446e9bcdfaab369"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt1-horizontal-branco.png",
+      "bytes": 31332,
+      "sha256": "7526ec6dff5f396e2b2d027fff21bfa93a46b9cc43846c8943817f13997f3317"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt1-horizontal-cor.png",
+      "bytes": 28256,
+      "sha256": "ac0ffb667fd96719ceb334dfe79673e7ac2d247b07aa8ddd4aeb49847ca4808a"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt1-horizontal-mono-branco.png",
+      "bytes": 31398,
+      "sha256": "e25b1f1d39eaec874e0799053dd30670d5dca7e12a96a9c2cc33f5bf4aeb8b48"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt1-horizontal-mono-preto.png",
+      "bytes": 28714,
+      "sha256": "add970ad2d4da7e102465d2346a53bfd97ab85db92494fb56eadb9dfeed849e6"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt1-horizontal-papel.png",
+      "bytes": 31555,
+      "sha256": "387092c006b039c831b1b392627b60c869be520fb0b5ee05912e4d1ba1febeec"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt1-horizontal-reversa-azul.png",
+      "bytes": 31023,
+      "sha256": "6d5cbaba7656741cbfffae65a29b15f828de4a982cd80779153881c8f7cc1f3c"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt1-horizontal-reversa-preto.png",
+      "bytes": 31014,
+      "sha256": "a9eb7570dec740144904946d1e10953004536e0415f6d619e0c9fa80fa4f8ca7"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt2-vertical-branco.png",
+      "bytes": 38706,
+      "sha256": "ccd67b3c149450105f69c0d3cd450e3ebeaa312464cb8e1158680ade070d6b36"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt2-vertical-cor.png",
+      "bytes": 38223,
+      "sha256": "d0c173513c99bb42ee38e4a6171e92d2b836dc586057f1a18651ebf7050fcdae"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt2-vertical-mono-branco.png",
+      "bytes": 38832,
+      "sha256": "19246e833106597e4108c21902371f319e621471b2a58a33530127e0ae73d72a"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt2-vertical-mono-preto.png",
+      "bytes": 38939,
+      "sha256": "da6b96cd2770c058a82bc45c4b2fb9792faae152d301137297791d6c23979a5c"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt2-vertical-papel.png",
+      "bytes": 39102,
+      "sha256": "7b819fbd943c6fc1c435f37967c765282ad01d6b1f56ca6e86be7b7c6d464c63"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt2-vertical-reversa-azul.png",
+      "bytes": 38492,
+      "sha256": "de0408ed524dfcdfc71d1e7b2bdf3cd52602d15aed959b515c8481b535a65d39"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt2-vertical-reversa-preto.png",
+      "bytes": 38459,
+      "sha256": "1832dbde9d50567953a9f59917a1b6bedfef9cf03e339bda1006d21046bd8b4a"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt3-uma-linha-branco.png",
+      "bytes": 24447,
+      "sha256": "f5787121731e2eae84d9a4563ec5fb58c120711b69bf425f5e498ee6e46c9ece"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt3-uma-linha-cor.png",
+      "bytes": 21990,
+      "sha256": "e9517b715ccfe3365c5fa8020311142e2b7acaefa9bc5f7d4ee0c83070976c69"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt3-uma-linha-mono-branco.png",
+      "bytes": 23656,
+      "sha256": "ea728ebb4fb3e817f26d92bcdf6fc56f6605d20eb8b74b4042c066e87e3d6ad7"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt3-uma-linha-mono-preto.png",
+      "bytes": 21973,
+      "sha256": "3308bf6e4306daeaa7ae75c28daca6effbf888a1060d62540569beda1d896904"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt3-uma-linha-papel.png",
+      "bytes": 24586,
+      "sha256": "8c2e168d44b7c14eb91dc21cd558d5309ac38a061513b6f1e5763519e1afd51c"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt3-uma-linha-reversa-azul.png",
+      "bytes": 24154,
+      "sha256": "1a79beab46593acd9a8adfdf8e1434016e63d8262e9c7a9ffb37c098d9abbd46"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-alt3-uma-linha-reversa-preto.png",
+      "bytes": 24164,
+      "sha256": "4d70e768bba491d1685f6683b6d8d95b49cbe1a0c82c5bb8302feec4504fb320"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-principal-branco.png",
+      "bytes": 27388,
+      "sha256": "906c58c242c81e29fe61ef2672427e7ad14e3403de3dd6ede1c007ebf068f83a"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-principal-cor.png",
+      "bytes": 24745,
+      "sha256": "7513488c405c5db9ed4675757b9c818f25d88ef3db489d0dcb4b5c593acae269"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-principal-mono-branco.png",
+      "bytes": 26343,
+      "sha256": "5a5a27e489943aa4d9bd02eb35c61a1cf0777630c297d2f42d43c30bc5b37a3b"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-principal-mono-preto.png",
+      "bytes": 24546,
+      "sha256": "9a2a059261f4dfd4109bd0cc2b0cb5bb07b9f9ac941c7122eb7d3bf3faac6970"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-principal-papel.png",
+      "bytes": 27661,
+      "sha256": "a4dacc92e413158c71235bdeadcfc12e6dac48a5c478a9aeb3cc41a9163926ec"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-principal-reversa-azul.png",
+      "bytes": 27198,
+      "sha256": "4d30b169330cc089781aa701d8b706e8efb546b34f38a949abbcce3f8cd81b2f"
+    },
+    {
+      "arquivo": "marca/png-web/CBA-principal-reversa-preto.png",
+      "bytes": 27188,
+      "sha256": "fd6d7a42599f5ba362f829275ecfb3999973f033e2ec993e709cf3889e74a53a"
+    }
+  ]
+}

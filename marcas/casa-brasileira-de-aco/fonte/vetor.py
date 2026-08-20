@@ -127,26 +127,57 @@ def marca_l(S=48, bg=None, c1=TINTA, c2=VERDE, cores=CORES, pad_f=0.9):
             f'viewBox="0 0 {W} {H}">{fundo}{bl}{corpo}</svg>')
 
 
+# -------------------------------------------------------------- simbolo so
+def simbolo(L=512, bg=None, cores=CORES, comp_f=0.62):
+    """As tres listras isoladas em quadro quadrado — avatar, favicon, adesivo.
+
+    Elemento derivado. Nao usa a proporcao da listra da assinatura (que e
+    fina em relacao ao nome e desapareceria num quadrado), e sim exatamente
+    o mesmo bloco solto das alternativas 1, 2 e 3: `listras_bloco`, com
+    comprimento 2,0 x a altura do bloco e respiro 0,34 x a espessura.
+    Nunca substitui a marca em documento.
+    """
+    comp = L * comp_f
+    alt = comp / 2.0                      # comp_f de listras_bloco e 2,0
+    bl, _ = listras_bloco(L / 2, L / 2, alt, cores)
+    o = f'<rect width="{L}" height="{L}" fill="{bg}"/>' if bg else ""
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{L}" height="{L}" '
+            f'viewBox="0 0 {L} {L}">{o}{bl}</svg>')
+
+
 # ------------------------------------------------------------------ export
 OUT = "marca"
 os.makedirs(OUT, exist_ok=True)
 
 MONO_P = (TINTA, TINTA, TINTA)
 MONO_B = (BRANCO, BRANCO, BRANCO)
-REV = (BRANCO, AMARELO, BRANCO)
+REV    = (BRANCO, AMARELO, BRANCO)
 
-ARQ = [
-    ("CBA-principal-cor",        marca(96, None,  TINTA,  VERDE,   CORES)),
-    ("CBA-principal-papel",      marca(96, OSSO,  TINTA,  VERDE,   CORES)),
-    ("CBA-principal-branco",     marca(96, BRANCO, TINTA, VERDE,   CORES)),
-    ("CBA-principal-reversa-azul",  marca(96, AZUL,  BRANCO, AMARELO, REV)),
-    ("CBA-principal-reversa-preto", marca(96, TINTA, BRANCO, AMARELO, CORES)),
-    ("CBA-principal-mono-preto", marca(96, None,  TINTA,  TINTA,   MONO_P)),
-    ("CBA-principal-mono-branco", marca(96, TINTA, BRANCO, BRANCO,  MONO_B)),
-    ("CBA-alt1-horizontal",      marca_h(72, None, TINTA, VERDE,   CORES)),
-    ("CBA-alt2-vertical",        marca_v(72, None, TINTA, VERDE,   CORES)),
-    ("CBA-alt3-uma-linha",       marca_l(72, None, TINTA, VERDE,   CORES)),
+# (sufixo, fundo, cor de CASA BRASILEIRA, cor de DE ACO, cores das listras)
+FUNDOS = [
+    ("cor",            None,   TINTA,  VERDE,   CORES),   # fundo transparente
+    ("papel",          OSSO,   TINTA,  VERDE,   CORES),
+    ("branco",         BRANCO, TINTA,  VERDE,   CORES),
+    ("reversa-azul",   AZUL,   BRANCO, AMARELO, REV),
+    ("reversa-preto",  TINTA,  BRANCO, AMARELO, REV),
+    ("mono-preto",     None,   TINTA,  TINTA,   MONO_P),
+    ("mono-branco",    TINTA,  BRANCO, BRANCO,  MONO_B),
 ]
+
+COMPOSICOES = [
+    ("principal",     marca,   96),
+    ("alt1-horizontal", marca_h, 72),
+    ("alt2-vertical",   marca_v, 72),
+    ("alt3-uma-linha",  marca_l, 72),
+]
+
+ARQ = []
+for comp, fn, S in COMPOSICOES:
+    for suf, bg, c1, c2, cores in FUNDOS:
+        ARQ.append((f"CBA-{comp}-{suf}", fn(S, bg, c1, c2, cores)))
+
+for suf, bg, _, _, cores in FUNDOS:
+    ARQ.append((f"CBA-simbolo-{suf}", simbolo(512, bg, cores)))
 
 for nome, svg in ARQ:
     open(os.path.join(OUT, nome + ".svg"), "w", encoding="utf-8").write(svg)

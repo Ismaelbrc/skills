@@ -1,28 +1,98 @@
 CASA BRASILEIRA DE AÇO
-Defesa de marca e manual de identidade · versão 1.0 · 2026 (revisada)
+Identidade 1.0 · DEFINIDA · 2026
 
-CASA_BRASILEIRA_manual.html   documento completo, um arquivo só, fontes embutidas.
-                              Abre em qualquer navegador, sem internet.
-CASA_BRASILEIRA_manual.pdf    o mesmo documento em A4, 12 páginas, pronto para imprimir.
+Corte e dobra de vergalhão para construção civil.
 
-marca/                        arquivos da marca com o texto em curvas (não dependem
-                              da fonte Jura instalada).
-  CBA-principal-*             composição principal — listra sob CASA BRASILEIRA
-    -cor                      fundo transparente
-    -papel / -branco          sobre fundo claro
-    -reversa-azul             sobre o azul institucional
-    -reversa-preto            sobre preto
-    -mono-preto / -mono-branco  uma cor só: gravação, frota, bordado
-  CBA-alt1-horizontal         listras à esquerda, nome em duas linhas
-  CBA-alt2-vertical           listras acima, nome centralizado
-  CBA-alt3-uma-linha          assinatura horizontal compacta
-  .svg  vetor, para qualquer tamanho
-  .png  4x (≈6260 px de largura na principal)
-  .pdf  vetor para gráfica
 
-fonte/                        scripts que geram tudo. A listra é calculada a partir
-                              das métricas reais da Jura Light — se o corpo ou a
-                              entreletra mudar, é preciso rodar de novo, não
-                              redesenhar à mão.
+COMECE AQUI
+───────────
+ESPECIFICACAO.md        Ficha técnica: cor, tipografia, geometria, o que nunca
+                        fazer. É o documento de referência para qualquer pessoa
+                        que vá reproduzir a marca. Leia antes de abrir editor.
+ESPECIFICACAO.json      O mesmo conteúdo em formato de máquina, com o inventário
+                        e o SHA-256 de cada arquivo.
+CASA_BRASILEIRA_manual.pdf   Defesa da marca e manual completo, A4, 12 páginas.
+CASA_BRASILEIRA_manual.html  O mesmo documento, arquivo único, abre offline.
 
-Tipografia: Jura Light (SIL Open Font License).
+
+A MARCA
+───────
+marca/                  35 arquivos em vetor, texto já convertido em curvas —
+                        não dependem da Jura estar instalada em lugar nenhum.
+
+  4 composições × 7 versões de cor, mais o símbolo:
+
+    CBA-principal-*        PADRÃO. Nome em uma linha, listra sob CASA BRASILEIRA.
+    CBA-alt1-horizontal-*  Listras à esquerda, nome em duas linhas.
+    CBA-alt2-vertical-*    Listras acima, nome centralizado.
+    CBA-alt3-uma-linha-*   Listras à esquerda, nome inteiro em uma linha.
+    CBA-simbolo-*          As três listras sozinhas, em quadrado. Avatar e
+                           favicon. NUNCA substitui a marca em documento.
+
+  As sete versões de cor:
+
+    -cor              fundo transparente
+    -papel            sobre #F5F4F0, o fundo padrão do sistema
+    -branco           sobre branco puro
+    -reversa-azul     sobre #002B5C
+    -reversa-preto    sobre #14161C
+    -mono-preto       uma cor: gravação, carimbo, jornal
+    -mono-branco      uma cor sobre escuro: bordado, serigrafia, frota
+
+  marca/png-alta/       8000 px na maior dimensão
+  marca/png-web/        1600 px na maior dimensão
+  marca/pdf/            vetor para gráfica
+  marca/icones/         símbolo em 1024, 512, 256, 128, 64 e 32 px
+  marca/FOLHA-DE-CONFERENCIA.pdf   as 35 aplicações numa folha, para bater o olho
+
+
+AS TRÊS COISAS QUE MAIS DÃO ERRADO
+──────────────────────────────────
+1. A listra é CALCULADA, não desenhada. Ela começa na tinta do C e termina na
+   tinta do último A de BRASILEIRA, com precisão de fração de pixel. Se você
+   precisa de outro tamanho, use o SVG — ele escala sem perda. Nunca estique.
+
+2. A listra NUNCA passa por baixo de DE AÇO. Essa é a única regra de significado
+   da marca: as cores do Brasil sublinham exatamente a parte brasileira do nome.
+
+3. DE AÇO tem ajuste óptico por par de letras. A entreletra numérica é a mesma
+   das duas partes, mas os glifos D, E, Ç e O têm lateral mais larga: sem
+   correção o vão de tinta sai 8% maior. Se você redigitar o nome num editor
+   em vez de usar estes arquivos, vai perder o ajuste.
+
+
+PANTONE
+───────
+Não está especificado, de propósito. O HEX/RGB é definitivo para tela; o CMYK
+da ficha é conversão aritmética e serve para pedir a prova, não para fechar a
+tiragem. Escolha o Pantone em prova impressa com a gráfica e anote na ficha
+depois. Pintura de frota: prova numa amostra do substrato.
+
+
+CONFERIR OS ARQUIVOS
+────────────────────
+    sha256sum -c SHA256SUMS.txt
+
+Se algum arquivo circulou por e-mail e você quer saber se ainda é o original,
+é assim que se descobre.
+
+
+REGERAR TUDO
+────────────
+fonte/                  O código que desenha a marca, e a Jura-Light.ttf usada.
+                        Toda a geometria sai das métricas reais da fonte.
+
+    python3 vetor.py      gera os 35 SVG
+    python3 rasteriza.py  gera PNG, PDF e ícones
+    python3 prova.py      gera a folha de conferência
+    python3 build_doc.py  monta o manual em HTML
+    python3 pdf.py        exporta o manual em PDF
+    python3 spec.py       gera ESPECIFICACAO.json e SHA256SUMS.txt
+    python3 ficha.py      gera ESPECIFICACAO.md
+
+Precisa de: fontTools, cairosvg, playwright (só para o PDF do manual).
+A ficha técnica é GERADA pelo código. Não edite à mão — corrija o código e
+rode de novo, senão a especificação e o desenho se separam.
+
+
+Tipografia: Jura Light, SIL Open Font License 1.1.
