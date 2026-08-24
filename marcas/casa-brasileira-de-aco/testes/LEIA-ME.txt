@@ -1,0 +1,17 @@
+TESTES — NÃO APROVADO, NÃO FAZ PARTE DA IDENTIDADE
+
+Escrever a palavra com as três listras. Duas rodadas e uma prancha de
+finalistas. Nada daqui entrou no brandbook.
+
+teste_listras.png      rodada 1 · fatiar a Jura Light. Não funciona: traço
+                       fino dividido em três dá três fios, não três listras.
+teste_listras2.png     rodada 2 · dois caminhos
+                         A · letra fatiada, testada em quatro pesos
+                         B · letra vazada dentro do bloco de listras
+teste_finalistas.png   os quatro que sobraram, com a marca aprovada no topo
+
+A proporção das faixas não foi escolhida a olho: é a mesma da assinatura.
+Três listras com respiro 0,34 da espessura somam 3,68 espessuras, então cada
+faixa vale altura_da_maiúscula ÷ 3,68.
+
+Os .svg são vetor e abrem em qualquer editor.
