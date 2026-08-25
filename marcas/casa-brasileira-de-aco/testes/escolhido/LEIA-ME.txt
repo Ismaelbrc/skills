@@ -1,0 +1,33 @@
+O ESCOLHIDO — ainda teste, não entrou no brandbook
+
+Caminho A · letra fatiada, Outfit Bold.
+A palavra escrita com as três listras: a maiúscula é cortada em três faixas
+horizontais nas cores da marca, com respiro de 0,34 da espessura — a mesma
+proporção do sublinhado da assinatura aprovada.
+
+POR QUE ESTE
+  Sobrevive em corpo 15 px, que é o mínimo que o manual já publica.
+  Outfit é geométrica como a Jura: a família não muda de caráter.
+  Não introduz bloco retangular que brigue com etiqueta, placa e frota.
+
+O QUE FOI DESCARTADO E POR QUÊ
+  B · vazada em Jura Light  o traço da letra recortada fecha em corpo 24 px.
+                            Falha o mínimo do próprio manual. Era a minha
+                            aposta na rodada anterior e o número derrubou.
+  A · Big Shoulders Bold    sobrevive melhor (13 px) e é a mais industrial,
+                            mas condensada muda o registro da marca inteira.
+  B · vazada em Outfit Bold empata em 15 px, mas o bloco compete com os
+                            layouts que já existem.
+
+ARQUIVOS
+  svg/       vetor, texto em curvas
+  png-alta/  8000 px na maior dimensão
+  -cor       fundo transparente
+  -papel     #F5F4F0        -branco  #FFFFFF
+  -escuro    #14161C        -azul    #002B5C
+  Em fundo escuro a listra vira branco/amarelo/branco, pela regra que a
+  marca já tem: sobre o preto o azul cai a 1,3:1 e o verde a 2,7:1.
+
+RESSALVA SOBRE CBA
+  Companhia Brasileira de Alumínio, Grupo Votorantim, B3, ticker CBAV3.
+  Como exercício visual funciona. Como marca registrável em metais, não.
