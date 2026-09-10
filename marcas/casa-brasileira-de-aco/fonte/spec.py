@@ -227,11 +227,21 @@ SPEC = {
     },
     "formatos_entregues": {
         "svg": "vetor, texto em curvas — não depende da Jura instalada",
-        "pdf": "vetor para grafica",
-        "png-alta": "8000 px na maior dimensao",
-        "png-web": "1600 px na maior dimensao",
+        "pdf": "vetor para gráfica",
+        "png-alta": "8000 px na maior dimensão, com canal alfa",
+        "png-web": "1600 px na maior dimensão (o símbolo web está em icones/)",
+        "jpg-alta": "8000 px, qualidade 95, sem subamostragem de croma",
         "icones": "símbolo quadrado em 1024, 512, 256, 128, 64 e 32 px",
     },
+    "nota_sobre_jpeg": (
+        "JPEG não tem canal alfa, então as versões de fundo transparente (-cor e "
+        "-mono-preto) não têm JPEG de propósito: achatá-las sobre branco geraria "
+        "arquivo idêntico ao -branco com nome -cor, e é assim que erro de reprodução "
+        "nasce. Quem precisa de JPEG sobre branco usa o -branco. JPEG também é "
+        "compressão com perda e trabalha mal com aresta dura de cor plana: gera franja "
+        "em volta da letra. Está em qualidade 95 e 4:4:4, o menor estrago possível — "
+        "medido, a cor plana desvia no máximo 1 unidade por canal. Onde aceitarem PNG, "
+        "prefira PNG."),
     "inventario": inventario(),
 }
 

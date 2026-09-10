@@ -111,9 +111,10 @@ as três listras isoladas em quadro quadrado. avatar, favicon, adesivo. Elemento
 ## Formatos
 
 - **svg** — vetor, texto em curvas — não depende da Jura instalada
-- **pdf** — vetor para grafica
-- **png-alta** — 8000 px na maior dimensao
-- **png-web** — 1600 px na maior dimensao
+- **pdf** — vetor para gráfica
+- **png-alta** — 8000 px na maior dimensão, com canal alfa
+- **png-web** — 1600 px na maior dimensão (o símbolo web está em icones/)
+- **jpg-alta** — 8000 px, qualidade 95, sem subamostragem de croma
 - **icones** — símbolo quadrado em 1024, 512, 256, 128, 64 e 32 px
 
 ## Nunca
@@ -129,7 +130,7 @@ as três listras isoladas em quadro quadrado. avatar, favicon, adesivo. Elemento
 
 ## Inventário
 
-171 arquivos. O SHA-256 de cada um está em `ESPECIFICACAO.json` e em
+203 arquivos. O SHA-256 de cada um está em `ESPECIFICACAO.json` e em
 `SHA256SUMS.txt`. Para conferir se um arquivo que circulou por aí ainda é o
 original:
 

@@ -42,11 +42,23 @@ marca/                  35 arquivos em vetor, texto já convertido em curvas —
     -mono-preto       uma cor: gravação, carimbo, jornal
     -mono-branco      uma cor sobre escuro: bordado, serigrafia, frota
 
-  marca/png-alta/       8000 px na maior dimensão
-  marca/png-web/        1600 px na maior dimensão
-  marca/pdf/            vetor para gráfica
-  marca/icones/         símbolo em 1024, 512, 256, 128, 64 e 32 px
+  marca/png-alta/       8000 px na maior dimensão, com transparência   35 arq.
+  marca/png-web/        1600 px na maior dimensão                      28 arq.
+  marca/jpg-alta/       8000 px, qualidade 95, sem subamostragem       25 arq.
+  marca/pdf/            vetor para gráfica                             35 arq.
+  marca/icones/         símbolo em 1024, 512, 256, 128, 64 e 32 px     42 arq.
   marca/FOLHA-DE-CONFERENCIA.pdf   as 35 aplicações numa folha, para bater o olho
+
+  PNG ou JPEG?
+  Use PNG sempre que aceitarem. JPEG é compressão com perda e trabalha mal
+  com aresta dura de cor plana: gera franja em volta da letra. Está aqui em
+  qualidade 95 e 4:4:4, o menor estrago possível — a cor plana desvia no
+  máximo 1 unidade por canal, medido.
+
+  JPEG não tem transparência, então as versões -cor e -mono-preto NÃO têm
+  JPEG, de propósito. Achatá-las sobre branco geraria um arquivo idêntico ao
+  -branco com nome -cor, e é assim que erro de reprodução nasce. Se você
+  precisa de JPEG sobre branco, use o -branco.
 
 
 AS TRÊS COISAS QUE MAIS DÃO ERRADO
