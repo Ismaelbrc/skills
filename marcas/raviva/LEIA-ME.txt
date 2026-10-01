@@ -1,0 +1,75 @@
+RAVIVA
+Acenda a faísca
+──────────────────────────────────────────────────────────────────────────
+
+O DOCUMENTO
+───────────
+RAVIVA_defesa_e_manual.html   Defesa da marca e manual completo. Arquivo
+                              único, fontes embutidas, abre offline em
+                              qualquer navegador, inclusive no celular.
+RAVIVA_defesa_e_manual.pdf    O mesmo documento, 15 páginas.
+RAVIVA_manual_de_marca.pdf    Só o manual, 9 pranchas.
+
+
+A MARCA
+───────
+marca/svg/        vetor. Escala sem perda, é daqui que sai qualquer tamanho.
+marca/png-alta/   6000 px na maior dimensão.
+marca/jpg-alta/   6000 px, qualidade 95, sem subamostragem de croma.
+
+  Seis composições:
+
+    raviva_lockup_light       símbolo acima, nome embaixo, sobre claro
+    raviva_lockup_dark        o mesmo, sobre escuro
+    raviva_horizontal_light   símbolo à esquerda, nome à direita
+    raviva_icon_light         só o símbolo, quadrado — avatar e favicon
+    raviva_icon_dark          o mesmo, sobre escuro
+    raviva_wordmark_only      só a palavra, sem o símbolo
+
+  Cada uma em duas formas:
+
+    (sem sufixo)      com o fundo embutido — #FCF8F1 nas light,
+                      #20140D nas dark
+    -transparente     sem fundo, para você aplicar sobre o seu
+
+  CUIDADO COM A TRANSPARENTE
+  O círculo interno fino do símbolo é desenhado num tom claro, calibrado
+  para o papel #FCF8F1. Sobre um fundo de meio-tom ele aparece como um anel
+  pálido que não deveria estar ali. A versão -transparente light serve para
+  fundos claros e a dark para fundos escuros; ela não é um passe livre para
+  qualquer cor. Em dúvida, use a versão com o fundo embutido.
+
+  PNG OU JPEG?
+  PNG sempre que aceitarem. JPEG é compressão com perda e trabalha mal com
+  aresta dura de cor plana: gera franja em volta da letra. Está aqui em
+  qualidade 95 e 4:4:4, o menor estrago possível. Não há JPEG das versões
+  transparentes porque JPEG não tem canal alfa.
+
+
+AS PRANCHAS
+───────────
+pranchas/    As 9 pranchas do manual, cada uma em SVG, PNG e PDF:
+
+    01_capa            02_conceito        03_versoes
+    04_protecao        05_cores           06_tipografia
+    07_evitar          08_tom_de_voz      09_encerramento
+
+
+O CÓDIGO
+────────
+fonte/brand_kit.py    a geometria do símbolo
+fonte/build_site.py   monta o documento
+
+O símbolo não foi desenhado à mão: é gerado. A imperfeição dos dois
+círculos e a posição de cada dente vêm de semente fixa no código, e é por
+isso que todas as aplicações são idênticas até o último decimal. Para
+mudar alguma coisa, mude o código e rode de novo — nunca edite o SVG à mão,
+senão as versões se separam.
+
+
+TRABALHO
+────────
+trabalho/    76 capturas do processo: conferências de renderização, testes
+             de fonte, recortes de QA. Não é entrega, mas também não é lixo
+             — é o registro de como o material foi verificado. Pode apagar
+             sem perder nada do que importa.
