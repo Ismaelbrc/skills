@@ -1,0 +1,83 @@
+BR.AÇO — AVATAR DE WHATSAPP
+===========================
+
+Para usar agora
+---------------
+    avatar-whatsapp/png/BRACO-whatsapp-1000.png
+
+É só esse arquivo. Sobe no perfil do WhatsApp e pronto. O app recorta em
+círculo sozinho, e o quadrado foi montado para que esse recorte saia certo.
+
+
+O que tem na pasta
+------------------
+    BRACO-whatsapp-*          BR. com a barra das três listras   <- o principal
+    BRACO-whatsapp-br-*       BR. sozinho, maior                 alternativa
+    BRACO-whatsapp-marca-*    a marca inteira, BR.AÇO            só para tela grande
+
+Cada um em 1000 px e 640 px, em PNG e em JPEG.
+Use PNG. O JPEG está aí porque alguns sistemas antigos só aceitam JPEG.
+
+    COMO-FICA-NO-APP.png      a prova: os três, com 48, 56, 96 e 200 px,
+                              na interface clara e na escura do WhatsApp
+
+
+Por que esse e não a marca inteira
+----------------------------------
+A marca BR.AÇO tem proporção 5,25 : 1. É uma marca deitada, comprida. Círculo
+não aceita isso: para a marca inteira caber na largura do círculo, ela encolhe
+tanto que vira um borrão.
+
+E o tamanho que decide não é o do perfil. É o da lista de conversas: 48 px.
+É ali que a pessoa te vê dez vezes por dia. Abrir a tela de perfil para olhar
+a foto, quase ninguém faz.
+
+Abra o COMO-FICA-NO-APP.png e olhe a primeira coluna de cada linha. Com 48 px:
+
+    marca inteira      ilegível. Dá para ver que tem cor, não dá para ler
+    BR. sozinho        lê perfeito, mas fica só verde — perde o amarelo e o azul
+    BR. + listras      lê, e as três cores aparecem          <- escolhido
+
+A barra de listras não é a faixa da marca espremida. É um trecho dela,
+ampliado em escala uniforme até a largura do BR. Cada listra fica 1,6x mais
+grossa e sobrevive aos 48 px, sem nada ter sido achatado.
+
+
+As cores
+--------
+Medidas na própria imagem, não inventadas:
+
+    verde      #2C6745      R 44    G 103   B 69
+    amarelo    #E7B23D      R 231   G 178   B 61
+    azul       #113167      R 17    G 49    B 103
+    fundo      #F5F4F0      R 245   G 244   B 240
+    aro        verde #2C6745, 3% do diâmetro
+
+O aro verde existe por um motivo prático: o fundo da marca é quase branco, e
+a interface clara do WhatsApp também. Sem o aro, o avatar sangra no fundo e a
+foto some. O aro fecha o círculo nos dois temas.
+
+
+Um aviso honesto sobre a qualidade
+----------------------------------
+Isto foi feito a partir de uma captura de tela, não do arquivo original.
+
+O logo que consegui extrair tem 1108 x 211 px. O recorte do "BR." tem
+440 x 132 px. Para chegar nos 1000 px de entrega houve ampliação de 1,55x.
+Limpei as bordas jogando cada pixel na cor exata da marca, o que deixou os
+contornos retos de novo — mas é remendo, não é o mesmo que partir do vetor.
+
+Na captura dava para ver o nome do arquivo original: 02_BR_verde_ACO_amarelo.
+Se você me mandar esse arquivo — ou qualquer .ai, .eps, .svg, .pdf ou PNG em
+alta — eu refaço em dez minutos e aí sim fica impecável em qualquer tamanho,
+inclusive para impressão. Vale a pena.
+
+
+Como refazer
+------------
+    fonte/avatar.py                          o script que gerou tudo
+    fonte/logo-extraido-da-captura.png       a fonte, 1108 x 211 px
+
+    python3 fonte/avatar.py
+
+Precisa de Pillow. Regenera os seis arquivos e a prova.
