@@ -1,0 +1,56 @@
+AVATAR DE WHATSAPP — Casa Brasileira de Aço
+───────────────────────────────────────────
+
+USE ESTE
+  jpg/CBA-whatsapp-verde-1000.jpg
+
+  Círculo verde #006B3C com listra branco / amarelo / branco.
+  Quadrado de bordo a bordo: o WhatsApp recorta em círculo sozinho, e com a
+  cor preenchendo a tela inteira o recorte sai limpo em qualquer variação.
+  Suba o de 1000 px. O de 640 existe se o app reclamar do peso.
+
+
+POR QUE ESTE E NÃO OUTRO
+  O que elimina opção num avatar não é como ele fica grande na tela de
+  perfil. É como ele fica com 48 px na lista de conversas. Testado nos dois
+  temas do WhatsApp:
+
+    preto                some contra a interface escura
+    papel claro          some contra a interface clara
+    verde                separa das duas  ← 6,63:1 na clara, 2,81:1 na escura
+
+  E sobre o verde, a listra:
+    branco    6,63:1   ok
+    amarelo   3,65:1   ok
+    azul      2,11:1   não passa
+    preto     2,73:1   não passa
+
+  Por isso branco/amarelo/branco — a mesma regra de fundo escuro que a marca
+  já tem documentada, aplicada ao verde.
+
+
+O NOME NÃO ENTRA
+  Com 48 px, "CASA BRASILEIRA DE AÇO" vira uma mancha. O manual já fixa
+  corpo mínimo de 15 px, e num avatar de 48 px o nome sairia com corpo 4.
+  O símbolo existe exatamente para isto — está escrito na especificação:
+  "avatar, favicon, adesivo".
+
+  Fora do avatar, o símbolo sozinho não substitui a marca. Em proposta,
+  etiqueta, nota e placa de obra, use a assinatura completa.
+
+
+AS ALTERNATIVAS QUE TAMBÉM PASSARAM
+  CBA-whatsapp-azul          azul institucional, branco/amarelo/branco
+  CBA-whatsapp-papel-aro     papel com as três cores da marca, aro verde
+
+  As duas funcionam a 48 px. A papel-aro é a única que mantém as três cores
+  da bandeira; em compensação é a de menor presença na lista.
+
+
+ARQUIVOS
+  jpg/   1000 e 640 px — é o que o WhatsApp armazena de qualquer jeito
+  png/   1000 e 640 px — sem perda, use se for editar antes
+  svg/   vetor, para qualquer outro tamanho
+
+  As versões -circulo têm canto transparente, para usar fora do WhatsApp.
+  Não têm JPEG porque JPEG não tem canal alfa.
